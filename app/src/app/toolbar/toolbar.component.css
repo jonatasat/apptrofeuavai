@@ -1,0 +1,14 @@
+#btnmenuicon {
+    width: 5%;
+    height: 100%;
+}
+
+#menuicon {
+    color: white;
+}
+
+#appname {
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+}
