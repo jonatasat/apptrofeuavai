@@ -4,17 +4,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { TogglesidebarService } from './togglesidebar.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TogglesidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
