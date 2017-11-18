@@ -19,5 +19,13 @@ export class SidebarComponent implements OnInit {
     );
   }
 
+  toggleSidebar(){
+    if(this.toggle=='toggled'){
+      this.toggle = '';
+    }else{
+      this.toggle = 'toggled';
+    }
+  }
+
 
 }
