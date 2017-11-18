@@ -1,0 +1,85 @@
+<ol id="breadcrumb" class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a routerLink="">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Jogadores</li>
+  </ol>
+  
+  <table id="playerstable" class="table">
+    <thead class="thead-default">
+      <tr>
+        <th>#</th>
+        <th>Escudo</th>
+        <th>Nome</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="rows">
+      <tr>
+        <th scope="row">1</th>
+        <td>
+            <img id="image" src="../../assets/avai.png" alt="Avai" class="img-fluid">
+        </td>
+        <td>Avai F.C</td>
+        <td>
+          <div id="buttonbar">
+            <i id="pencilicon" routerLink='/editteam' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Time"></i>
+            <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Time"></i>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>
+          <img id="image" src="../../assets/vasco.png" alt="Vasco" class="img-fluid">
+        </td>
+        <td>Vasco F.C</td>
+        <td>
+          <div id="buttonbar">
+            <i id="pencilicon" routerLink='/editteam' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Time"></i>
+            <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Time"></i>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>
+          <img id="image" src="../../assets/santos.png" alt="JuniorDutra" class="img-fluid">
+        </td>
+        <td>Santos F.C</td>
+        <td>
+          <div id="buttonbar">
+            <i id="pencilicon" routerLink='/editsantos' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Time"></i>
+            <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Time"></i>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+  
+  <nav id="pagination" aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous" data-toggle="tooltip" title="Anterior">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next" data-toggle="tooltip" title="Próximo">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+  <div>
+    <button id="btnadd" routerLink='/addteam' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Time">
+      <i id="addicon" class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+  </div>
