@@ -8,6 +8,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TogglesidebarService } from './togglesidebar.service';
 import { PlayersComponent } from './players/players.component';
 import { HomeComponent } from './home/home.component';
+import { AddPlayerComponent } from './players/add-player/add-player.component';
+import { EditPlayerComponent } from './players/edit-player/edit-player.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     ToolbarComponent,
     SidebarComponent,
     PlayersComponent,
-    HomeComponent
+    HomeComponent,
+    AddPlayerComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,
