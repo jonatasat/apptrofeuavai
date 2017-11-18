@@ -2,16 +2,19 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">Home</a>
+                <a routerLink="" (click)="toggleSidebar()">Home</a>
             </li>
             <li>
-                <a href="#">Jogadores</a>
+                <a routerLink="/players" (click)="toggleSidebar()" >Jogadores</a>
             </li>
             <li>
-                <a href="#">Partidas</a>
+                <a routerLink="" (click)="toggleSidebar()">Times</a>
             </li>
             <li>
-                <a href="#">Sobre</a>
+                <a routerLink="" (click)="toggleSidebar()">Partidas</a>
+            </li>
+            <li>
+                <a routerLink="" (click)="toggleSidebar()">Sobre</a>
             </li>
         </ul>
     </div>
