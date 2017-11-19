@@ -12,6 +12,9 @@ import { MatchesComponent } from './matches/matches.component';
 import { AddMatchComponent } from './matches/add-match/add-match.component';
 import { EditMatchComponent } from './matches/edit-match/edit-match.component';
 import { EditPlayersMatchComponent } from './matches/edit-players-match/edit-players-match.component';
+import { UsersComponent } from './users/users.component';
+import { AddUsersComponent } from './users/add-users/add-users.component';
+import { EditUsersComponent } from './users/edit-users/edit-users.component';
 
 
 const APP_ROUTES: Routes = [
@@ -25,7 +28,11 @@ const APP_ROUTES: Routes = [
     { path: 'matches', component: MatchesComponent},
     { path: 'addmatch', component: AddMatchComponent},
     { path: 'editmatch', component: EditMatchComponent},
-    { path: 'editplayersmatch', component: EditPlayersMatchComponent}
+    { path: 'editplayersmatch', component: EditPlayersMatchComponent},
+    { path: 'users', component: UsersComponent},
+    { path: 'addusers', component: AddUsersComponent},
+    { path: 'editusers', component: EditUsersComponent}
+
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

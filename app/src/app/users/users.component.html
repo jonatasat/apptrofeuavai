@@ -1,0 +1,67 @@
+<ol id="breadcrumb" class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a routerLink="">Home</a>
+  </li>
+  <li class="breadcrumb-item active">Usuários</li>
+</ol>
+
+<table id="userstable" class="table">
+  <thead class="thead-default">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Login</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="rows">
+    <tr>
+      <th scope="row">1</th>
+      <th>Administrador</th>
+      <th>admin</th>
+      <td>
+        <div id="buttonbar">
+          <i id="pencilicon" routerLink='/editusers' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuário"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Usuário"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <th>Jonatas</th>
+      <th>jonatas</th>
+      <td>
+        <div id="buttonbar">
+          <i id="pencilicon" routerLink='/editusers' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuários"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Usuário"></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<nav id="pagination" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous" data-toggle="tooltip" title="Anterior">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next" data-toggle="tooltip" title="Próximo">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<div>
+  <button id="btnadd" routerLink='/addusers' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Usuário">
+    <i id="addicon" class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>
