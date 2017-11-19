@@ -13,6 +13,11 @@ import { EditPlayerComponent } from './players/edit-player/edit-player.component
 import { TeamComponent } from './team/team.component';
 import { AddTeamComponent } from './team/add-team/add-team.component';
 import { EditTeamComponent } from './team/edit-team/edit-team.component';
+import { MatchesComponent } from './matches/matches.component';
+import { SoccerFieldComponent } from './soccer-field/soccer-field.component';
+import { AddMatchComponent } from './matches/add-match/add-match.component';
+import { EditMatchComponent } from './matches/edit-match/edit-match.component';
+import { EditPlayersMatchComponent } from './matches/edit-players-match/edit-players-match.component';
 
 
 @NgModule({
@@ -26,7 +31,12 @@ import { EditTeamComponent } from './team/edit-team/edit-team.component';
     EditPlayerComponent,
     TeamComponent,
     AddTeamComponent,
-    EditTeamComponent
+    EditTeamComponent,
+    MatchesComponent,
+    SoccerFieldComponent,
+    AddMatchComponent,
+    EditMatchComponent,
+    EditPlayersMatchComponent
   ],
   imports: [
     BrowserModule,

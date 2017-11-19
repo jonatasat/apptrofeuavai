@@ -1,0 +1,79 @@
+<ol id="breadcrumb" class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a routerLink="">Home</a>
+  </li>
+  <li class="breadcrumb-item active">Partidas</li>
+</ol>
+
+<table id="matchestable" class="table">
+  <thead class="thead-default">
+    <tr>
+      <th>#</th>
+      <th>Time</th>
+      <th>Placar</th>
+      <th>Adversário</th>
+      <th>Estádio</th>
+      <th>Média da Equipe</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="rows">
+    <tr>
+      <th scope="row">1</th>
+      <td>Avai</td>
+      <td>2 x 0</td>
+      <td>Santos</td>
+      <td>Ressacada</td>
+      <td>7,9</td>
+      <td>
+        <div id="buttonbar">
+          <i id="pencilicon" routerLink='/editmatch' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Partida"></i>
+          <i id="usersicon" routerLink='/editplayersmatch' class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Vasco</td>
+      <td>1 x 4</td>
+      <td>Avai</td>
+      <td>São Januário</td>
+      <td>9,4</td>
+      <td>
+        <div id="buttonbar">
+          <i id="pencilicon" routerLink='/editmatch' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Partida"></i>
+          <i id="usersicon" routerLink='/editplayersmatch' class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida"></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  
+</table>
+
+<nav id="pagination" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous" data-toggle="tooltip" title="Anterior">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next" data-toggle="tooltip" title="Próximo">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<div>
+  <button id="btnadd" routerLink='/addmatch' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Partida">
+    <i id="addicon" class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>
