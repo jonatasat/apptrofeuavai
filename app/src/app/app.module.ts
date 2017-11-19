@@ -18,6 +18,9 @@ import { SoccerFieldComponent } from './soccer-field/soccer-field.component';
 import { AddMatchComponent } from './matches/add-match/add-match.component';
 import { EditMatchComponent } from './matches/edit-match/edit-match.component';
 import { EditPlayersMatchComponent } from './matches/edit-players-match/edit-players-match.component';
+import { UsersComponent } from './users/users.component';
+import { AddUsersComponent } from './users/add-users/add-users.component';
+import { EditUsersComponent } from './users/edit-users/edit-users.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { EditPlayersMatchComponent } from './matches/edit-players-match/edit-pla
     SoccerFieldComponent,
     AddMatchComponent,
     EditMatchComponent,
-    EditPlayersMatchComponent
+    EditPlayersMatchComponent,
+    UsersComponent,
+    AddUsersComponent,
+    EditUsersComponent
   ],
   imports: [
     BrowserModule,
