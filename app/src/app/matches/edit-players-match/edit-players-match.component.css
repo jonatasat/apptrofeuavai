@@ -1,0 +1,55 @@
+#playerstable{
+    position: relative;
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 80px;
+    box-shadow: 0px 1px 1px 0px #888888;
+    border-collapse:collapse;
+}
+
+#rows{
+    overflow-y: auto;
+}
+
+
+#rows :hover{
+    background: #ebe5e5;
+}
+
+#buttonbar i{
+    margin-right: 20px;
+}
+
+#trashicon{
+    cursor: pointer;
+    color:red;
+}
+
+#breadcrumb{
+    position: absolute;
+    right: 10px;
+    width: 30%;
+    margin-top: 10px;
+    background: white;
+}
+
+#form{
+    margin-top: 30px;
+}
+
+#btnsave{
+    cursor: pointer;
+    margin-left: 380px;
+}
+
+.col2{
+    margin-top: 20px;
+}
+
+#average{
+    color: blue;
+}
+
+.form{
+    margin-top: 50px;
+}
