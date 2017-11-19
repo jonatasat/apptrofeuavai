@@ -1,0 +1,24 @@
+#soccerfield{
+    margin-left: 300px;
+    height: 520px;
+    margin-top: 20px;
+    box-shadow: 1px 1px  #888888;
+}
+
+#breadcrumb{
+    position: absolute;
+    right: 10px;
+    width: 15%;
+    margin-top: 10px;
+    background: white;
+}
+
+#btnconfig{
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: solid 0px #888888;
+    box-shadow: 1px 1px  #888888;
+}
