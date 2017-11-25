@@ -21,6 +21,11 @@ import { EditPlayersMatchComponent } from './matches/edit-players-match/edit-pla
 import { UsersComponent } from './users/users.component';
 import { AddUsersComponent } from './users/add-users/add-users.component';
 import { EditUsersComponent } from './users/edit-users/edit-users.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './login/auth.service';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth-guard';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -42,13 +47,16 @@ import { EditUsersComponent } from './users/edit-users/edit-users.component';
     EditPlayersMatchComponent,
     UsersComponent,
     AddUsersComponent,
-    EditUsersComponent
+    EditUsersComponent,
+    LoginComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
-  providers: [TogglesidebarService],
+  providers: [TogglesidebarService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

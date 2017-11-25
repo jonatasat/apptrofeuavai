@@ -15,24 +15,27 @@ import { EditPlayersMatchComponent } from './matches/edit-players-match/edit-pla
 import { UsersComponent } from './users/users.component';
 import { AddUsersComponent } from './users/add-users/add-users.component';
 import { EditUsersComponent } from './users/edit-users/edit-users.component';
-
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth-guard';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const APP_ROUTES: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'players', component: PlayersComponent },
-    { path: 'newplayer', component: AddPlayerComponent},
-    { path: 'editplayer', component: EditPlayerComponent},
-    { path: 'team', component: TeamComponent},
-    { path: 'addteam', component: AddTeamComponent},
-    { path: 'editteam', component: EditTeamComponent},
-    { path: 'matches', component: MatchesComponent},
-    { path: 'addmatch', component: AddMatchComponent},
-    { path: 'editmatch', component: EditMatchComponent},
-    { path: 'editplayersmatch', component: EditPlayersMatchComponent},
-    { path: 'users', component: UsersComponent},
-    { path: 'addusers', component: AddUsersComponent},
-    { path: 'editusers', component: EditUsersComponent}
-
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
+    { path: 'newplayer', component: AddPlayerComponent, canActivate: [AuthGuard]},
+    { path: 'editplayer', component: EditPlayerComponent, canActivate: [AuthGuard]},
+    { path: 'team', component: TeamComponent, canActivate: [AuthGuard]},
+    { path: 'addteam', component: AddTeamComponent, canActivate: [AuthGuard]},
+    { path: 'editteam', component: EditTeamComponent, canActivate: [AuthGuard]},
+    { path: 'matches', component: MatchesComponent, canActivate: [AuthGuard]},
+    { path: 'addmatch', component: AddMatchComponent, canActivate: [AuthGuard]},
+    { path: 'editmatch', component: EditMatchComponent, canActivate: [AuthGuard]},
+    { path: 'editplayersmatch', component: EditPlayersMatchComponent, canActivate: [AuthGuard]},
+    { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
+    { path: 'addusers', component: AddUsersComponent, canActivate: [AuthGuard]},
+    { path: 'editusers', component: EditUsersComponent, canActivate: [AuthGuard]},
+    { path: 'login', component:LoginComponent},
+    { path: '**', component: PagenotfoundComponent}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
