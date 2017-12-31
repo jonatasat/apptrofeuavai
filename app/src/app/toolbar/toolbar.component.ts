@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TogglesidebarService } from '../togglesidebar.service';
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,15 +11,21 @@ export class ToolbarComponent implements OnInit {
 
   title = '';
 
-  constructor(private service:TogglesidebarService) {
-  }
+  constructor(
+    private service: TogglesidebarService,
+    private authService: AuthService,
+  ) { }
 
   ngOnInit() {
     this.title = 'Troféu Avai';
   }
 
-  toggleMenu(){
+  toggleMenu() {
     this.service.toggleSidebar('toggled');
+  }
+
+  fazerLogout(){
+    this.authService.fazerLogout();
   }
 
 }
