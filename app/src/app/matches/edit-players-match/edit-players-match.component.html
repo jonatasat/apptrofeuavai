@@ -47,27 +47,36 @@
     </div>
 
     <div class="col-md-5 col-sm-5 form">
-      <form id="form">
-        <div class="form-group row">
-          <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores:</label>
+      <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+        <div class="form-group row has-danger" [class.has-danger]="!player.valid && player.touched" [class.has-feedback]="!player.valid && player.touched">
+          <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores*:</label>
           <div class="col-sm-8">
-            <select class="form-control input-sm" id="selectplayer">
+            <select name="player" class="form-control input-sm" id="selectplayer" ngModel required #player="ngModel">
               <option selected>Selecione o jogador</option>
               <option value="1">Alemão</option>
               <option value="2">Junior Dutra</option>
               <option value="3">Betão</option>
             </select>
+            <div class="form-control-feedback" *ngIf="!team.valid && team.touched">
+                Campo "Jogadores" é obrigatório.
+            </div>
           </div>
         </div>
-        <div class="form-group row">
-          <label for="inputgrade" class="col-sm-2 col-form-label">Nota:</label>
+
+        <div class="form-group row has-danger" [class.has-danger]="!grade.valid && grade.touched" [class.has-feedback]="!grade.valid && grade.touched">
+          <label for="inputgrade" class="col-sm-2 col-form-label">Nota*:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="inputgrade" placeholder="Nota">
+            <input type="text" name="grade" class="form-control" id="inputgrade" placeholder="Nota" ngModel required #grade="ngModel">
+            <div class="form-control-feedback" *ngIf="!grade.valid && grade.touched">
+                Campo "Nota" é obrigatório.
+            </div>
           </div>
         </div>
+
         <div class="form-group row">
           <div class="col-sm-4">
-            <button id="btnsave" type="submit" class="btn btn-primary" (click)="savePlayer()">Salvar</button>
+            <button id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
           </div>
         </div>
       </form>
