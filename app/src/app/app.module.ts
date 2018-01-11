@@ -26,7 +26,7 @@ import { AuthService } from './login/auth.service';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth-guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-
+import { PaginationService } from './pagination.service'
 
 @NgModule({
   declarations: [
@@ -49,14 +49,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AddUsersComponent,
     EditUsersComponent,
     LoginComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
   ],
+  
   imports: [
     BrowserModule,
     routing,
     FormsModule
   ],
-  providers: [TogglesidebarService, AuthService, AuthGuard],
+  providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
