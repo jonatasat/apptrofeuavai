@@ -16,9 +16,10 @@
   </thead>
   <tbody id="rows">
     <tr *ngFor="let item of pagedItems">
-      <th scope="row">1</th>
+      <th>{{item.row}}</th>
       <th>{{item.name}}</th>
-      <th>admin</th>
+      <th>{{item.login}}</th>
+      
       <td>
         <div id="buttonbar">
           <i id="pencilicon" routerLink='/editusers' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuário"></i>
@@ -33,19 +34,19 @@
 <nav id="pagination" aria-label="Page navigation example">
   <ul class="pagination justify-content-center" *ngIf="pager.pages && pager.pages.length" >
       <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
-        <a (click)="setPage(1)" class="page-link">First</a>
+        <a (click)="setPage(1)" class="page-link"><<</a>
       </li>
       <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
-        <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+        <a (click)="setPage(pager.currentPage - 1)" class="page-link">Anterior</a>
       </li>
       <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
         <a (click)="setPage(page)" class="page-link">{{page}}</a>
       </li>
       <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
-        <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+        <a (click)="setPage(pager.currentPage + 1)" class="page-link">Próximo</a>
       </li>
       <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
-        <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
+        <a (click)="setPage(pager.totalPages)" class="page-link">>></a>
       </li>
     </ul>
 </nav>

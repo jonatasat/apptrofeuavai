@@ -16,27 +16,13 @@
     </tr>
   </thead>
   <tbody id="rows">
-    <tr>
-      <th scope="row">1</th>
+    <tr *ngFor="let item of pagedItems">
+      <th>{{item.row}}</th>
       <td>
-          <img id="image" src="../../assets/alemao.png" alt="Alemao" class="img-fluid">
+        <img id="image" src="../../assets/alemao.png" alt="Alemao" class="img-fluid">
       </td>
-      <td>Alemão</td>
-      <td>Zagueiro</td>
-      <td>
-        <div id="buttonbar">
-          <i id="pencilicon" routerLink='/editplayer' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogador"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador"></i>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>
-        <img id="image" src="../../assets/JuniorDutra.png" alt="JuniorDutra" class="img-fluid">
-      </td>
-      <td>Junior Dutra</td>
-      <td>Atacante</td>
+      <td>{{item.name}}</td>
+      <td>{{item.posicao}}</td>
       <td>
         <div id="buttonbar">
           <i id="pencilicon" routerLink='/editplayer' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogador"></i>
@@ -44,43 +30,31 @@
         </div>
       </td>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>
-        <img id="image" src="../../assets/betao.png" alt="JuniorDutra" class="img-fluid">
-      </td>
-      <td>Betão</td>
-      <td>Zagueiro</td>
-      <td>
-        <div id="buttonbar">
-          <i id="pencilicon" routerLink='/editplayer' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogador"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador"></i>
-        </div>
-      </td>
-    </tr>
+
   </tbody>
-  
+
 </table>
 
 <nav id="pagination" aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous" data-toggle="tooltip" title="Anterior">
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Previous</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next" data-toggle="tooltip" title="Próximo">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <ul class="pagination justify-content-center" *ngIf="pager.pages && pager.pages.length">
+    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+      <a (click)="setPage(1)" class="page-link">
+        <<</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+      <a (click)="setPage(pager.currentPage - 1)" class="page-link">Anterior</a>
+    </li>
+    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+      <a (click)="setPage(page)" class="page-link">{{page}}</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+      <a (click)="setPage(pager.currentPage + 1)" class="page-link">Próximo</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+      <a (click)="setPage(pager.totalPages)" class="page-link">>></a>
+    </li>
+  </ul>
+</nav>
 
 <div>
   <button id="btnadd" routerLink='/newplayer' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Jogador">
