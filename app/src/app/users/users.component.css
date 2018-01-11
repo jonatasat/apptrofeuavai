@@ -57,3 +57,7 @@
     width: auto;
     height: auto;
 }
+
+a {
+    cursor: pointer;
+}
