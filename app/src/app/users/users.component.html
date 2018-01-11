@@ -26,24 +26,12 @@
         </div>
       </td>
     </tr>
-    <!-- <tr>
-      <th scope="row">2</th>
-      <th>Jonatas</th>
-      <th>jonatas</th>
-      <td>
-        <div id="buttonbar">
-          <i id="pencilicon" routerLink='/editusers' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuários"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Usuário"></i>
-        </div>
-      </td>
-    </tr> -->
   </tbody>
 </table>
 
 
 <nav id="pagination" aria-label="Page navigation example">
   <ul class="pagination justify-content-center" *ngIf="pager.pages && pager.pages.length" >
-    <!-- <div *ngFor="let item of pagedItems">{{item.name}}</div> -->
       <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
         <a (click)="setPage(1)" class="page-link">First</a>
       </li>
