@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth-guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PaginationService } from './pagination.service'
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PaginationService } from './pagination.service'
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService],
   bootstrap: [AppComponent]

@@ -6,8 +6,7 @@
     <a routerLink="/users">Usuários</a>
   </li>
   <li class="breadcrumb-item active">Adicionar Usuário</li>
-</ol>
-
+</ol> 
 
 <div class="container">
   <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
@@ -73,6 +72,5 @@
           [disabled]="!f.valid">Salvar</button>
       </div>
     </div>
-    
   </form>
 </div>
