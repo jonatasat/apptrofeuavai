@@ -28,6 +28,10 @@ import { AuthGuard } from './guards/auth-guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PaginationService } from './pagination.service'
 import { HttpModule } from '@angular/http';
+import { FirebaseConfig } from './../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2/index';
+// import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @NgModule({
   declarations: [
@@ -52,14 +56,15 @@ import { HttpModule } from '@angular/http';
     LoginComponent,
     PagenotfoundComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
-  providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService],
+  providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
