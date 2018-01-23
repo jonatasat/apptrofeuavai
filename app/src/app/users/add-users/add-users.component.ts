@@ -17,6 +17,10 @@ export class AddUsersComponent implements OnInit {
   }
 
   onSubmit(form) {
+    // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
+    // .map(res => res)
+    // .subscribe(dados => console.log);
+    
     this.angularFire.list("users").push(
       {
         name: form.value.name,

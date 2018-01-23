@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginationService } from '../pagination.service'
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 
 import * as _ from 'underscore';
 
@@ -16,20 +17,14 @@ export class PlayersComponent implements OnInit {
 
   pagedItems: any[];
 
-  constructor(private paginationService: PaginationService) { }
+  players: FirebaseListObservable<any[]>;
+
+  constructor(private paginationService: PaginationService, private db: AngularFireDatabase) { }
 
 
   ngOnInit() {
-    
-    for(let i=0; i< 10; i++){
-      this.allItems.push(
-        {
-          row: i,
-          name: 'Jogador' + i,
-          posicao: 'Posicao' + i
-        }
-      );
-    }
+    this.players = this.db.list('players');
+    this.allItems.push(this.players);
 
     this.setPage(1);
   }

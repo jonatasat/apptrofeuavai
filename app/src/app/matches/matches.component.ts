@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationService } from '../pagination.service'
+import { PaginationService } from '../pagination.service';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 
 import * as _ from 'underscore';
 
@@ -16,23 +17,14 @@ export class MatchesComponent implements OnInit {
 
   pagedItems: any[];
 
-  constructor(private paginationService: PaginationService) { }
+  matches: FirebaseListObservable<any[]>;
+
+  constructor(private paginationService: PaginationService, private db: AngularFireDatabase) { }
 
 
   ngOnInit() {
-    
-    for(let i=0; i< 10; i++){
-      this.allItems.push(
-        {
-          row: i,
-          time: 'Time' + i,
-          placar: i + " x " + i,
-          adversario: 'Adversario' + i,
-          estadio: 'Estadio' + i,
-          media: i + ',' + i
-        }
-      );
-    }
+    this.matches = this.db.list('matches');
+    this.allItems.push(this.matches);
 
     this.setPage(1);
   }

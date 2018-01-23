@@ -16,10 +16,11 @@
     </tr>
   </thead>
   <tbody id="rows">
-    <tr *ngFor="let item of pagedItems">
-      <th>{{item.row}}</th>
+    <tr *ngFor="let item of players | async">
+      <th>1</th>
       <td>
-        <img id="image" src="../../assets/alemao.png" alt="Alemao" class="img-fluid">
+        {{item.photo}}
+        <!-- <img id="image" src="../../assets/alemao.png" alt="Alemao" class="img-fluid"> -->
       </td>
       <td>{{item.name}}</td>
       <td>{{item.posicao}}</td>

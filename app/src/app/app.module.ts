@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
-
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -30,7 +29,6 @@ import { PaginationService } from './pagination.service'
 import { HttpModule } from '@angular/http';
 import { FirebaseConfig } from './../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
-// import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @NgModule({

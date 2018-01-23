@@ -18,8 +18,8 @@
     </tr>
   </thead>
   <tbody id="rows">
-    <tr *ngFor="let item of pagedItems">
-      <th>{{item.row}}</th>
+    <tr *ngFor="let item of players | async">
+      <th>1</th>
       <td>{{item.time}}</td>
       <td>{{item.placar}}</td>
       <td>{{item.adversario}}</td>

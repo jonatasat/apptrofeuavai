@@ -22,22 +22,14 @@ export class UsersComponent implements OnInit {
 
 
   constructor(private paginationService: PaginationService, private db: AngularFireDatabase) {
-    this.users = db.list('users');
+    
   }
 
 
   ngOnInit() {
+    this.users = this.db.list('users');
+    this.allItems.push(this.users);
     
-    // for(let i=0; i< 10; i++){
-    //   this.allItems.push(
-    //     {
-    //       row: i,
-    //       name: 'Administrador' + i,
-    //       login: 'admin' + i
-    //     }
-    //   );
-    // }
-
     this.setPage(1);
   }
 

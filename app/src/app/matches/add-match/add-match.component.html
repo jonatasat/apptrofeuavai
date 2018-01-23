@@ -24,7 +24,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!opponent.valid && opponent.touched" [class.has-feedback]="!opponent.valid && opponent.touched">
       <label for="inputnameopponent" class="col-sm-2 col-form-label">Adversário*:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputopponent" placeholder="Adversário" ngModel required #opponent="ngModel">
+        <input name="opponent" type="text" class="form-control" id="inputopponent" placeholder="Adversário" ngModel required #opponent="ngModel">
         <div class="form-control-feedback" *ngIf="!opponent.valid && opponent.touched">
             Campo "Adversário" é obrigatório.
           </div>
