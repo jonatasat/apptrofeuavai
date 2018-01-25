@@ -29,7 +29,8 @@ import { PaginationService } from './pagination.service'
 import { HttpModule } from '@angular/http';
 import { FirebaseConfig } from './../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
-import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [

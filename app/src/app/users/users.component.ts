@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationService } from '../pagination.service'
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { PaginationService } from '../pagination.service';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 import * as _ from 'underscore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-users',
@@ -12,24 +15,21 @@ import * as _ from 'underscore';
 
 export class UsersComponent implements OnInit {
 
-  private allItems: any[] = [];
+  allItems: any[] = [];
 
   pager: any = {};
 
   pagedItems: any[];
 
-  users: FirebaseListObservable<any[]>;
-
+  users: Observable<any[]>;
 
   constructor(private paginationService: PaginationService, private db: AngularFireDatabase) {
     
   }
 
-
   ngOnInit() {
-    this.users = this.db.list('users');
+    this.users = this.db.list('users').valueChanges();
     this.allItems.push(this.users);
-    
     this.setPage(1);
   }
 
@@ -41,6 +41,13 @@ export class UsersComponent implements OnInit {
     this.pager = this.paginationService.getPager(this.allItems.length, page);
 
     this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
+  deleteItem(item){
+    console.log("cheguei aqui");
+    console.log(item.key);
+    const itemsRef = this.db.list('users');
+    itemsRef.remove(item.key);
   }
 
 }

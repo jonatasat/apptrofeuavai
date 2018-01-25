@@ -8,7 +8,6 @@
 <table id="userstable" class="table">
   <thead class="thead-default">
     <tr>
-      <th>#</th>
       <th>Nome</th>
       <th>Login</th>
       <th></th>
@@ -16,13 +15,12 @@
   </thead>
   <tbody id="rows">
     <tr *ngFor="let item of users | async">
-      <th>1</th>
       <th>{{item.name}}</th>
       <th>{{item.login}}</th>
       <td>
         <div id="buttonbar">
           <i id="pencilicon" routerLink='/editusers' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuário"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Usuário"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Usuário" (click)="deleteItem(item)"></i>
         </div>
       </td>
     </tr>

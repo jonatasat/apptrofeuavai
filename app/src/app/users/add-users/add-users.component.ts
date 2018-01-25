@@ -11,6 +11,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AddUsersComponent implements OnInit {
 
+
   constructor(private angularFire: AngularFireDatabase) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class AddUsersComponent implements OnInit {
     // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
     // .map(res => res)
     // .subscribe(dados => console.log);
+
     
     this.angularFire.list("users").push(
       {
