@@ -33,7 +33,7 @@ const APP_ROUTES: Routes = [
     { path: 'editplayersmatch', component: EditPlayersMatchComponent, canActivate: [AuthGuard]},
     { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
     { path: 'addusers', component: AddUsersComponent, canActivate: [AuthGuard]},
-    { path: 'editusers', component: EditUsersComponent, canActivate: [AuthGuard]},
+    { path: 'users/editusers/:id', component: EditUsersComponent, canActivate: [AuthGuard]},
     { path: 'login', component:LoginComponent},
     { path: '**', component: PagenotfoundComponent}
 ];

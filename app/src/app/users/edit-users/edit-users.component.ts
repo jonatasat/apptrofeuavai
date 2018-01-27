@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-users',
@@ -10,7 +11,11 @@ import 'rxjs/add/operator/map'
 })
 export class EditUsersComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  id: string;
+
+  constructor(private route: ActivatedRoute) { 
+    console.log(this.route.snapshot.params['id']);
+  }
 
   user: any = {
     name: 'Jonatas'
@@ -20,9 +25,9 @@ export class EditUsersComponent implements OnInit {
   }
 
   onSubmit(form){
-    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    .map(res => res)
-    .subscribe(dados => console.log);
+    // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
+    // .map(res => res)
+    // .subscribe(dados => console.log);
   }
 
 }

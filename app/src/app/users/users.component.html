@@ -19,7 +19,7 @@
       <th>{{item.login}}</th>
       <td>
         <div id="buttonbar">
-          <i id="pencilicon" routerLink='/editusers' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuário"></i>
+          <i id="pencilicon" [routerLink]="['editusers', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Usuário"></i>
           <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Usuário" (click)="deleteItem(item)"></i>
         </div>
       </td>

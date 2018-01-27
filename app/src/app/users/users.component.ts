@@ -28,7 +28,9 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.users = this.db.list('users').valueChanges();
+    this.users = this.db.list('users').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
     this.allItems.push(this.users);
     this.setPage(1);
   }
@@ -44,8 +46,6 @@ export class UsersComponent implements OnInit {
   }
 
   deleteItem(item){
-    console.log("cheguei aqui");
-    console.log(item.key);
     const itemsRef = this.db.list('users');
     itemsRef.remove(item.key);
   }
