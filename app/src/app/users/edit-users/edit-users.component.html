@@ -16,7 +16,7 @@
       [class.has-feedback]="!name.valid && name.touched">
         <label for="user" class="col-sm-2 col-form-label">Nome*:</label>
         <div class="col-sm-10">
-          <input type="text" name="name" class="form-control form-control-danger" id="inputname" placeholder="Nome" ngModel 
+          <input type="text" name="name" class="form-control form-control-danger" id="inputname" placeholder="Nome" ngModel="{{(user | async)?.name}}" 
           required #name="ngModel">
           <div class="form-control-feedback" *ngIf="!name.valid && name.touched">
             Campo "Nome" é obrigatório.
