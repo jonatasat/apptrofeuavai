@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-match',
@@ -11,7 +12,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AddMatchComponent implements OnInit {
 
-  constructor(private angularFire: AngularFireDatabase) { }
+  constructor(private angularFire: AngularFireDatabase, private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,6 +33,8 @@ export class AddMatchComponent implements OnInit {
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);
+
+      this.router.navigate(['/matches']);
   }
 
 }

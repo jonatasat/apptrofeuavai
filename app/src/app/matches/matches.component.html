@@ -8,28 +8,28 @@
 <table id="matchestable" class="table">
   <thead class="thead-default">
     <tr>
-      <th>#</th>
       <th>Time</th>
       <th>Placar</th>
       <th>Adversário</th>
       <th>Estádio</th>
-      <th>Média da Equipe</th>
+      <th>Campeonato</th>
+      <th>Rodada</th>
       <th></th>
     </tr>
   </thead>
   <tbody id="rows">
-    <tr *ngFor="let item of players | async">
-      <th>1</th>
-      <td>{{item.time}}</td>
-      <td>{{item.placar}}</td>
-      <td>{{item.adversario}}</td>
-      <td>{{item.estadio}}</td>
-      <td>{{item.media}}</td>
+    <tr *ngFor="let item of matches | async">
+      <td>{{item.team}}</td>
+      <td>{{item.score}}</td>
+      <td>{{item.opponent}}</td>
+      <td>{{item.stadium}}</td>
+      <td>{{item.championship}}</td>
+      <td>{{item.round}}</td>
       <td>
         <div id="buttonbar">
-          <i id="pencilicon" routerLink='/editmatch' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Partida"></i>
-          <i id="usersicon" routerLink='/editplayersmatch' class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida"></i>
+          <i id="pencilicon" [routerLink]="['editmatches', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Partida"></i>
+          <i id="usersicon" [routerLink]="['editplayersmatch', item.key]" class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida" (click)="deleteItem(item)"></i>
         </div>
       </td>
     </tr>

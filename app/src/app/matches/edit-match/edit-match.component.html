@@ -14,7 +14,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!team.valid && team.touched" [class.has-feedback]="!team.valid && team.touched">
       <label for="inputname" class="col-sm-2 col-form-label">Time*:</label>
       <div class="col-sm-10">
-        <input type="text" name="team" class="form-control" id="inputteam" placeholder="Time" ngModel required #team="ngModel">
+        <input type="text" name="team" class="form-control" id="inputteam" placeholder="Time" ngModel="{{(match | async)?.team}}" required #team="ngModel">
         <div class="form-control-feedback" *ngIf="!team.valid && team.touched">
           Campo "Time" é obrigatório.
         </div>
@@ -24,7 +24,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!opponent.valid && opponent.touched" [class.has-feedback]="!opponent.valid && opponent.touched">
       <label for="inputnameopponent" class="col-sm-2 col-form-label">Adversário*:</label>
       <div class="col-sm-10">
-        <input type="text" name="opponent" class="form-control" id="inputopponent" placeholder="Adversário" ngModel required #opponent="ngModel">
+        <input type="text" name="opponent" class="form-control" id="inputopponent" placeholder="Adversário" ngModel="{{(match | async)?.opponent}}" required #opponent="ngModel">
         <div class="form-control-feedback" *ngIf="!opponent.valid && opponent.touched">
           Campo "Adversário" é obrigatório.
         </div>
@@ -34,7 +34,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!score.valid && score.touched" [class.has-feedback]="!score.valid && score.touched">
       <label for="inputscore" class="col-sm-2 col-form-label">Placar*:</label>
       <div class="col-sm-10">
-        <input type="text" name="score" class="form-control" id="inputscore" placeholder="Placar" ngModel required #score="ngModel">
+        <input type="text" name="score" class="form-control" id="inputscore" placeholder="Placar" ngModel="{{(match | async)?.score}}" required #score="ngModel">
         <div class="form-control-feedback" *ngIf="!score.valid && score.touched">
           Campo "Placar" é obrigatório.
         </div>
@@ -44,7 +44,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!stadium.valid && stadium.touched" [class.has-feedback]="!stadium.valid && stadium.touched">
       <label for="inputstadium" class="col-sm-2 col-form-label">Estádio*:</label>
       <div class="col-sm-10">
-        <input type="text" name="stadium" class="form-control" id="inputstadium" placeholder="Estádio" ngModel required #stadium="ngModel">
+        <input type="text" name="stadium" class="form-control" id="inputstadium" placeholder="Estádio" ngModel="{{(match | async)?.stadium}}" required #stadium="ngModel">
         <div class="form-control-feedback" *ngIf="!stadium.valid && stadium.touched">
           Campo "Estádio" é obrigatório.
         </div>
@@ -54,7 +54,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!championship.valid && championship.touched" [class.has-feedback]="!championship.valid && championship.touched">
       <label for="inputchampionship" class="col-sm-2 col-form-label">Campeonato*:</label>
       <div class="col-sm-10">
-        <input type="text" name="championship" class="form-control" id="inputchampionship" placeholder="Campeonato" ngModel required #championship="ngModel">
+        <input type="text" name="championship" class="form-control" id="inputchampionship" placeholder="Campeonato" ngModel="{{(match | async)?.championship}}" required #championship="ngModel">
         <div class="form-control-feedback" *ngIf="!championship.valid && championship.touched">
           Campo "Campeonato" é obrigatório.
         </div>
@@ -64,7 +64,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!round.valid && round.touched" [class.has-feedback]="!round.valid && round.touched">
       <label for="inputround" class="col-sm-2 col-form-label">Rodada*:</label>
       <div class="col-sm-10">
-        <input type="text" name="round" class="form-control" id="inputround" placeholder="Rodada" ngModel required #round="ngModel">
+        <input type="text" name="round" class="form-control" id="inputround" placeholder="Rodada" ngModel="{{(match | async)?.round}}" required #round="ngModel">
         <div class="form-control-feedback" *ngIf="!round.valid && round.touched">
           Campo "Rodada" é obrigatório.
         </div>
