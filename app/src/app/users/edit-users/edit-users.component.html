@@ -16,7 +16,7 @@
       [class.has-feedback]="!name.valid && name.touched">
         <label for="user" class="col-sm-2 col-form-label">Nome*:</label>
         <div class="col-sm-10">
-          <input type="text" name="name" class="form-control form-control-danger" id="inputname" placeholder="Nome" ngModel 
+          <input type="text" name="name" class="form-control form-control-danger" id="inputname" placeholder="Nome" ngModel="{{(user | async)?.name}}" 
           required #name="ngModel">
           <div class="form-control-feedback" *ngIf="!name.valid && name.touched">
             Campo "Nome" é obrigatório.
@@ -29,7 +29,7 @@
       [class.has-feedback]="!login.valid && login.touched">
         <label for="login" class="col-sm-2 col-form-label">Login*:</label>
         <div class="col-sm-10">
-          <input type="text" name="login" class="form-control form-control-danger" id="inputlogin" placeholder="Login" ngModel
+          <input type="text" name="login" class="form-control form-control-danger" id="inputlogin" placeholder="Login" ngModel="{{(user | async)?.login}}"
           required #login="ngModel">
           <div class="form-control-feedback" *ngIf="!login.valid && login.touched">
               Campo "Login" é obrigatório.
@@ -42,7 +42,7 @@
       [class.has-feedback]="!password.valid && password.touched">
         <label for="password" class="col-sm-2 col-form-label">Senha*:</label>
         <div class="col-sm-10">
-          <input type="password" name="password" class="form-control form-control-danger" id="inputpassword" placeholder="Senha" ngModel
+          <input type="password" name="password" class="form-control form-control-danger" id="inputpassword" placeholder="Senha" ngModel="{{(user | async)?.password}}"
           required #password="ngModel">
           <div class="form-control-feedback" *ngIf="!password.valid && password.touched">
               Campo "Senha" é obrigatório.
@@ -55,7 +55,7 @@
       [class.has-feedback]="!confirmpassword.valid && confirmpassword.touched">
         <label for="confirmpassword" class="col-sm-2 col-form-label">Confirmar*:</label>
         <div class="col-sm-10">
-          <input type="password" name="confirmpassword" class="form-control form-control-danger" id="inputconfirmpassword" placeholder="Confirmar Senha" ngModel
+          <input type="password" name="confirmpassword" class="form-control form-control-danger" id="inputconfirmpassword" placeholder="Confirmar Senha" ngModel="{{(user | async)?.confirmpassword}}"
           required #confirmpassword="ngModel">
           <div class="form-control-feedback" *ngIf="!confirmpassword.valid && confirmpassword.touched">
               Campo "Confirmar Senha" é obrigatório.

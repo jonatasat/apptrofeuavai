@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
-
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -28,6 +27,10 @@ import { AuthGuard } from './guards/auth-guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PaginationService } from './pagination.service'
 import { HttpModule } from '@angular/http';
+import { FirebaseConfig } from './../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2/index';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -52,14 +55,15 @@ import { HttpModule } from '@angular/http';
     LoginComponent,
     PagenotfoundComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
-  providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService],
+  providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

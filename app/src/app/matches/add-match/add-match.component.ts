@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-match',
@@ -10,15 +12,29 @@ import 'rxjs/add/operator/map'
 })
 export class AddMatchComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  constructor(private angularFire: AngularFireDatabase, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit(form){
-    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    .map(res => res)
-    .subscribe(dados => console.log);
+    // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
+    // .map(res => res)
+    // .subscribe(dados => console.log);
+
+    this.angularFire.list("matches").push(
+      {
+        team: form.value.team,
+        opponent: form.value.opponent,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round
+      }
+    ).then((t: any) => console.log('dados gravados: ' + t.key)),
+      (e: any) => console.log(e.message);
+
+      this.router.navigate(['/matches']);
   }
 
 }
