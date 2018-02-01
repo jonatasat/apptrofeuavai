@@ -8,7 +8,6 @@
   <table id="playerstable" class="table">
     <thead class="thead-default">
       <tr>
-        <th>#</th>
         <th>Escudo</th>
         <th>Nome</th>
         <th></th>
@@ -16,15 +15,14 @@
     </thead>
     <tbody id="rows">
       <tr *ngFor="let item of teams | async">
-        <th>1</th>
         <td>
-            <img id="image" src="../../assets/avai.png" alt="Avai" class="img-fluid">
+            <img id="image" src="{{item.photo}}" alt="photo" class="img-fluid">
         </td>
         <td>{{item.name}}</td>
         <td>
           <div id="buttonbar">
-            <i id="pencilicon" routerLink='/editteam' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Time"></i>
-            <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Time"></i>
+            <i id="pencilicon" [routerLink]="['editteams', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Time"></i>
+            <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Time" (click)="deleteItem(item)"></i>
           </div>
         </td>
       </tr>

@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-team',
@@ -11,7 +12,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AddTeamComponent implements OnInit {
 
-  constructor(private angularFire: AngularFireDatabase) { }
+  constructor(private angularFire: AngularFireDatabase, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,10 +25,12 @@ export class AddTeamComponent implements OnInit {
     this.angularFire.list("teams").push(
       {
         name: form.value.name,
-        escudo: form.value.escudo
+        badge: form.value.badge
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);
+
+      this.router.navigate(['/team']);
   }
 
 }
