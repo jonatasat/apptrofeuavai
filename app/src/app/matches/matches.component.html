@@ -28,7 +28,8 @@
       <td>
         <div id="buttonbar">
           <i id="pencilicon" [routerLink]="['editmatches', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Partida"></i>
-          <i id="usersicon" [routerLink]="['editplayersmatch', item.key]" class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
+          <!-- <i id="usersicon" [routerLink]="['editplayersmatch', item.key]" class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i> -->
+          <i id="usersicon" routerLink="/editplayersmatch" class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
           <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida" (click)="deleteItem(item)"></i>
         </div>
       </td>
