@@ -38,7 +38,7 @@ export class TeamComponent implements OnInit {
   }
 
   deleteItem(item){
-    const itemsRef = this.db.list('users');
+    const itemsRef = this.db.list('teams');
     itemsRef.remove(item.key);
   }
 

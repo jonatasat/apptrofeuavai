@@ -23,10 +23,12 @@ export class AddTeamComponent implements OnInit {
   image: string;
   currentUpload: Upload;
   preview: any;
+  show: any;
 
   constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {  }
 
   ngOnInit() {
+    this.show = false;
   }
 
   store(url){
@@ -47,31 +49,9 @@ export class AddTeamComponent implements OnInit {
     let imgUrl = storageRef.getDownloadURL().then(url => this.store(url));
     storageRef.put(this.file);
 
-  
-
-
-    // this.angularFire.list("teams").push(
-    //   {
-    //     name: form.value.name,
-    //     photo: ''
-    //   }
-    // ).then((t: any) => console.log('dados gravados: ' + t.key)),
-    //   (e: any) => console.log(e.message);
-
-      this.router.navigate(['/team']);
+    this.router.navigate(['/team']);
   }
 
-  private newMethod() {
-    return this.image;
-  }
-
-  // detectFile(event){
-  //   this.file = event.target.files[0];
-  //   let storageRef = this.firebase.storage().ref().child(event.target.files[0].name);
-  //   let imgUrl = storageRef.getDownloadURL().then(url => this.image = url);
-  //   storageRef.put(this.file);
-  //   console.log(imgUrl);
-  // }
 
   detectFile(event){
     this.fileName = event.target.files[0].name;
@@ -79,6 +59,7 @@ export class AddTeamComponent implements OnInit {
     let storageRef = this.firebase.storage().ref().child(event.target.files[0].name);
     let imgUrl = storageRef.getDownloadURL().then(url => this.image = url);
     this.preview = imgUrl;
+    this.show = true;
   }
 
 
