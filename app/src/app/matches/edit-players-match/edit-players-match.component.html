@@ -49,18 +49,15 @@
     <div class="col-md-5 col-sm-5 form">
       <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
 
-        <div class="form-group row has-danger" [class.has-danger]="!player.valid && player.touched" [class.has-feedback]="!player.valid && player.touched">
+        <div class="form-group row has-danger" >
           <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores*:</label>
           <div class="col-sm-8">
-            <select name="player" class="form-control input-sm" id="selectplayer" ngModel required #player="ngModel">
+            <select name="player" class="form-control input-sm" id="selectplayer" ngModel>
               <option selected>Selecione o jogador</option>
               <option value="1">Alemão</option>
               <option value="2">Junior Dutra</option>
               <option value="3">Betão</option>
             </select>
-            <div class="form-control-feedback" *ngIf="!team.valid && team.touched">
-                Campo "Jogadores" é obrigatório.
-            </div>
           </div>
         </div>
 

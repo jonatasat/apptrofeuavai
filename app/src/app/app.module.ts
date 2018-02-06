@@ -31,6 +31,7 @@ import { FirebaseConfig } from './../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     routing,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(FirebaseConfig)
+    AngularFireModule.initializeApp(FirebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService, AngularFireDatabase],
   bootstrap: [AppComponent]
