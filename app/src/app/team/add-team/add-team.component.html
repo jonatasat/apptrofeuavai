@@ -23,7 +23,8 @@
 
     <div class="form-group row">
       <label for="inputphoto" class="col-sm-2 col-form-label">Escudo:</label>
-      <img id="image" src="../../../assets/escudo.png" alt="addescudo" class="img-thumbnail">
+      <!-- <img id="image" src="../../../assets/escudo.png" alt="addescudo" class="img-thumbnail"> -->
+      <img id="image" src="{{preview | async}}" alt="addescudo" class="img-thumbnail">
     </div>
     <div class="form-group row">
       <input type="file" name="badge" class="form-control-file" id="avatar" placeholder="Escudo" (change)="detectFile($event)">

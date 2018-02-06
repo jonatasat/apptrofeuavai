@@ -22,6 +22,7 @@ export class AddTeamComponent implements OnInit {
   teamName: string;
   image: string;
   currentUpload: Upload;
+  preview: any;
 
   constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {  }
 
@@ -75,6 +76,9 @@ export class AddTeamComponent implements OnInit {
   detectFile(event){
     this.fileName = event.target.files[0].name;
     this.file = event.target.files[0];
+    let storageRef = this.firebase.storage().ref().child(event.target.files[0].name);
+    let imgUrl = storageRef.getDownloadURL().then(url => this.image = url);
+    this.preview = imgUrl;
   }
 
 
