@@ -3,9 +3,10 @@ import { PaginationService } from '../pagination.service'
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireDatabase } from 'angularfire2/database';
-
+import 'firebase/storage';
 import * as _ from 'underscore';
 import { Observable } from 'rxjs/Observable';
+import { FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'app-team',
@@ -18,10 +19,12 @@ export class TeamComponent implements OnInit {
   pager: any = {};
   pagedItems: any[];
   teams: Observable<any[]>;
+  storageRef: any;
 
-  constructor(private paginationService: PaginationService, private db: AngularFireDatabase) { }
+  constructor(private paginationService: PaginationService, private db: AngularFireDatabase, private firebase: FirebaseApp) { }
 
   ngOnInit() {
+    this.storageRef = this.firebase.storage().ref();
     this.teams = this.db.list('teams').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
@@ -40,6 +43,13 @@ export class TeamComponent implements OnInit {
   deleteItem(item){
     const itemsRef = this.db.list('teams');
     itemsRef.remove(item.key);
+    let deleteRef = this.storageRef.child(item.fileName);
+    deleteRef.delete().then(function() {
+      console.log('arquivo deletado');
+    }).catch(function(error) {
+      console.log('erro ao deletar arquivo');
+    });
+    
   }
 
 

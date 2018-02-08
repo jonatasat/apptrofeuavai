@@ -26,7 +26,9 @@ export class EditTeamComponent implements OnInit {
   preview: any;
   showOld: any;
   showNew: any;
-  team;
+  storageRef: any;
+  team: any;
+
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {
     console.log(this.route.snapshot.params['id']);
@@ -35,42 +37,43 @@ export class EditTeamComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.storageRef = this.firebase.storage().ref();
     this.team = this.db.object('teams/'+ this.route.snapshot.params['id']).valueChanges();
+    this.showOld = true;
+    this.showNew = false;
   }
 
   store(url){
     let nome = this.teamName;
-    this.db.list("teams").push(
+    let nomeFile = this.fileName;
+    this.firebase.database().ref("teams/"+ this.route.snapshot.params['id']).set(
       {
         name: nome,
-        photo: url
+        photo: url,
+        fileName: nomeFile
       }
-    ).then((t: any) => console.log('dados gravados: ' + t.key)),
-      (e: any) => console.log(e.message);
+    );
 
   }
 
   onSubmit(form){
     this.teamName = form.value.name;
-    let storageRef = this.firebase.storage().ref().child(this.fileName);
-    let imgUrl = storageRef.getDownloadURL().then(url => this.store(url));
-    this.db.database.ref('teams/'+ this.route.snapshot.params['id']).set({
-      name: this.teamName,
-      photo: this.file
-  });
-  
+    this.storageRef.child(this.fileName).getDownloadURL().then(url => this.store(url));
+    
 
     this.router.navigate(['/team']);
   }
 
   detectFile(event){
-    this.showOld = false;
-    this.showNew = true;
     this.fileName = event.target.files[0].name;
     this.file = event.target.files[0];
-    let storageRef = this.firebase.storage().ref().child(event.target.files[0].name);
-    let imgUrl = storageRef.getDownloadURL().then(url => this.image = url);
-    this.preview = imgUrl;
+    this.preview = this.storageRef.child(this.fileName).put(this.file).then(function(result){
+      if(result.state=='success'){
+        return result.downloadURL;
+      }
+    });
+    this.showOld = false;
+    this.showNew = true;
   }
 
 }
