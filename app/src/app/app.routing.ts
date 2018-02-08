@@ -26,7 +26,7 @@ const APP_ROUTES: Routes = [
     { path: 'editplayer', component: EditPlayerComponent, canActivate: [AuthGuard]},
     { path: 'team', component: TeamComponent, canActivate: [AuthGuard]},
     { path: 'addteam', component: AddTeamComponent, canActivate: [AuthGuard]},
-    { path: 'editteam', component: EditTeamComponent, canActivate: [AuthGuard]},
+    { path: 'team/editteams/:id', component: EditTeamComponent, canActivate: [AuthGuard]},
     { path: 'matches', component: MatchesComponent, canActivate: [AuthGuard]},
     { path: 'addmatch', component: AddMatchComponent, canActivate: [AuthGuard]},
     { path: 'matches/editmatches/:id', component: EditMatchComponent, canActivate: [AuthGuard]},

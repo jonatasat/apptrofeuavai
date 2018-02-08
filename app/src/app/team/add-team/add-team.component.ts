@@ -24,10 +24,12 @@ export class AddTeamComponent implements OnInit {
   currentUpload: Upload;
   preview: any;
   show: any;
+  storageRef: any;
 
   constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {  }
 
   ngOnInit() {
+    this.storageRef = this.firebase.storage().ref();
     this.show = false;
   }
 
@@ -45,9 +47,8 @@ export class AddTeamComponent implements OnInit {
 
   onSubmit(form){
     this.teamName = form.value.name;
-    let storageRef = this.firebase.storage().ref().child(this.fileName);
-    let imgUrl = storageRef.getDownloadURL().then(url => this.store(url));
-    storageRef.put(this.file);
+    this.storageRef.child(this.fileName).getDownloadURL().then(url => this.store(url));
+    
 
     this.router.navigate(['/team']);
   }
@@ -56,9 +57,11 @@ export class AddTeamComponent implements OnInit {
   detectFile(event){
     this.fileName = event.target.files[0].name;
     this.file = event.target.files[0];
-    let storageRef = this.firebase.storage().ref().child(event.target.files[0].name);
-    let imgUrl = storageRef.getDownloadURL().then(url => this.image = url);
-    this.preview = imgUrl;
+    this.preview = this.storageRef.child(this.fileName).put(this.file).then(function(result){
+      if(result.state=='success'){
+        return result.downloadURL;
+      }
+    });
     this.show = true;
   }
 

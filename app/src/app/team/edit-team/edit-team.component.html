@@ -14,7 +14,7 @@
     <div class="form-group row has-danger" [class.has-danger]="!name.valid && name.touched" [class.has-feedback]="!name.valid && name.touched">
       <label for="inputname" class="col-sm-2 col-form-label">Nome*:</label>
       <div class="col-sm-10">
-        <input type="text" name="name" class="form-control" id="inputname" placeholder="Nome" ngModel required #name="ngModel">
+        <input type="text" name="name" class="form-control" id="inputname" placeholder="Nome" required ngModel="{{(team | async)?.name}}" #name="ngModel">
         <div class="form-control-feedback" *ngIf="!name.valid && name.touched">
           Campo "Nome" é obrigatório.
         </div>
@@ -23,7 +23,8 @@
 
     <div class="form-group row">
       <label for="inputfoto" class="col-sm-2 col-form-label">Escudo:</label>
-      <img id="image" src="../../../assets/escudo.png" alt="adduser" class="img-thumbnail">
+      <img id="image" *ngIf="showOld" src="{{(team | async)?.photo}}" alt="edituser" class="img-thumbnail">
+      <img id="image" *ngIf="showNew" src="{{preview | async}}" alt="edituser" class="img-thumbnail">
     </div>
     <div class="form-group row">
       <input type="file" class="form-control-file" id="inputfile" aria-describedby="fileHelp">
