@@ -29,6 +29,7 @@ export class EditTeamComponent implements OnInit {
   storageRef: any;
   team: any;
 
+
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {
     console.log(this.route.snapshot.params['id']);
     this.showOld = true;
@@ -44,10 +45,12 @@ export class EditTeamComponent implements OnInit {
 
   store(url){
     let nome = this.teamName;
+    let nomeFile = this.fileName;
     this.firebase.database().ref("teams/"+ this.route.snapshot.params['id']).set(
       {
         name: nome,
-        photo: url
+        photo: url,
+        fileName: nomeFile
       }
     );
 

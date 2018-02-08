@@ -35,10 +35,12 @@ export class AddTeamComponent implements OnInit {
 
   store(url){
     let nome = this.teamName;
+    let nomeFile = this.fileName;
     this.angularFire.list("teams").push(
       {
         name: nome,
-        photo: url
+        photo: url,
+        fileName: nomeFile
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);
