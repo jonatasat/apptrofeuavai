@@ -19,7 +19,7 @@ import { FirebaseApp } from 'angularfire2';
 export class EditTeamComponent implements OnInit {
 
   file: File;
-  fileName: string;
+  fileName: string = null;
   teamName: string;
   image: string;
   currentUpload: Upload;
@@ -43,25 +43,53 @@ export class EditTeamComponent implements OnInit {
     this.showNew = false;
   }
 
-  store(url){
+  fullStore(photo){
     let nome = this.teamName;
     let nomeFile = this.fileName;
     this.firebase.database().ref("teams/"+ this.route.snapshot.params['id']).set(
       {
         name: nome,
-        photo: url,
+        photo: photo,
         fileName: nomeFile
       }
     );
 
   }
 
-  onSubmit(form){
-    this.teamName = form.value.name;
-    this.storageRef.child(this.fileName).getDownloadURL().then(url => this.store(url));
-    
+  store(name, photo, fileName){
+    let nome = name;
+    let photoOld = photo;
+    let fileNameOld = fileName;
+    this.firebase.database().ref("teams/"+ this.route.snapshot.params['id']).set(
+      {
+        name: nome,
+        photo: photoOld,
+        fileName: fileNameOld
+      }
+    );
+  }
 
-    this.router.navigate(['/team']);
+  onSubmit(form){
+    if(this.fileName){
+      this.teamName = form.value.name;
+      this.storageRef.child(this.fileName).getDownloadURL().then(photo => this.fullStore(photo));
+      this.router.navigate(['/team']);
+    }else{
+      let name = null;
+      let fileName = null;
+      let photo = null;
+      this.firebase.database().ref("teams/"+ this.route.snapshot.params['id']).on('value', function(snap){
+        fileName = snap.val().fileName;
+        photo = snap.val().photo;
+      });
+      this.teamName = form.value.name;
+      name = this.teamName;
+      this.store(name, photo, fileName);
+
+      
+      this.router.navigate(['/team']);
+    }
+    
   }
 
   detectFile(event){
