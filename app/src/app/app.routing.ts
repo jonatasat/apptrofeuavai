@@ -22,8 +22,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
-    { path: 'newplayer', component: AddPlayerComponent, canActivate: [AuthGuard]},
-    { path: 'editplayer', component: EditPlayerComponent, canActivate: [AuthGuard]},
+    { path: 'addplayer', component: AddPlayerComponent, canActivate: [AuthGuard]},
+    { path: 'players/editplayer/:id', component: EditPlayerComponent, canActivate: [AuthGuard]},
     { path: 'team', component: TeamComponent, canActivate: [AuthGuard]},
     { path: 'addteam', component: AddTeamComponent, canActivate: [AuthGuard]},
     { path: 'team/editteams/:id', component: EditTeamComponent, canActivate: [AuthGuard]},
