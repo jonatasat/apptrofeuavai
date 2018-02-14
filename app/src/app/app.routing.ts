@@ -4,6 +4,9 @@ import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
 import { AddPlayerComponent } from './players/add-player/add-player.component';
 import { EditPlayerComponent } from './players/edit-player/edit-player.component';
+import { CoachesComponent } from './coaches/coaches.component';
+import { AddCoachesComponent } from './coaches/add-coaches/add-coaches.component';
+import { EditCoachesComponent } from './coaches/edit-coaches/edit-coaches.component';
 import { TeamComponent } from './team/team.component';
 import { AddTeamComponent } from './team/add-team/add-team.component';
 import { EditTeamComponent } from './team/edit-team/edit-team.component';
@@ -19,11 +22,16 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth-guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
+
+
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
     { path: 'addplayer', component: AddPlayerComponent, canActivate: [AuthGuard]},
     { path: 'players/editplayer/:id', component: EditPlayerComponent, canActivate: [AuthGuard]},
+    { path: 'coaches', component: CoachesComponent, canActivate: [AuthGuard] },
+    { path: 'addcoach', component: AddCoachesComponent, canActivate: [AuthGuard] },
+    { path: 'coaches/editcoach/:id', component: EditCoachesComponent, canActivate: [AuthGuard]},
     { path: 'team', component: TeamComponent, canActivate: [AuthGuard]},
     { path: 'addteam', component: AddTeamComponent, canActivate: [AuthGuard]},
     { path: 'team/editteams/:id', component: EditTeamComponent, canActivate: [AuthGuard]},
