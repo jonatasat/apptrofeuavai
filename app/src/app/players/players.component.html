@@ -8,7 +8,6 @@
 <table id="playerstable" class="table">
   <thead class="thead-default">
     <tr>
-      <th>#</th>
       <th>Foto</th>
       <th>Nome</th>
       <th>Posição</th>
@@ -16,18 +15,16 @@
     </tr>
   </thead>
   <tbody id="rows">
-    <tr *ngFor="let item of players">
-      <th>1</th>
+    <tr *ngFor="let item of players | async">
       <td>
-        {{item.photo}}
-        <!-- <img id="image" src="../../assets/alemao.png" alt="Alemao" class="img-fluid"> -->
+        <img id="image" src="{{item.photo}}" alt="photo" class="img-fluid">
       </td>
       <td>{{item.name}}</td>
-      <td>{{item.posicao}}</td>
+      <td>{{item.position}}</td>
       <td>
         <div id="buttonbar">
-          <i id="pencilicon" routerLink='/editplayer' class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogador"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador"></i>
+          <i id="pencilicon" [routerLink]="['editplayer', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogador"></i>
+          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador" (click)="deleteItem(item)"></i>
         </div>
       </td>
     </tr>
@@ -58,7 +55,7 @@
 </nav>
 
 <div>
-  <button id="btnadd" routerLink='/newplayer' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Jogador">
+  <button id="btnadd" routerLink='/addplayer' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Jogador">
     <i id="addicon" class="fa fa-plus" aria-hidden="true"></i>
   </button>
 </div>

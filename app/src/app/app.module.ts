@@ -32,6 +32,8 @@ import { AngularFireModule } from 'angularfire2/index';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ArbitroComponent } from './arbitro/arbitro.component';
+import { TecnicoComponent } from './tecnico/tecnico.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     EditUsersComponent,
     LoginComponent,
     PagenotfoundComponent,
+    ArbitroComponent,
+    TecnicoComponent,
   ],
 
   imports: [

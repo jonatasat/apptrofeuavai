@@ -3,6 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Router } from '@angular/router'
+import { FirebaseApp } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
+import { AngularFirestore } from 'angularfire2/firestore';
+import 'firebase/storage';
 
 @Component({
   selector: 'app-add-player',
@@ -11,24 +16,56 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AddPlayerComponent implements OnInit {
 
-  constructor(private angularFire: AngularFireDatabase) { }
+  file: File;
+  fileName: string;
+  playerName: string;
+  playerPosition: string;
+  image: string;
+  preview: any;
+  show: any;
+  storageRef: any;
+
+
+  constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) { }
 
   ngOnInit() {
+    this.storageRef = this.firebase.storage().ref();
+    this.show = false;
   }
 
-  onSubmit(form){
-    // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    // .map(res => res)
-    // .subscribe(dados => console.log);
-
+  store(url){
+    let nome = this.playerName;
+    let posicao = this.playerPosition;
+    let nomeFile = this.fileName;
     this.angularFire.list("players").push(
       {
-        name: form.value.name,
-        position: form.value.position,
-        photo: form.value.photo
+        name: nome,
+        position: posicao,
+        photo: url,
+        fileName: nomeFile
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);
+
+  }
+
+  onSubmit(form){
+    this.playerName = form.value.name;
+    this.playerPosition = form.value.position;
+    this.storageRef.child(this.fileName).getDownloadURL().then(url => this.store(url));
+
+    this.router.navigate(['/players']);
+  }
+
+  detectFile(event){
+    this.fileName = event.target.files[0].name;
+    this.file = event.target.files[0];
+    this.preview = this.storageRef.child(this.fileName).put(this.file).then(function(result){
+      if(result.state=='success'){
+        return result.downloadURL;
+      }
+    });
+    this.show = true;
   }
 
 }
