@@ -5,6 +5,7 @@ import { PlayersComponent } from './players/players.component';
 import { AddPlayerComponent } from './players/add-player/add-player.component';
 import { EditPlayerComponent } from './players/edit-player/edit-player.component';
 import { CoachesComponent } from './coaches/coaches.component';
+import { AddCoachesComponent } from './coaches/add-coaches/add-coaches.component';
 import { TeamComponent } from './team/team.component';
 import { AddTeamComponent } from './team/add-team/add-team.component';
 import { EditTeamComponent } from './team/edit-team/edit-team.component';
@@ -28,6 +29,7 @@ const APP_ROUTES: Routes = [
     { path: 'addplayer', component: AddPlayerComponent, canActivate: [AuthGuard]},
     { path: 'players/editplayer/:id', component: EditPlayerComponent, canActivate: [AuthGuard]},
     { path: 'coaches', component: CoachesComponent, canActivate: [AuthGuard] },
+    { path: 'addcoach', component: AddCoachesComponent, canActivate: [AuthGuard] },
     { path: 'team', component: TeamComponent, canActivate: [AuthGuard]},
     { path: 'addteam', component: AddTeamComponent, canActivate: [AuthGuard]},
     { path: 'team/editteams/:id', component: EditTeamComponent, canActivate: [AuthGuard]},
