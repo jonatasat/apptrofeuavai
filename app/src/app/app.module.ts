@@ -34,6 +34,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ArbitroComponent } from './arbitro/arbitro.component';
 import { CoachesComponent } from './coaches/coaches.component';
+import { AddCoachesComponent } from './coaches/add-coaches/add-coaches.component';
+import { EditCoachesComponent } from './coaches/edit-coaches/edit-coaches.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { CoachesComponent } from './coaches/coaches.component';
     PagenotfoundComponent,
     ArbitroComponent,
     CoachesComponent,
+    AddCoachesComponent,
+    EditCoachesComponent,
   ],
 
   imports: [
