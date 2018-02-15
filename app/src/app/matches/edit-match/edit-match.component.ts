@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import { ActivatedRoute, Router } from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
@@ -23,10 +23,6 @@ export class EditMatchComponent implements OnInit {
   }
 
   onSubmit(form){
-    // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    // .map(res => res)
-    // .subscribe(dados => console.log);
-
     this.db.database.ref('matches/'+ this.route.snapshot.params['id']).set({
       team: form.value.team,
       opponent: form.value.opponent,

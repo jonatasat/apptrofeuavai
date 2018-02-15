@@ -5,7 +5,7 @@
   <li class="breadcrumb-item">
     <a routerLink="/matches">Partidas</a>
   </li>
-  <li class="breadcrumb-item active">Editar Jogadores Partida</li>
+  <li class="breadcrumb-item active">Editar Jogadores da Partida</li>
 </ol>
 
 <div class="container-fluid">
@@ -15,30 +15,18 @@
       <table id="playerstable" class="table">
         <thead class="thead-default">
           <tr>
-            <th>#</th>
             <th>Jogador</th>
             <th>Nota</th>
             <th></th>
           </tr>
         </thead>
         <tbody id="rows">
-          <tr>
-            <th scope="row">1</th>
-            <td>Alemão</td>
-            <td>8,7</td>
+          <tr *ngFor="let item of playersmatch | async">
+            <td>{{item.name}}</td>
+            <td>{{item.grade}}</td>
             <td>
               <div id="buttonbar">
                 <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida"></i>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Junior Dutra</td>
-            <td>7,3</td>
-            <td>
-              <div id="buttonbar">
-                <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador"></i>
               </div>
             </td>
           </tr>
@@ -52,11 +40,9 @@
         <div class="form-group row has-danger" >
           <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores*:</label>
           <div class="col-sm-8">
-            <select name="player" class="form-control input-sm" id="selectplayer" ngModel>
+            <select name="player" class="form-control input-sm" id="selectplayer" ngModel required #player="ngModel">
               <option selected>Selecione o jogador</option>
-              <option value="1">Alemão</option>
-              <option value="2">Junior Dutra</option>
-              <option value="3">Betão</option>
+              <option *ngFor="let item of players | async" [ngValue]="item">{{item.name}}</option>
             </select>
           </div>
         </div>
@@ -90,7 +76,7 @@
     <div class="col-md-5 col-sm-5 col2">
       <h3>
         <i id="infolicon" class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Média dos Jogadores"></i> Média :
-        <span id="average">8.0</span>
+        <span id="average">{{teamaverage}}</span>
       </h3>
     </div>
   </div>

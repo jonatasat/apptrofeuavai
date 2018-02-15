@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
+import { ActivatedRoute, Router } from '@angular/router';
+import {AngularFireDatabase} from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireObject } from 'angularfire2/database/interfaces';
 
 
 @Component({
@@ -11,15 +15,16 @@ import 'rxjs/add/operator/map'
 })
 export class EditPlayersMatchComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  match: any;
+
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) { }
 
   ngOnInit() {
+    this.match = this.db.object('matches/'+ this.route.snapshot.params['id']).valueChanges();
   }
 
   onSubmit(form){
-    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    .map(res => res)
-    .subscribe(dados => console.log);
+
   }
 
 }
