@@ -37,15 +37,44 @@
     <div class="col-md-5 col-sm-5 form">
       <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
 
-        <div class="form-group row has-danger" >
+          <div class="form-group row" >
+              <label for="inputplayers" class="col-sm-2 col-form-label">Tipo*:</label>
+              <div class="col-sm-8">
+                <select name="type" class="form-control input-sm" id="selecttype" ngModel #type="ngModel" (change)="detectType($event)">
+                  <option selected>Selecione o tipo</option>
+                  <option value="Jogador">Jogador</option>
+                  <option value="Tecnico">Técnico</option>
+                  <option value="Arbitro">Árbitro</option>
+                </select>
+              </div>
+            </div>
+
+        <div class="form-group row" *ngIf="showPlayer" >
           <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores*:</label>
           <div class="col-sm-8">
-            <select name="player" class="form-control input-sm" id="selectplayer" ngModel required #player="ngModel">
-              <option selected>Selecione o jogador</option>
+            <select name="player" class="form-control input-sm" id="selectplayer" ngModel #player="ngModel">
               <option *ngFor="let item of players | async" [ngValue]="item">{{item.name}}</option>
             </select>
           </div>
         </div>
+
+        <div class="form-group row" *ngIf="showCoach" >
+            <label for="inputplayers" class="col-sm-2 col-form-label">Técnicos*:</label>
+            <div class="col-sm-8">
+              <select name="coach" class="form-control input-sm" id="selectcoach" ngModel #coach="ngModel">
+                <option *ngFor="let item of coaches | async" [ngValue]="item">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row" *ngIf="showReferee" >
+              <label for="inputplayers" class="col-sm-2 col-form-label">Árbitros*:</label>
+              <div class="col-sm-8">
+                <select name="referee" class="form-control input-sm" id="selectreferee" ngModel #coach="ngModel">
+                  <option *ngFor="let item of referees | async" [ngValue]="item">{{item.name}}</option>
+                </select>
+              </div>
+            </div>
 
         <div class="form-group row has-danger" [class.has-danger]="!grade.valid && grade.touched" [class.has-feedback]="!grade.valid && grade.touched">
           <label for="inputgrade" class="col-sm-2 col-form-label">Nota*:</label>
