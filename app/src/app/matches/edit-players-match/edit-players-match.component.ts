@@ -24,7 +24,13 @@ export class EditPlayersMatchComponent implements OnInit {
   players: Observable<any[]>;
   coaches: Observable<any[]>;
   referees: Observable<any[]>;
+  playersMatch: Observable<any[]>;
+  coachesMatch: Observable<any[]>;
+  refereesMatch: Observable<any[]>;
   storageRef: any;
+  allItems: any[] = [];
+  pager: any = {};
+  pagedItems: any[];
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { 
     console.log(this.route.snapshot.params['id']);
@@ -45,10 +51,28 @@ export class EditPlayersMatchComponent implements OnInit {
     this.referees = this.db.list('referees').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
+
+    this.storageRef = this.firebase.storage().ref();
+    this.playersMatch = this.db.list('matches/'+ this.route.snapshot.params['id']+ '/players').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+
+    this.storageRef = this.firebase.storage().ref();
+    this.coachesMatch = this.db.list('matches/'+ this.route.snapshot.params['id']+ '/coaches').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+    this.storageRef = this.firebase.storage().ref();
+    this.refereesMatch = this.db.list('matches/'+ this.route.snapshot.params['id']+ '/referees').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+
+    this.allItems.push(this.playersMatch);
+    this.allItems.push(this.coachesMatch);
+    this.allItems.push(this.refereesMatch);
+    this.setPage(1);
   }
 
   onSubmit(form){
-   console.log(form);
    if(this.showPlayer == true){
     this.storePlayer(form);
    }else if(this.showCoach == true){
@@ -106,6 +130,14 @@ export class EditPlayersMatchComponent implements OnInit {
       fileName: nomeFile,
       grade: nota
     });
+  }
+
+  setPage(page: number) {
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+    this.pager = this.paginationService.getPager(this.allItems.length, page);
+    this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 
   detectType(event){
