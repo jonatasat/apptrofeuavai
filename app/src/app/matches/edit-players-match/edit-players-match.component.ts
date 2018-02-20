@@ -31,6 +31,7 @@ export class EditPlayersMatchComponent implements OnInit {
   allItems: any[] = [];
   pager: any = {};
   pagedItems: any[];
+  matchAverage: any = null;
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { 
     console.log(this.route.snapshot.params['id']);
@@ -100,12 +101,14 @@ export class EditPlayersMatchComponent implements OnInit {
       grade: nota
     });
 
+
   }
 
   storeCoach(form){
     let nome = form.value.coach.name;
     let nomeFile = form.value.coach.fileName;
     let url = form.value.coach.photo;
+    let posicao = form.value.coach.position;
     let nota = form.value.grade;
     let key = form.value.coach.key;
 
@@ -113,6 +116,7 @@ export class EditPlayersMatchComponent implements OnInit {
       name: nome,
       photo: url,
       fileName: nomeFile,
+      position: posicao,
       grade: nota
     });
   }
@@ -121,6 +125,7 @@ export class EditPlayersMatchComponent implements OnInit {
     let nome = form.value.referee.name;
     let nomeFile = form.value.referee.fileName;
     let url = form.value.referee.photo;
+    let posicao = form.value.referee.position;
     let nota = form.value.grade;
     let key = form.value.referee.key;
 
@@ -128,6 +133,7 @@ export class EditPlayersMatchComponent implements OnInit {
       name: nome,
       photo: url,
       fileName: nomeFile,
+      position: posicao,
       grade: nota
     });
   }
@@ -159,7 +165,17 @@ export class EditPlayersMatchComponent implements OnInit {
       this.showReferee = false;
     }
    
-    
+  }
+
+
+  deleteItem(item){
+    if(item.position=='tecnico'){
+      this.db.database.ref('matches/'+ this.route.snapshot.params['id'] + '/coaches/'+ item.key).remove();
+    }else if(item.position=='arbitro'){
+      this.db.database.ref('matches/'+ this.route.snapshot.params['id'] + '/referees/'+ item.key).remove();
+    }else{
+      this.db.database.ref('matches/'+ this.route.snapshot.params['id'] + '/players/'+ item.key).remove();
+    }
   }
 
 }
