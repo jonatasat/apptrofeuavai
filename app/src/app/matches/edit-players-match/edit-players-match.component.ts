@@ -7,7 +7,9 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireObject } from 'angularfire2/database/interfaces';
 import { PaginationService } from '../../pagination.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 import { FirebaseApp } from 'angularfire2';
+import 'firebase/storage';
 
 
 @Component({
@@ -32,6 +34,8 @@ export class EditPlayersMatchComponent implements OnInit {
   pager: any = {};
   pagedItems: any[];
   matchAverage: any = null;
+  snapMatch: any;
+  teste: any;
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { 
     console.log(this.route.snapshot.params['id']);
@@ -74,6 +78,7 @@ export class EditPlayersMatchComponent implements OnInit {
   }
 
   onSubmit(form){
+
    if(this.showPlayer == true){
     this.storePlayer(form);
    }else if(this.showCoach == true){
@@ -84,6 +89,50 @@ export class EditPlayersMatchComponent implements OnInit {
    
    
   }
+
+  getMatch(form){
+
+    var team = null;
+    var opponent = null;
+    var score =  null;
+    var stadium =  null;
+    var championship =  null;
+    var round =  null;
+    var sumGrade = null;
+    let nota = form.value.grade;
+
+
+    // this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).on('value', function(snap){
+    //       team = snap.val().team;
+    //       opponent = snap.val().opponent;
+    //       score =  snap.val().score;
+    //       stadium =  snap.val().stadium;
+    //       championship =  snap.val().championship;
+    //       round =  snap.val().round;
+    //       sumGrade = parseFloat(snap.val().average) + parseFloat(nota);
+    // });
+    this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).on('value', this.getData, this.errData);
+
+    // console.log(sumGrade);
+    // console.log(team);
+    // console.log(opponent);
+    // console.log(score);
+    // console.log(stadium);
+    // console.log(championship);
+    // console.log(round);
+
+    
+    
+  }
+
+  getData(data){
+    console.log(data.val().average);
+  }
+
+  errData(data){
+
+  }
+
 
   storePlayer(form){
     let nome = form.value.player.name;
@@ -101,8 +150,43 @@ export class EditPlayersMatchComponent implements OnInit {
       grade: nota
     });
 
+    this.getMatch(form);
+
+
+    
+    // var team = null;
+    // var opponent = null;
+    // var score =  null;
+    // var stadium =  null;
+    // var championship =  null;
+    // var round =  null;
+    // var sumGrade = null;
+
+    // this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).on('value', function(snap){
+    //       team = snap.val().team;
+    //       opponent = snap.val().opponent;
+    //       score =  snap.val().score;
+    //       stadium =  snap.val().stadium;
+    //       championship =  snap.val().championship;
+    //       round =  snap.val().round;
+    //       sumGrade = parseFloat(snap.val().average) + parseFloat(nota);
+          
+                 
+    // });
+
+    // console.log(sumGrade);
+    // console.log(team);
+    // console.log(opponent);
+    // console.log(score);
+    // console.log(stadium);
+    // console.log(championship);
+    // console.log(round);
+
+    // this.updateMatch(team, opponent, score, stadium, championship, round, sumGrade);
 
   }
+
+  
 
   storeCoach(form){
     let nome = form.value.coach.name;
