@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireObject } from 'angularfire2/database/interfaces';
+import { FirebaseApp } from 'angularfire2';
+import 'firebase/storage';
 
 @Component({
   selector: 'app-edit-match',
@@ -15,11 +17,21 @@ import { AngularFireObject } from 'angularfire2/database/interfaces';
 export class EditMatchComponent implements OnInit {
 
   match;
+  storageRef: any;
+  teams: any;
+  selected: any;
 
-  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router) { }
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) { }
 
   ngOnInit() {
     this.match = this.db.object('matches/'+ this.route.snapshot.params['id']).valueChanges();
+
+    this.storageRef = this.firebase.storage().ref();
+    this.teams = this.db.list('teams').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+    this.selected = true;
+
   }
 
   onSubmit(form){
@@ -29,8 +41,7 @@ export class EditMatchComponent implements OnInit {
       score: form.value.score,
       stadium: form.value.stadium,
       championship: form.value.championship,
-      round: form.value.round,
-      average: form.value.average,
+      round: form.value.round
     });
 
     this.router.navigate(['/matches']);
