@@ -47,6 +47,7 @@ export class EditRefereesComponent implements OnInit {
       {
         name: nome,
         photo: photo,
+        position: 'arbitro',
         fileName: nomeFile
       }
     );
@@ -60,6 +61,7 @@ export class EditRefereesComponent implements OnInit {
       {
         name: nome,
         photo: photoOld,
+        position: 'arbitro',
         fileName: fileNameOld
       }
     );

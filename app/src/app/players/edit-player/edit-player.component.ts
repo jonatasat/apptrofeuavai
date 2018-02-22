@@ -86,6 +86,7 @@ export class EditPlayerComponent implements OnInit {
         fileName = snap.val().fileName;
         photo = snap.val().photo;
       });
+      console.log(fileName);
       this.playerName = form.value.name;
       this.playerPosition = form.value.position;
       name = this.playerName;
@@ -93,7 +94,7 @@ export class EditPlayerComponent implements OnInit {
       this.store(name, position, photo, fileName);
 
       
-      this.router.navigate(['/players']);
+      // this.router.navigate(['/players']);
     }
   }
 

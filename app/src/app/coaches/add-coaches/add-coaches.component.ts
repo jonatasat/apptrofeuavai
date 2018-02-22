@@ -38,6 +38,7 @@ export class AddCoachesComponent implements OnInit {
       {
         name: nome,
         photo: url,
+        position: 'tecnico',
         fileName: nomeFile
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),

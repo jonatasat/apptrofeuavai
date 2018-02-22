@@ -18,10 +18,6 @@ export class AddMatchComponent implements OnInit {
   }
 
   onSubmit(form){
-    // this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
-    // .map(res => res)
-    // .subscribe(dados => console.log);
-
     this.angularFire.list("matches").push(
       {
         team: form.value.team,
@@ -29,7 +25,8 @@ export class AddMatchComponent implements OnInit {
         score: form.value.score,
         stadium: form.value.stadium,
         championship: form.value.championship,
-        round: form.value.round
+        round: form.value.round,
+        average: 0
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);

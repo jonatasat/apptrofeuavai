@@ -47,6 +47,7 @@ export class EditCoachesComponent implements OnInit {
       {
         name: nome,
         photo: photo,
+        position: 'tecnico',
         fileName: nomeFile
       }
     );
@@ -60,6 +61,7 @@ export class EditCoachesComponent implements OnInit {
       {
         name: nome,
         photo: photoOld,
+        position: 'tecnico',
         fileName: fileNameOld
       }
     );
