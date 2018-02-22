@@ -35,7 +35,7 @@ export class EditPlayersMatchComponent implements OnInit {
   pagedItems: any[];
   matchAverage: any = null;
   snapMatch: any;
-  teste: any;
+  newGrade: any;
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { 
     console.log(this.route.snapshot.params['id']);
@@ -90,47 +90,22 @@ export class EditPlayersMatchComponent implements OnInit {
    
   }
 
-  getMatch(form){
+  updateMatch(form){
+    this.newGrade = form.value.grade;
+    this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).once('value', data => this.updateAvg(data, this.newGrade, this.route.snapshot.params['id']), this.errData);
+  }
 
-    var team = null;
-    var opponent = null;
-    var score =  null;
-    var stadium =  null;
-    var championship =  null;
-    var round =  null;
-    var sumGrade = null;
-    let nota = form.value.grade;
-
-
-    // this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).on('value', function(snap){
-    //       team = snap.val().team;
-    //       opponent = snap.val().opponent;
-    //       score =  snap.val().score;
-    //       stadium =  snap.val().stadium;
-    //       championship =  snap.val().championship;
-    //       round =  snap.val().round;
-    //       sumGrade = parseFloat(snap.val().average) + parseFloat(nota);
-    // });
-    this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).on('value', this.getData, this.errData);
-
-    // console.log(sumGrade);
-    // console.log(team);
-    // console.log(opponent);
-    // console.log(score);
-    // console.log(stadium);
-    // console.log(championship);
-    // console.log(round);
-
-    
+  updateAvg(data, newGrade, id){
+    var sumGrade = parseFloat(data.val().average) + parseFloat(newGrade);
+    this.firebase.database().ref("matches/"+id).update({
+        average: sumGrade
+    })
     
   }
 
-  getData(data){
-    console.log(data.val().average);
-  }
 
   errData(data){
-
+      console.log('Erro na atualização dos dados: '+ data);
   }
 
 
@@ -150,39 +125,7 @@ export class EditPlayersMatchComponent implements OnInit {
       grade: nota
     });
 
-    this.getMatch(form);
-
-
-    
-    // var team = null;
-    // var opponent = null;
-    // var score =  null;
-    // var stadium =  null;
-    // var championship =  null;
-    // var round =  null;
-    // var sumGrade = null;
-
-    // this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).on('value', function(snap){
-    //       team = snap.val().team;
-    //       opponent = snap.val().opponent;
-    //       score =  snap.val().score;
-    //       stadium =  snap.val().stadium;
-    //       championship =  snap.val().championship;
-    //       round =  snap.val().round;
-    //       sumGrade = parseFloat(snap.val().average) + parseFloat(nota);
-          
-                 
-    // });
-
-    // console.log(sumGrade);
-    // console.log(team);
-    // console.log(opponent);
-    // console.log(score);
-    // console.log(stadium);
-    // console.log(championship);
-    // console.log(round);
-
-    // this.updateMatch(team, opponent, score, stadium, championship, round, sumGrade);
+    this.updateMatch(form);
 
   }
 
@@ -203,6 +146,8 @@ export class EditPlayersMatchComponent implements OnInit {
       position: posicao,
       grade: nota
     });
+
+    this.updateMatch(form);
   }
 
   storeReferee(form){
@@ -220,6 +165,8 @@ export class EditPlayersMatchComponent implements OnInit {
       position: posicao,
       grade: nota
     });
+
+    this.updateMatch(form);
   }
 
   setPage(page: number) {
@@ -255,11 +202,22 @@ export class EditPlayersMatchComponent implements OnInit {
   deleteItem(item){
     if(item.position=='tecnico'){
       this.db.database.ref('matches/'+ this.route.snapshot.params['id'] + '/coaches/'+ item.key).remove();
+      this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).once('value', data => this.subtractAvg(data, item.grade, this.route.snapshot.params['id']), this.errData);
     }else if(item.position=='arbitro'){
       this.db.database.ref('matches/'+ this.route.snapshot.params['id'] + '/referees/'+ item.key).remove();
+      this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).once('value', data => this.subtractAvg(data, item.grade, this.route.snapshot.params['id']), this.errData);
     }else{
       this.db.database.ref('matches/'+ this.route.snapshot.params['id'] + '/players/'+ item.key).remove();
+      this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).once('value', data => this.subtractAvg(data, item.grade, this.route.snapshot.params['id']), this.errData);
     }
+  }
+
+  subtractAvg(data, grade, id){
+    var subtractGrade = parseFloat(data.val().average) - parseFloat(grade);
+    this.firebase.database().ref("matches/"+id).update({
+        average: subtractGrade
+    })
+    
   }
 
 }

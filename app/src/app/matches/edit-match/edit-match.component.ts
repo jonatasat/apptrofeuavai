@@ -29,7 +29,8 @@ export class EditMatchComponent implements OnInit {
       score: form.value.score,
       stadium: form.value.stadium,
       championship: form.value.championship,
-      round: form.value.round
+      round: form.value.round,
+      average: form.value.average,
     });
 
     this.router.navigate(['/matches']);

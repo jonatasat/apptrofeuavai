@@ -146,7 +146,7 @@
     <div class="col-md-5 col-sm-5 col2">
       <h3>
         <i id="infolicon" class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Média dos Jogadores"></i> Média :
-        <span id="average">{{teamaverage}}</span>
+        <span id="average">{{(match | async)?.average}}</span>
       </h3>
     </div>
   </div>
