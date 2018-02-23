@@ -18,6 +18,6 @@
     </form>
 </div>
 <div id="imgPlayers" *ngFor="let item of players | async">
-        <img id="goalkeeper" src="{{item.photo}}" alt="goalkeeper">
+        <img *ngIf='item.position=="Goleiro"' id="goalkeeper" src="{{item.photo}}" alt="goalkeeper">
 </div>
 <img id="soccerfield" src="../../assets/campo.jpg" alt="Campo de Futebol">
