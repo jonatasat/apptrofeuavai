@@ -3,9 +3,21 @@
         Home
     </li>
 </ol>
-<img id="soccerfield" src="../../assets/campo.jpg" alt="Campo de Futebol">
-<div>
-    <button id="btnconfig" class="btn btn-info btn-lg" data-toggle="tooltip" title="Configurar Campo">
-        <i id="addicon" class="fa fa-cogs" aria-hidden="true"></i>
-    </button>
+<div class="col-sm-2">
+    <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <span id="titleconfig">
+            <b>Configurações do campo:</b>
+        </span>
+        <select name="match" class="form-control input-sm" id="selectmatches" ngModel required #match="ngModel">
+            <option value="" disabled selected>Selecione a partida</option>
+            <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team}} x {{item.opponent}}</option>
+        </select>
+        <div class="col-sm-4">
+            <button id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Enviar</button>
+        </div>
+    </form>
 </div>
+<div id="imgPlayers" *ngFor="let item of players | async">
+        <img id="goalkeeper" src="{{item.photo}}" alt="goalkeeper">
+</div>
+<img id="soccerfield" src="../../assets/campo.jpg" alt="Campo de Futebol">

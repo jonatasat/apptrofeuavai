@@ -1,3 +1,23 @@
+#titleconfig{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    text-align: center;
+    font-size: 12pt;
+}
+
+#btnsave{
+    position: absolute;
+    left: 150px;
+    top: 120px;
+}
+
+#selectmatches{
+    position: absolute;
+    left: 10px;
+    top: 70px;
+}
+
 #soccerfield{
     margin-left: 300px;
     height: 520px;
@@ -13,12 +33,10 @@
     background: white;
 }
 
-#btnconfig{
+#goalkeeper{
     position: absolute;
-    bottom: 50px;
-    right: 100px;
-    cursor: pointer;
-    border-radius: 50%;
-    border: solid 0px #888888;
-    box-shadow: 1px 1px  #888888;
+    left: 320px;
+    top: 300px;
+    height: 80px;
+    width: 80px;
 }
