@@ -27,6 +27,7 @@ export class EditPlayerComponent implements OnInit {
   showNew: any;
   storageRef: any;
   player: any;
+  positions: any;
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) { 
     console.log(this.route.snapshot.params['id']);
@@ -37,6 +38,9 @@ export class EditPlayerComponent implements OnInit {
   ngOnInit() {
     this.storageRef = this.firebase.storage().ref();
     this.player = this.db.object('players/'+ this.route.snapshot.params['id']).valueChanges();
+    this.positions = this.db.list('positions').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
     this.showOld = true;
     this.showNew = false;
   }
@@ -94,7 +98,7 @@ export class EditPlayerComponent implements OnInit {
       this.store(name, position, photo, fileName);
 
       
-      // this.router.navigate(['/players']);
+      this.router.navigate(['/players']);
     }
   }
 

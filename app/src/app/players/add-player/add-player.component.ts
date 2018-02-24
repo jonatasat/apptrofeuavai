@@ -24,13 +24,17 @@ export class AddPlayerComponent implements OnInit {
   preview: any;
   show: any;
   storageRef: any;
+  positions: any;
 
 
-  constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) { }
+  constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp, private db: AngularFireDatabase) { }
 
   ngOnInit() {
     this.storageRef = this.firebase.storage().ref();
     this.show = false;
+    this.positions = this.db.list('positions').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
   }
 
   store(url){
@@ -50,6 +54,7 @@ export class AddPlayerComponent implements OnInit {
   }
 
   onSubmit(form){
+    console.log(form);
     this.playerName = form.value.name;
     this.playerPosition = form.value.position;
     this.storageRef.child(this.fileName).getDownloadURL().then(url => this.store(url));
@@ -58,6 +63,7 @@ export class AddPlayerComponent implements OnInit {
   }
 
   detectFile(event){
+    
     this.fileName = event.target.files[0].name;
     this.file = event.target.files[0];
     this.preview = this.storageRef.child(this.fileName).put(this.file).then(function(result){
