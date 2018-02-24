@@ -18,6 +18,16 @@
     </form>
 </div>
 <div id="imgPlayers" *ngFor="let item of players | async">
-        <img *ngIf='item.position=="Goleiro"' id="goalkeeper" src="{{item.photo}}" alt="goalkeeper">
+    <img *ngIf='item.position=="Goleiro"' id="goleiro" src="{{item.photo}}" alt="goalkeeper">
+    <img *ngIf='item.position=="Zagueiro (Esquerdo)"' id="zagueiroesquerdo" src="{{item.photo}}" alt="zagueiroesquerdo">
+    <img *ngIf='item.position=="Zagueiro (Direito)"' id="zagueirodireito" src="{{item.photo}}" alt="zagueirodireito">
+    <img *ngIf='item.position=="Lateral (Esquerdo)"' id="lateralesquerdo" src="{{item.photo}}" alt="lateralesquerdo">
+    <img *ngIf='item.position=="Lateral (Direito)"' id="lateraldireito" src="{{item.photo}}" alt="lateraldireito">
+    <img *ngIf='item.position=="Volante (Esquerdo)"' id="volanteesquerdo" src="{{item.photo}}" alt="volanteesquerdo">
+    <img *ngIf='item.position=="Volante (Direito)"' id="volantedireito" src="{{item.photo}}" alt="volantedireito">
+    <img *ngIf='item.position=="Meia (Central)"' id="meiacentral" src="{{item.photo}}" alt="meiacentral">
+    <img *ngIf='item.position=="Ponta (Esquerdo)"' id="pontaesquerdo" src="{{item.photo}}" alt="pontaesquerdo">
+    <img *ngIf='item.position=="Ponta (Direito)"' id="pontadireito" src="{{item.photo}}" alt="pontadireito">
+    <img *ngIf='item.position=="Centroavante"' id="centroavante" src="{{item.photo}}" alt="centroavante">
 </div>
 <img id="soccerfield" src="../../assets/campo.jpg" alt="Campo de Futebol">
