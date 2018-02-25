@@ -30,6 +30,15 @@
               </div>
             </td>
           </tr>
+          <tr *ngFor="let item of substitutesMatch | async">
+            <td>{{item.name}} (Reserva)</td>
+            <td>{{item.grade}}</td>
+            <td>
+              <div id="buttonbar">
+                <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
+              </div>
+            </td>
+          </tr>
           <tr *ngFor="let item of coachesMatch | async">
             <td>{{item.name}}</td>
             <td>{{item.grade}}</td>

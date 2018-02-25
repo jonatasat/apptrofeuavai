@@ -30,9 +30,9 @@
     <img *ngIf='item.position=="Ponta (Direito)"' id="pontadireito" src="{{item.photo}}" alt="pontadireito">
     <img *ngIf='item.position=="Centroavante"' id="centroavante" src="{{item.photo}}" alt="centroavante">
 </div>
-<!-- <div id="imgPlayers" *ngFor="let item of substitutes | async; let i = index" [attr.data-index]="i">
+<div id="imgSubstitutes" *ngFor="let item of substitutes | async; let i = index" [attr.data-index]="i">
     <img id="reserva1" *ngIf='i==0' src="{{item.photo}}" alt="substitute1">
     <img id="reserva2" *ngIf='i==1' src="{{item.photo}}" alt="substitute2">
     <img id="reserva3" *ngIf='i==2' src="{{item.photo}}" alt="substitute3">
-</div> -->
+</div>
 <img id="soccerfield" src="../../assets/campo.jpg" alt="Campo de Futebol">
