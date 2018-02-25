@@ -53,3 +53,15 @@
 .form{
     margin-top: 50px;
 }
+
+
+#substitutelabel{
+    position: relative;
+    margin-top: 20px;
+    margin-right: 55px;
+}
+
+#substitute{
+    position: relative;
+    margin-top:20px;
+}
