@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { }
 
   players: any;
+  substitutes: any;
 
   ngOnInit() {
     this.storageRef = this.firebase.storage().ref();
@@ -38,6 +39,10 @@ export class HomeComponent implements OnInit {
 
     this.storageRef = this.firebase.storage().ref();
     this.players = this.db.list('matches/'+id+'/players/').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+
+    this.substitutes = this.db.list('matches/'+id+'/substitutes/').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
   }
