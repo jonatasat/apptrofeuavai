@@ -40,116 +40,633 @@
 }
 
 
+
+
+
+#divgoleiro{
+    position: absolute;
+    left: 80px;
+    top: 230px;
+    height: 100px;
+    width: 120px;
+}
+
+
 #goleiro{
     position: absolute;
-    left: 100px;
-    top: 230px;
+    left: 20px;
     height: 80px;
     width: 80px;
+}
+
+#nmgoleiro{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradegoleiro{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+#divzagueiroesquerdo{
+    position: absolute;
+    left: 200px;
+    top: 170px;
+    height: 100px;
+    width: 120px;
 }
 
 #zagueiroesquerdo{
     position: absolute;
-    left: 200px;
-    top: 170px;
+    left: 10px;
     height: 80px;
     width: 80px;
 }
 
-#zagueirodireito{
+#nmzagueiroesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradezagueiroesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+#divzagueirodireito{
     position: absolute;
     left: 200px;
     top: 300px;
+    height: 100px;
+    width: 120px;
+}
+
+
+#zagueirodireito{
+    position: absolute;
+    left: 10px;
     height: 80px;
     width: 80px;
+}
+
+#nmzagueirodireito{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradezagueirodireito{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+#divlateralesquerdo{
+    position: absolute;
+    left: 280px;
+    top: 70px;
+    height: 100px;
+    width: 120px;
 }
 
 #lateralesquerdo{
     position: absolute;
-    left: 250px;
-    top: 70px;
+    left: 10px;
     height: 80px;
     width: 80px;
 }
 
+#nmlateralesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradelateralesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+#divlateraldireito{
+    position: absolute;
+    left: 280px;
+    top: 380px;
+    height: 100px;
+    width: 120px;
+}
+
+
 #lateraldireito{
     position: absolute;
-    left: 250px;
-    top: 400px;
+    left: 10px;
     height: 80px;
     width: 80px;
+}
+
+#nmlateraldireito{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradelateraldireito{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+#divvolanteesquerdo{
+    position: absolute;
+    left: 430px;
+    top: 170px;
+    height: 100px;
+    width: 120px;
 }
 
 #volanteesquerdo{
     position: absolute;
-    left: 430px;
-    top: 170px;
+    left: 10px;
     height: 80px;
     width: 80px;
+}
+
+#nmvolanteesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradevolanteesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+#divvolantedireito{
+    position: absolute;
+    left: 430px;
+    top: 300px;
+    height: 100px;
+    width: 120px;
 }
 
 #volantedireito{
     position: absolute;
-    left: 430px;
-    top: 300px;
+    left: 10px;
     height: 80px;
     width: 80px;
+}
+
+#nmvolantedireito{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradevolantedireito{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+
+#divpontaesquerdo{
+    position: absolute;
+    left: 610px;
+    top: 70px;
+    height: 100px;
+    width: 120px;
 }
 
 #pontaesquerdo{
     position: absolute;
-    left: 610px;
-    top: 70px;
+    left: 10px;
     height: 80px;
     width: 80px;
+}
+
+#nmpontaesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradepontaesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+
+#divpontadireito{
+    position: absolute;
+    left: 610px;
+    top: 380px;
+    height: 100px;
+    width: 120px;
 }
 
 #pontadireito{
     position: absolute;
-    left: 610px;
-    top: 400px;
+    left: 10px;
     height: 80px;
     width: 80px;
+}
+
+#nmpontadireito{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradepontadireito{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+#divmeiacentral{
+    position: absolute;
+    left: 590px;
+    top: 240px;
+    height: 100px;
+    width: 120px;
 }
 
 #meiacentral{
     position: absolute;
-    left: 590px;
-    top: 240px;
+    left: 10px;
     height: 80px;
     width: 80px;
 }
 
-#centroavante{
+#nmmeiacentral{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#grademeiacentral{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+#divcentroavante{
     position: absolute;
     left: 740px;
     top: 240px;
+    height: 100px;
+    width: 120px;
+}
+
+#centroavante{
+    position: absolute;
+    left: 10px;
     height: 80px;
+    width: 80px;
+}
+
+#nmcentroavante{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradecentroavante{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+#divreserva1{
+    position: absolute;
+    left: 510px;
+    top: 485px;
+    height: 65px;
     width: 80px;
 }
 
 #reserva1{
     position: absolute;
-    left: 510px;
-    top: 485px;
+    left: 10px;
     height: 60px;
     width: 60px;
+}
+
+#nmreserva1{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradereserva1{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    height: 25px;
+    width: 20px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+
+
+#divreserva2{
+    position: absolute;
+    left: 650px;
+    top: 485px;
+    height: 65px;
+    width: 80px;
 }
 
 #reserva2{
     position: absolute;
-    left: 650px;
-    top: 485px;
+    left: 10px;
     height: 60px;
     width: 60px;
 }
 
-#reserva3{
+#nmreserva2{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradereserva2{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    height: 25px;
+    width: 20px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
+
+
+
+
+#divreserva3{
     position: absolute;
     left: 790px;
     top: 485px;
+    height: 65px;
+    width: 60px;
+}
+
+
+#reserva3{
+    position: absolute;
+    left: 10px;
     height: 60px;
     width: 60px;
+}
+
+#nmreserva3{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradereserva3{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    height: 25px;
+    width: 20px;
+    color: white;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
 }
 
 #logotrofeuavai{
@@ -158,4 +675,26 @@
     top: 10px;
     height: 60px;
     width: 90px;
+}
+
+#mediaequipe{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    height: 60px;
+    width: 70px;
+}
+
+#average{
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    left: 0px;
+    bottom: 0px;
+    height: 60px;
+    width: 70px;
+    background: yellow;
+    text-shadow: 1px 1px 1px black;
 }

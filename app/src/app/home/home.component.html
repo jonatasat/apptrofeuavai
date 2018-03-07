@@ -20,22 +20,141 @@
 <div class="container">
     <img id="soccerfield" src="../../assets/campo.jpg" alt="Campo de Futebol">
     <div id="imgPlayers" *ngFor="let item of players | async">
-        <img *ngIf='item.position=="Goleiro"' id="goleiro" src="{{item.photo}}" alt="goalkeeper">
-        <img *ngIf='item.position=="Zagueiro (Esquerdo)"' id="zagueiroesquerdo" src="{{item.photo}}" alt="zagueiroesquerdo">
-        <img *ngIf='item.position=="Zagueiro (Direito)"' id="zagueirodireito" src="{{item.photo}}" alt="zagueirodireito">
-        <img *ngIf='item.position=="Lateral (Esquerdo)"' id="lateralesquerdo" src="{{item.photo}}" alt="lateralesquerdo">
-        <img *ngIf='item.position=="Lateral (Direito)"' id="lateraldireito" src="{{item.photo}}" alt="lateraldireito">
-        <img *ngIf='item.position=="Volante (Esquerdo)"' id="volanteesquerdo" src="{{item.photo}}" alt="volanteesquerdo">
-        <img *ngIf='item.position=="Volante (Direito)"' id="volantedireito" src="{{item.photo}}" alt="volantedireito">
-        <img *ngIf='item.position=="Meia (Central)"' id="meiacentral" src="{{item.photo}}" alt="meiacentral">
-        <img *ngIf='item.position=="Ponta (Esquerdo)"' id="pontaesquerdo" src="{{item.photo}}" alt="pontaesquerdo">
-        <img *ngIf='item.position=="Ponta (Direito)"' id="pontadireito" src="{{item.photo}}" alt="pontadireito">
-        <img *ngIf='item.position=="Centroavante"' id="centroavante" src="{{item.photo}}" alt="centroavante">
+        <div id="divgoleiro">
+            <img *ngIf='item.position=="Goleiro"' id="goleiro" src="{{item.photo}}" alt="goalkeeper">
+            <span *ngIf='item.position=="Goleiro"' id="nmgoleiro">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Goleiro"' id="gradegoleiro">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divzagueiroesquerdo">
+            <img *ngIf='item.position=="Zagueiro (Esquerdo)"' id="zagueiroesquerdo" src="{{item.photo}}" alt="zagueiroesquerdo">
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)"' id="nmzagueiroesquerdo">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)"' id="gradezagueiroesquerdo">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divzagueirodireito">
+            <img *ngIf='item.position=="Zagueiro (Direito)"' id="zagueirodireito" src="{{item.photo}}" alt="zagueirodireito">
+            <span *ngIf='item.position=="Zagueiro (Direito)"' id="nmzagueirodireito">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Direito)"' id="gradezagueirodireito">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divlateralesquerdo">
+            <img *ngIf='item.position=="Lateral (Esquerdo)"' id="lateralesquerdo" src="{{item.photo}}" alt="lateralesquerdo">
+            <span *ngIf='item.position=="Lateral (Esquerdo)"' id="nmlateralesquerdo">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Esquerdo)"' id="gradelateralesquerdo">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divlateraldireito">
+            <img *ngIf='item.position=="Lateral (Direito)"' id="lateraldireito" src="{{item.photo}}" alt="lateraldireito">
+            <span *ngIf='item.position=="Lateral (Direito)"' id="nmlateraldireito">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Direito)"' id="gradelateraldireito">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divvolanteesquerdo">
+            <img *ngIf='item.position=="Volante (Esquerdo)"' id="volanteesquerdo" src="{{item.photo}}" alt="volanteesquerdo">
+            <span *ngIf='item.position=="Volante (Esquerdo)"' id="nmvolanteesquerdo">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Esquerdo)"' id="gradevolanteesquerdo">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divvolantedireito">
+            <img *ngIf='item.position=="Volante (Direito)"' id="volantedireito" src="{{item.photo}}" alt="volantedireito">
+            <span *ngIf='item.position=="Volante (Direito)"' id="nmvolantedireito">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Direito)"' id="gradevolantedireito">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divmeiacentral">
+            <img *ngIf='item.position=="Meia (Central)"' id="meiacentral" src="{{item.photo}}" alt="meiacentral">
+            <span *ngIf='item.position=="Meia (Central)"' id="nmmeiacentral">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Meia (Central)"' id="grademeiacentral">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divpontaesquerdo">
+            <img *ngIf='item.position=="Ponta (Esquerdo)"' id="pontaesquerdo" src="{{item.photo}}" alt="pontaesquerdo">
+            <span *ngIf='item.position=="Ponta (Esquerdo)"' id="nmpontaesquerdo">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Esquerdo)"' id="gradepontaesquerdo">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divpontadireito">
+            <img *ngIf='item.position=="Ponta (Direito)"' id="pontadireito" src="{{item.photo}}" alt="pontadireito">
+            <span *ngIf='item.position=="Ponta (Direito)"' id="nmpontadireito">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Direito)"' id="gradepontadireito">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divcentroavante">
+            <img *ngIf='item.position=="Centroavante"' id="centroavante" src="{{item.photo}}" alt="centroavante">
+            <span *ngIf='item.position=="Centroavante"' id="nmcentroavante">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Centroavante"' id="gradecentroavante">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+
     </div>
     <div id="imgSubstitutes" *ngFor="let item of substitutes | async; let i = index" [attr.data-index]="i">
-        <img *ngIf='i==0' id="reserva1" src="{{item.photo}}" alt="substitute1">
-        <img *ngIf='i==1' id="reserva2" src="{{item.photo}}" alt="substitute2">
-        <img *ngIf='i==2' id="reserva3" src="{{item.photo}}" alt="substitute3">
+        <div id="divreserva1">
+            <img *ngIf='i==0' id="reserva1" src="{{item.photo}}" alt="substitute1">
+            <span *ngIf='i==0' id="nmreserva1">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='i==0' id="gradereserva1">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divreserva2">
+            <img *ngIf='i==1' id="reserva2" src="{{item.photo}}" alt="substitute2">
+            <span *ngIf='i==1' id="nmreserva2">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='i==1' id="gradereserva2">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+        <div id="divreserva3">
+            <img *ngIf='i==2' id="reserva3" src="{{item.photo}}" alt="substitute3">
+            <span *ngIf='i==2' id="nmreserva3">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='i==2' id="gradereserva3">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
     </div>
     <img id="logotrofeuavai" src="../../assets/logo.png" alt="logotrofeuavai">
+    <div id="mediaequipe" *ngFor="let item of matchesList">
+        <span id="average">
+            {{item.average}}
+            <!-- <b>{{(item | async)?.average}}</b> -->
+        </span>
+    </div>
 </div>

@@ -20,11 +20,15 @@ export class HomeComponent implements OnInit {
 
   storageRef: any;
   matches: any;
+  match: any;
+  matchesList: any[] = [];
+  showAverage=false;
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { }
 
   players: any;
   substitutes: any;
+  
 
   ngOnInit() {
     this.storageRef = this.firebase.storage().ref();
@@ -45,6 +49,16 @@ export class HomeComponent implements OnInit {
     this.substitutes = this.db.list('matches/'+id+'/substitutes/').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
+
+    this.match = this.db.list('matches/'+id).snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
+
+    this.matchesList.push(this.match);
+
+    
+    console.log(this.matchesList);
+    this.showAverage=true;
   }
 
 }
