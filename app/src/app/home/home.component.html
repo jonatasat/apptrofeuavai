@@ -151,10 +151,9 @@
         </div>
     </div>
     <img id="logotrofeuavai" src="../../assets/logo.png" alt="logotrofeuavai">
-    <div id="mediaequipe" *ngFor="let item of matchesList">
-        <span id="average">
-            {{item.average}}
-            <!-- <b>{{(item | async)?.average}}</b> -->
+    <div id="mediaequipe">
+        <span id="average" *ngIf="showAverage">
+            <b>{{average}}</b>
         </span>
     </div>
 </div>

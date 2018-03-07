@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit {
 
   players: any;
   substitutes: any;
+  errData: any;
+  average: any;
   
 
   ngOnInit() {
@@ -50,15 +52,22 @@ export class HomeComponent implements OnInit {
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
 
-    this.match = this.db.list('matches/'+id).snapshotChanges().map(actions =>{
-      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
-    });
+    // this.match = this.db.list('matches/'+id).snapshotChanges().map(actions =>{
+    //   return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    // });
 
-    this.matchesList.push(this.match);
+    // this.match = this.db.object('matches/'+ id);
+
+    this.firebase.database().ref("matches/" + id).once('value', data => this.getMatch(data), this.errData);
 
     
-    console.log(this.matchesList);
+
     this.showAverage=true;
+  }
+
+  getMatch(data){
+    this.average = data.val().average;
+
   }
 
 }
