@@ -10,7 +10,7 @@
         </span>
         <select name="match" class="form-control input-sm" id="selectmatches" ngModel required #match="ngModel">
             <option value="" disabled selected>Selecione a partida</option>
-            <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team}} x {{item.opponent}}</option>
+            <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team.name}} x {{item.opponent.name}}</option>
         </select>
         <div class="col-sm-4">
             <button id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Enviar</button>

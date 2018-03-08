@@ -37,7 +37,7 @@ export class EditPlayersMatchComponent implements OnInit {
   matchAverage: any = null;
   snapMatch: any;
   newGrade: any;
-  
+
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) {
     console.log(this.route.snapshot.params['id']);
@@ -85,6 +85,7 @@ export class EditPlayersMatchComponent implements OnInit {
     this.setPage(1);
   }
 
+
   onSubmit(form) {
 
     if (this.showPlayer == true) {
@@ -103,12 +104,15 @@ export class EditPlayersMatchComponent implements OnInit {
   }
 
   updateMatch(form) {
-    this.newGrade = form.value.grade;
+    this.newGrade = form.value.grade.replace(/,/gi, ".");
+
     this.firebase.database().ref("matches/" + this.route.snapshot.params['id']).once('value', data => this.updateAvg(data, this.newGrade, this.route.snapshot.params['id']), this.errData);
   }
 
   updateAvg(data, newGrade, id) {
-    var sumGrade = parseFloat(data.val().average) + parseFloat(newGrade);
+    console.log(data.val().average);
+    var sumGrade = Number(data.val().average) + Number(newGrade);
+    sumGrade.toFixed(1);
     this.firebase.database().ref("matches/" + id).update({
       average: sumGrade
     })
@@ -126,7 +130,7 @@ export class EditPlayersMatchComponent implements OnInit {
     let posicao = form.value.player.position;
     let nomeFile = form.value.player.fileName;
     let url = form.value.player.photo;
-    let nota = form.value.grade;
+    let nota = form.value.grade.replace(/,/gi, ".");
     let key = form.value.player.key;
 
     this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + key).set({
@@ -146,7 +150,7 @@ export class EditPlayersMatchComponent implements OnInit {
     let posicao = form.value.player.position;
     let nomeFile = form.value.player.fileName;
     let url = form.value.player.photo;
-    let nota = form.value.grade;
+    let nota = form.value.grade.replace(/,/gi, ".");
     let key = form.value.player.key;
 
     this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + key).set({
@@ -166,7 +170,7 @@ export class EditPlayersMatchComponent implements OnInit {
     let nomeFile = form.value.coach.fileName;
     let url = form.value.coach.photo;
     let posicao = form.value.coach.position;
-    let nota = form.value.grade;
+    let nota = form.value.grade.replace(/,/gi, ".");
     let key = form.value.coach.key;
 
     this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/coaches/' + key).set({
@@ -185,7 +189,7 @@ export class EditPlayersMatchComponent implements OnInit {
     let nomeFile = form.value.referee.fileName;
     let url = form.value.referee.photo;
     let posicao = form.value.referee.position;
-    let nota = form.value.grade;
+    let nota = form.value.grade.replace(/,/gi, ".");
     let key = form.value.referee.key;
 
     this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/referees/' + key).set({
@@ -246,7 +250,9 @@ export class EditPlayersMatchComponent implements OnInit {
   }
 
   subtractAvg(data, grade, id) {
-    var subtractGrade = parseFloat(data.val().average) - parseFloat(grade);
+    grade = parseFloat(grade).toFixed(1);
+    let avg = data.val().average;
+    var subtractGrade = avg - grade;
     this.firebase.database().ref("matches/" + id).update({
       average: subtractGrade
     })
