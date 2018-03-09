@@ -45,16 +45,16 @@
 
 #divgoleiro{
     position: absolute;
-    left: 80px;
-    top: 230px;
+    left: 60px;
+    top: 220px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 
 #goleiro{
     position: absolute;
-    left: 20px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -62,7 +62,7 @@
 #nmgoleiro{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -71,15 +71,13 @@
 
 #gradegoleiro{
     position: absolute;
+    text-align: center;
     bottom: 0px;
     left: 0px;
     font-size: 24px;
-    text-align: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -89,15 +87,15 @@
 
 #divzagueiroesquerdo{
     position: absolute;
-    left: 200px;
+    left: 190px;
     top: 170px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #zagueiroesquerdo{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -105,7 +103,7 @@
 #nmzagueiroesquerdo{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -118,11 +116,9 @@
     left: 0px;
     font-size: 24px;
     text-align: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -134,16 +130,16 @@
 
 #divzagueirodireito{
     position: absolute;
-    left: 200px;
+    left: 190px;
     top: 300px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 
 #zagueirodireito{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -151,7 +147,7 @@
 #nmzagueirodireito{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -165,10 +161,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -180,15 +175,15 @@
 
 #divlateralesquerdo{
     position: absolute;
-    left: 280px;
-    top: 70px;
+    left: 260px;
+    top: 68px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #lateralesquerdo{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -196,7 +191,7 @@
 #nmlateralesquerdo{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -210,10 +205,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -225,16 +219,16 @@
 
 #divlateraldireito{
     position: absolute;
-    left: 280px;
+    left: 260px;
     top: 380px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 
 #lateraldireito{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -242,7 +236,7 @@
 #nmlateraldireito{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -256,10 +250,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -270,15 +263,15 @@
 
 #divvolanteesquerdo{
     position: absolute;
-    left: 430px;
+    left: 410px;
     top: 170px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #volanteesquerdo{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -286,7 +279,7 @@
 #nmvolanteesquerdo{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -300,10 +293,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -314,15 +306,15 @@
 
 #divvolantedireito{
     position: absolute;
-    left: 430px;
+    left: 410px;
     top: 300px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #volantedireito{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -330,7 +322,7 @@
 #nmvolantedireito{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -344,10 +336,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -360,15 +351,15 @@
 
 #divpontaesquerdo{
     position: absolute;
-    left: 610px;
+    left: 590px;
     top: 70px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #pontaesquerdo{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -376,7 +367,7 @@
 #nmpontaesquerdo{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -390,10 +381,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -406,15 +396,15 @@
 
 #divpontadireito{
     position: absolute;
-    left: 610px;
+    left: 590px;
     top: 380px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #pontadireito{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -422,7 +412,7 @@
 #nmpontadireito{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -436,10 +426,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -450,15 +439,15 @@
 
 #divmeiacentral{
     position: absolute;
-    left: 590px;
-    top: 240px;
+    left: 570px;
+    top: 220px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #meiacentral{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -466,7 +455,7 @@
 #nmmeiacentral{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -480,10 +469,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -493,15 +481,15 @@
 
 #divcentroavante{
     position: absolute;
-    left: 740px;
-    top: 240px;
+    left: 720px;
+    top: 220px;
     height: 100px;
-    width: 120px;
+    width: 130px;
 }
 
 #centroavante{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 80px;
     width: 80px;
 }
@@ -509,7 +497,7 @@
 #nmcentroavante{
     position: absolute;
     bottom: 0px;
-    left: 30px;
+    left: 40px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -523,10 +511,9 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -536,7 +523,7 @@
 
 #divreserva1{
     position: absolute;
-    left: 510px;
+    left: 490px;
     top: 485px;
     height: 65px;
     width: 80px;
@@ -544,7 +531,7 @@
 
 #reserva1{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 60px;
     width: 60px;
 }
@@ -552,7 +539,7 @@
 #nmreserva1{
     position: absolute;
     bottom: 0px;
-    left: 20px;
+    left: 30px;
     font-size: 10px;
     text-align: center;
     color: white;
@@ -567,9 +554,8 @@
     text-align: center;
     align-items: center;
     height: 25px;
-    width: 20px;
+    width: 30px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -583,7 +569,7 @@
 
 #divreserva2{
     position: absolute;
-    left: 650px;
+    left: 630px;
     top: 485px;
     height: 65px;
     width: 80px;
@@ -591,7 +577,7 @@
 
 #reserva2{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 60px;
     width: 60px;
 }
@@ -599,7 +585,7 @@
 #nmreserva2{
     position: absolute;
     bottom: 0px;
-    left: 20px;
+    left: 30px;
     font-size: 10px;
     text-align: center;
     color: white;
@@ -614,9 +600,8 @@
     text-align: center;
     align-items: center;
     height: 25px;
-    width: 20px;
+    width: 30px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -631,7 +616,7 @@
 
 #divreserva3{
     position: absolute;
-    left: 790px;
+    left: 770px;
     top: 485px;
     height: 65px;
     width: 60px;
@@ -640,7 +625,7 @@
 
 #reserva3{
     position: absolute;
-    left: 10px;
+    left: 30px;
     height: 60px;
     width: 60px;
 }
@@ -648,7 +633,7 @@
 #nmreserva3{
     position: absolute;
     bottom: 0px;
-    left: 20px;
+    left: 30px;
     font-size: 10px;
     text-align: center;
     color: white;
@@ -663,9 +648,8 @@
     text-align: center;
     align-items: center;
     height: 25px;
-    width: 20px;
+    width: 30px;
     color: white;
-    background: yellow;
     text-shadow: 1px 1px 1px black;
 }
 
@@ -680,21 +664,54 @@
 #mediaequipe{
     position: absolute;
     left: 20px;
-    bottom: 10px;
-    height: 60px;
-    width: 70px;
+    bottom: 0px;
+    height: 70px;
+    width: 80px;
+    
 }
 
 #average{
     position: absolute;
-    font-size: 20px;
-    color: white;
+    font-size: 20pt;
     text-align: center;
-    align-items: center;
-    left: 0px;
-    bottom: 0px;
-    height: 60px;
+    bottom: 10px;
+    color: white;
     width: 70px;
-    background: yellow;
+    text-shadow: 1px 1px 1px black;
+}
+
+#teamphoto{
+    position: absolute;
+    left: 350px;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+#opponentphoto{
+    position: absolute;
+    left: 550px;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+#score{
+    position: absolute;
+    font-size: 20pt;
+    color: white;
+    left: 430px;
+    top: 3px;
+    height: 30px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#matchinformation{
+    position: absolute;
+    font-size: 12pt;
+    color: white;
+    left: 300px;
+    top: 43px;
+    height: 15px;
     text-shadow: 1px 1px 1px black;
 }

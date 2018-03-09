@@ -18,11 +18,7 @@ import 'firebase/storage';
 })
 export class HomeComponent implements OnInit {
 
-  storageRef: any;
-  matches: any;
-  match: any;
-  matchesList: any[] = [];
-  showAverage=false;
+ 
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) { }
 
@@ -30,6 +26,17 @@ export class HomeComponent implements OnInit {
   substitutes: any;
   errData: any;
   average: any;
+  score: any;
+  opponent: any;
+  team: any;
+  championship: any;
+  round: any;
+  storageRef: any;
+  matches: any;
+  match: any;
+  matchesList: any[] = [];
+  showAverage=false;
+
   
 
   ngOnInit() {
@@ -41,9 +48,9 @@ export class HomeComponent implements OnInit {
 
   onSubmit(form){
     let id = form.value.match.key;
-    console.log(form.value.match.key);
 
     this.storageRef = this.firebase.storage().ref();
+
     this.players = this.db.list('matches/'+id+'/players/').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
@@ -51,12 +58,6 @@ export class HomeComponent implements OnInit {
     this.substitutes = this.db.list('matches/'+id+'/substitutes/').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
-
-    // this.match = this.db.list('matches/'+id).snapshotChanges().map(actions =>{
-    //   return actions.map(action => ({ key: action.key, ...action.payload.val() }));
-    // });
-
-    // this.match = this.db.object('matches/'+ id);
 
     this.firebase.database().ref("matches/" + id).once('value', data => this.getMatch(data), this.errData);
 
@@ -67,7 +68,11 @@ export class HomeComponent implements OnInit {
 
   getMatch(data){
     this.average = data.val().average;
-
+    this.opponent = data.val().opponent;
+    this.team = data.val().team;
+    this.score = data.val().score;
+    this.championship = data.val().championship;
+    this.round = data.val().round;
   }
 
 }

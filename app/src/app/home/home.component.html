@@ -25,7 +25,19 @@
             <span *ngIf='item.position=="Goleiro"' id="nmgoleiro">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Goleiro"' id="gradegoleiro">
+            <span *ngIf='item.position=="Goleiro" && item.grade <= "0.9"' id="gradegoleiro" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Goleiro" && item.grade >= "1" && item.grade <= "4.9"' id="gradegoleiro" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Goleiro" && item.grade >= "5" && item.grade <= "5.9"' id="gradegoleiro" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Goleiro" && item.grade >= "6" && item.grade <= "6.9"' id="gradegoleiro" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Goleiro" && item.grade >= "7"' id="gradegoleiro" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -34,7 +46,19 @@
             <span *ngIf='item.position=="Zagueiro (Esquerdo)"' id="nmzagueiroesquerdo">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Zagueiro (Esquerdo)"' id="gradezagueiroesquerdo">
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade <= "0.9"' id="gradezagueiroesquerdo" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade >= "1" && item.grade <= "4.9"' id="gradezagueiroesquerdo" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade >= "5" && item.grade <= "5.9"' id="gradezagueiroesquerdo" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade >= "6" && item.grade <= "6.9"' id="gradezagueiroesquerdo" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade >= "7"' id="gradezagueiroesquerdo" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -43,7 +67,19 @@
             <span *ngIf='item.position=="Zagueiro (Direito)"' id="nmzagueirodireito">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Zagueiro (Direito)"' id="gradezagueirodireito">
+            <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade <= "0.9"' id="gradezagueirodireito" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade >= "1" && item.grade <= "4.9"' id="gradezagueirodireito" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade >= "5" && item.grade <= "5.9"' id="gradezagueirodireito" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade >= "6" && item.grade <= "6.9"' id="gradezagueirodireito" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade >= "7"' id="gradezagueirodireito" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -52,7 +88,19 @@
             <span *ngIf='item.position=="Lateral (Esquerdo)"' id="nmlateralesquerdo">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Lateral (Esquerdo)"' id="gradelateralesquerdo">
+            <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade <= "0.9"' id="gradelateralesquerdo" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade >= "1" && item.grade <= "4.9"' id="gradelateralesquerdo" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade >= "5" && item.grade <= "5.9"' id="gradelateralesquerdo" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade >= "6" && item.grade <= "6.9"' id="gradelateralesquerdo" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade >= "7"' id="gradelateralesquerdo" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -61,7 +109,19 @@
             <span *ngIf='item.position=="Lateral (Direito)"' id="nmlateraldireito">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Lateral (Direito)"' id="gradelateraldireito">
+            <span *ngIf='item.position=="Lateral (Direito)" && item.grade <= "0.9"' id="gradelateraldireito" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Direito)" && item.grade >= "1" && item.grade <= "4.9"' id="gradelateraldireito" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Direito)" && item.grade >= "5" && item.grade <= "5.9"' id="gradelateraldireito" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Direito)" && item.grade >= "6" && item.grade <= "6.9"' id="gradelateraldireito" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Direito)" && item.grade >= "7"' id="gradelateraldireito" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -70,7 +130,19 @@
             <span *ngIf='item.position=="Volante (Esquerdo)"' id="nmvolanteesquerdo">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Volante (Esquerdo)"' id="gradevolanteesquerdo">
+            <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade <= "0.9"' id="gradevolanteesquerdo" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade >= "1" && item.grade <= "4.9"' id="gradevolanteesquerdo" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade >= "5" && item.grade <= "5.9"' id="gradevolanteesquerdo" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade >= "6" && item.grade <= "6.9"' id="gradevolanteesquerdo" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade >= "7"' id="gradevolanteesquerdo" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -79,7 +151,19 @@
             <span *ngIf='item.position=="Volante (Direito)"' id="nmvolantedireito">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Volante (Direito)"' id="gradevolantedireito">
+            <span *ngIf='item.position=="Volante (Direito)" && item.grade <= "0.9"' id="gradevolantedireito" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Direito)" && item.grade >= "1" && item.grade <= "4.9"' id="gradevolantedireito" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Direito)" && item.grade >= "5" && item.grade <= "5.9"' id="gradevolantedireito" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Direito)" && item.grade >= "6" && item.grade <= "6.9"' id="gradevolantedireito" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Direito)" && item.grade >= "7"' id="gradevolantedireito" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -88,7 +172,19 @@
             <span *ngIf='item.position=="Meia (Central)"' id="nmmeiacentral">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Meia (Central)"' id="grademeiacentral">
+            <span *ngIf='item.position=="Meia (Central)" && item.grade <= "0.9"' id="grademeiacentral" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Meia (Central)" && item.grade >= "1" && item.grade <= "4.9"' id="grademeiacentral" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Meia (Central)" && item.grade >= "5" && item.grade <= "5.9"' id="grademeiacentral" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Meia (Central)" && item.grade >= "6" && item.grade <= "6.9"' id="grademeiacentral" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Meia (Central)" && item.grade >= "7"' id="grademeiacentral" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -97,7 +193,19 @@
             <span *ngIf='item.position=="Ponta (Esquerdo)"' id="nmpontaesquerdo">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Ponta (Esquerdo)"' id="gradepontaesquerdo">
+            <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade <= "0.9"' id="gradepontaesquerdo" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade >= "1" && item.grade <= "4.9"' id="gradepontaesquerdo" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade >= "5" && item.grade <= "5.9"' id="gradepontaesquerdo" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade >= "6" && item.grade <= "6.9"' id="gradepontaesquerdo" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade >= "7"' id="gradepontaesquerdo" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -106,7 +214,19 @@
             <span *ngIf='item.position=="Ponta (Direito)"' id="nmpontadireito">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Ponta (Direito)"' id="gradepontadireito">
+            <span *ngIf='item.position=="Ponta (Direito)" && item.grade <= "0.9"' id="gradepontadireito" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Direito)" && item.grade >= "1" && item.grade <= "4.9"' id="gradepontadireito" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Direito)" && item.grade >= "5" && item.grade <= "5.9"' id="gradepontadireito" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Direito)" && item.grade >= "6" && item.grade <= "6.9"' id="gradepontadireito" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Ponta (Direito)" && item.grade >= "7"' id="gradepontadireito" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -115,7 +235,19 @@
             <span *ngIf='item.position=="Centroavante"' id="nmcentroavante">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='item.position=="Centroavante"' id="gradecentroavante">
+            <span *ngIf='item.position=="Centroavante" && item.grade <= "0.9"' id="gradecentroavante" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Centroavante" && item.grade >= "1" && item.grade <= "4.9"' id="gradecentroavante" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Centroavante" && item.grade >= "5" && item.grade <= "5.9"' id="gradecentroavante" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Centroavante" && item.grade >= "6" && item.grade <= "6.9"' id="gradecentroavante" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Centroavante" && item.grade >= "7"' id="gradecentroavante" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -127,7 +259,19 @@
             <span *ngIf='i==0' id="nmreserva1">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='i==0' id="gradereserva1">
+            <span *ngIf='i==0 && item.grade <= "0.9"' id="gradereserva1" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==0 && item.grade >= "1" && item.grade <= "4.9"' id="gradereserva1" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==0 && item.grade >= "5" && item.grade <= "5.9"' id="gradereserva1" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==0 && item.grade >= "6" && item.grade <= "6.9"' id="gradereserva1" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==0 && item.grade >= "7"' id="gradereserva1" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -136,7 +280,19 @@
             <span *ngIf='i==1' id="nmreserva2">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='i==1' id="gradereserva2">
+            <span *ngIf='i==1 && item.grade <= "0.9"' id="gradereserva2" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==1 && item.grade >= "1" && item.grade <= "4.9"' id="gradereserva2" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==1 && item.grade >= "5" && item.grade <= "5.9"' id="gradereserva2" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==1 && item.grade >= "6" && item.grade <= "6.9"' id="gradereserva2" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==1 && item.grade >= "7"' id="gradereserva2" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
@@ -145,15 +301,55 @@
             <span *ngIf='i==2' id="nmreserva3">
                 <b>{{item.name}}</b>
             </span>
-            <span *ngIf='i==2' id="gradereserva3">
+            <span *ngIf='i==2 && item.grade <= "0.9"' id="gradereserva3" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==2 && item.grade >= "1" && item.grade <= "4.9"' id="gradereserva3" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==2 && item.grade >= "5" && item.grade <= "5.9"' id="gradereserva3" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==2 && item.grade >= "6" && item.grade <= "6.9"' id="gradereserva3" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='i==2 && item.grade >= "7"' id="gradereserva3" style="background-color:#2ded14">
                 <b>{{item.grade}}</b>
             </span>
         </div>
     </div>
     <img id="logotrofeuavai" src="../../assets/logo.png" alt="logotrofeuavai">
-    <div id="mediaequipe">
-        <span id="average" *ngIf="showAverage">
+    <div id="mediaequipe" *ngIf="showAverage">
+        <span *ngIf='average <= "0.9"' id="average" style="background-color:#aa0808">
             <b>{{average}}</b>
+        </span>
+        <span *ngIf='average >= "1" && average <= "4.9"' id="average" style="background-color:#fb3f3f">
+            <b>{{average}}</b>
+        </span>
+        <span *ngIf='average >= "5" && average <= "5.9"' id="average" style="background-color:#fb9c3f">
+            <b>{{average}}</b>
+        </span>
+        <span *ngIf='average >= "6" && average <= "6.9"' id="average" style="background-color:#ecfb3f">
+            <b>{{average}}</b>
+        </span>
+        <span *ngIf='average >= "7"' id="average" style="background-color:#2ded14">
+            <b>{{average}}</b>
+        </span>
+    </div>
+    <div id="team" *ngIf="showAverage">
+        <img id="teamphoto" src="{{team.photo}}" alt="teamphoto">
+    </div>
+    <div id="opponent" *ngIf="showAverage">
+        <img id="opponentphoto" src="{{opponent.photo}}" alt="opponentphoto">
+    </div>
+    <div id="divscore">
+        <span id="score" *ngIf="showAverage">
+            <b>{{score}}</b>
+        </span>
+    </div>
+    <div id="divmatchinformation">
+        <span id="matchinformation" *ngIf="showAverage">
+            <b>{{championship}} - {{round}} Rodada - </b>
         </span>
     </div>
 </div>
