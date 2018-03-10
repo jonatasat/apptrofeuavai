@@ -35,6 +35,7 @@ export class AddMatchComponent implements OnInit {
         stadium: form.value.stadium,
         championship: form.value.championship,
         round: form.value.round,
+        date: form.value.date,
         average: 0
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),

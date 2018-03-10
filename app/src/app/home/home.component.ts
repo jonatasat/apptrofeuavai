@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   opponent: any;
   team: any;
   championship: any;
+  date: any;
   round: any;
   storageRef: any;
   matches: any;
@@ -73,6 +74,7 @@ export class HomeComponent implements OnInit {
     this.score = data.val().score;
     this.championship = data.val().championship;
     this.round = data.val().round;
+    this.date = data.val().date.split('-')[2] + '/' + data.val().date.split('-')[1] + '/' + data.val().date.split('-')[0];
   }
 
 }
