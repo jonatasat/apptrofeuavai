@@ -37,7 +37,8 @@ export class HomeComponent implements OnInit {
   match: any;
   matchesList: any[] = [];
   showAverage=false;
-
+  matchesPlayers: any[] = [];
+  sumGrades: any = 0;
   
 
   ngOnInit() {
@@ -62,8 +63,9 @@ export class HomeComponent implements OnInit {
 
     this.firebase.database().ref("matches/" + id).once('value', data => this.getMatch(data), this.errData);
 
-    
+    this.firebase.database().ref("matches/" + id +'/players/').once('value', data => this.getPlayers(data), this.errData);
 
+    
     this.showAverage=true;
   }
 
@@ -75,6 +77,14 @@ export class HomeComponent implements OnInit {
     this.championship = data.val().championship;
     this.round = data.val().round;
     this.date = data.val().date.split('-')[2] + '/' + data.val().date.split('-')[1] + '/' + data.val().date.split('-')[0];
+  }
+
+  getPlayers(data){
+    Object.values(data.val()).forEach(this.logelements);
+  }
+
+  logelements(element){
+    return Number(element.grade);
   }
 
 }

@@ -683,15 +683,15 @@
 #teamphoto{
     position: absolute;
     left: 350px;
-    top: 5px;
+    top: 3px;
     height: 40px;
     width: 40px;
 }
 
 #opponentphoto{
     position: absolute;
-    left: 550px;
-    top: 5px;
+    left: 530px;
+    top: 3px;
     height: 40px;
     width: 40px;
 }
