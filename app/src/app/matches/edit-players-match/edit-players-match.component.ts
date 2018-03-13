@@ -74,14 +74,27 @@ export class EditPlayersMatchComponent implements OnInit {
     let url = form.value.player.photo;
     let nota = form.value.grade.replace(/,/gi, ".");
     let key = form.value.player.key;
+    let bestplayer = form.value.bestplayer;
 
-    this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + key).set({
-      name: nome,
-      position: posicao,
-      photo: url,
-      fileName: nomeFile,
-      grade: nota
-    });
+    if(bestplayer){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + key).set({
+        name: nome,
+        position: posicao,
+        photo: url,
+        fileName: nomeFile,
+        grade: nota,
+        bestplayer: true
+      });
+    }else{
+      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + key).set({
+        name: nome,
+        position: posicao,
+        photo: url,
+        fileName: nomeFile,
+        grade: nota
+      });
+    }
+    
 
   }
 
@@ -92,14 +105,26 @@ export class EditPlayersMatchComponent implements OnInit {
     let url = form.value.player.photo;
     let nota = form.value.grade.replace(/,/gi, ".");
     let key = form.value.player.key;
+    let bestplayer = form.value.bestplayer;
 
-    this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + key).set({
-      name: nome,
-      position: "reserva",
-      photo: url,
-      fileName: nomeFile,
-      grade: nota
-    });
+    if(bestplayer){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + key).set({
+        name: nome,
+        position: "reserva",
+        photo: url,
+        fileName: nomeFile,
+        grade: nota,
+        bestplayer: true
+      });
+    }else{
+      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + key).set({
+        name: nome,
+        position: "reserva",
+        photo: url,
+        fileName: nomeFile,
+        grade: nota
+      });
+    }
 
   }
 
