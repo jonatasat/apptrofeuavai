@@ -349,7 +349,11 @@
         <span *ngIf='average >= "7"' id="average" style="background-color:#2ded14">
             <b>{{average}}</b>
         </span>
+        <span id="nmaverage">
+            <b>Média da Equipe</b>
+        </span>
     </div>
+    <img id="substituicao" *ngIf="showAverage" src="../../assets/substituicao.png" alt="substituicao">
     <div id="team" *ngIf="showAverage">
         <img id="teamphoto" src="{{team.photo}}" alt="teamphoto">
     </div>
@@ -360,6 +364,7 @@
         <span id="score" *ngIf="showAverage">
             <b>{{score}}</b>
         </span>
+        
     </div>
     <div id="divmatchinformation">
         <span id="matchinformation" *ngIf="showAverage">

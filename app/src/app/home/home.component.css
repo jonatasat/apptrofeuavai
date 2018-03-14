@@ -822,6 +822,18 @@
     text-shadow: 1px 1px 1px black;
 }
 
+#nmaverage{
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+    height: 20px;
+    width: 130px;
+    font-size: 10pt;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
 #teamphoto{
     position: absolute;
     left: 350px;
@@ -856,4 +868,12 @@
     top: 43px;
     height: 15px;
     text-shadow: 1px 1px 1px black;
+}
+
+#substituicao{
+    position: absolute;
+    left: 390px;
+    top: 485px;
+    height: 65px;
+    width: 80px;
 }
