@@ -30,99 +30,91 @@
               </div>
             </td>
           </tr>
+          <tr *ngFor="let item of substitutesMatch | async">
+            <td>{{item.name}} (Reserva)</td>
+            <td>{{item.grade}}</td>
+            <td>
+              <div id="buttonbar">
+                <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
+              </div>
+            </td>
+          </tr>
           <tr *ngFor="let item of coachesMatch | async">
-              <td>{{item.name}}</td>
-              <td>{{item.grade}}</td>
-              <td>
-                <div id="buttonbar">
-                  <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
-                </div>
-              </td>
+            <td>{{item.name}}</td>
+            <td>{{item.grade}}</td>
+            <td>
+              <div id="buttonbar">
+                <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
+              </div>
+            </td>
           </tr>
           <tr *ngFor="let item of refereesMatch | async">
-              <td>{{item.name}}</td>
-              <td>{{item.grade}}</td>
-              <td>
-                <div id="buttonbar">
-                  <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
-                </div>
-              </td>
+            <td>{{item.name}}</td>
+            <td>{{item.grade}}</td>
+            <td>
+              <div id="buttonbar">
+                <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
 
       <nav id="pagination" aria-label="Page navigation example">
-          <ul class="pagination justify-content-center" *ngIf="pager.pages && pager.pages.length" >
-              <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
-                <a (click)="setPage(1)" class="page-link"><<</a>
-              </li>
-              <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
-                <a (click)="setPage(pager.currentPage - 1)" class="page-link">Anterior</a>
-              </li>
-              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
-                <a (click)="setPage(page)" class="page-link">{{page}}</a>
-              </li>
-              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
-                <a (click)="setPage(pager.currentPage + 1)" class="page-link">Próximo</a>
-              </li>
-              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
-                <a (click)="setPage(pager.totalPages)" class="page-link">>></a>
-              </li>
-            </ul>
-        </nav>
-  
+        <ul class="pagination justify-content-center" *ngIf="pager.pages && pager.pages.length">
+          <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+            <a (click)="setPage(1)" class="page-link">
+              <<</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+            <a (click)="setPage(pager.currentPage - 1)" class="page-link">Anterior</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+            <a (click)="setPage(page)" class="page-link">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+            <a (click)="setPage(pager.currentPage + 1)" class="page-link">Próximo</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+            <a (click)="setPage(pager.totalPages)" class="page-link">>></a>
+          </li>
+        </ul>
+      </nav>
+
     </div>
 
-    
+
 
     <div class="col-md-5 col-sm-5 form">
       <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
 
-          <div class="form-group row" >
-              <label for="inputplayers" class="col-sm-2 col-form-label">Tipo*:</label>
-              <div class="col-sm-8">
-                <select name="type" class="form-control input-sm" id="selecttype" ngModel #type="ngModel" (change)="detectType($event)">
-                  <option selected>Selecione o tipo</option>
-                  <option value="Jogador">Jogador</option>
-                  <option value="Tecnico">Técnico</option>
-                  <option value="Arbitro">Árbitro</option>
-                </select>
-              </div>
-            </div>
-
-        <div class="form-group row" *ngIf="showPlayer" >
+        <div class="form-group row">
           <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores*:</label>
           <div class="col-sm-8">
             <select name="player" class="form-control input-sm" id="selectplayer" ngModel #player="ngModel">
+              <option value="" disabled selected>Selecione o jogador</option>
               <option *ngFor="let item of players | async" [ngValue]="item">{{item.name}}</option>
             </select>
           </div>
         </div>
-
-        <div class="form-group row" *ngIf="showCoach" >
-            <label for="inputplayers" class="col-sm-2 col-form-label">Técnicos*:</label>
-            <div class="col-sm-8">
-              <select name="coach" class="form-control input-sm" id="selectcoach" ngModel #coach="ngModel">
-                <option *ngFor="let item of coaches | async" [ngValue]="item">{{item.name}}</option>
-              </select>
-            </div>
+        <div class="form-group row">
+          <div class="form-check" id="divsubstitute">
+            <label id="substitutelabel" class="form-check-label" for="substitute">Reserva ?</label>
+            <input type="checkbox" class="form-check-input" id="substitute" name="substitute" ngModel #substitute="ngModel">
           </div>
-
-          <div class="form-group row" *ngIf="showReferee" >
-              <label for="inputplayers" class="col-sm-2 col-form-label">Árbitros*:</label>
-              <div class="col-sm-8">
-                <select name="referee" class="form-control input-sm" id="selectreferee" ngModel #coach="ngModel">
-                  <option *ngFor="let item of referees | async" [ngValue]="item">{{item.name}}</option>
-                </select>
-              </div>
-            </div>
-
+        </div>
+        <div class="form-group row">
+          <div class="form-check" id="divbestplayer">
+            <label id="bestplayerlabel" class="form-check-label" for="bestplayer">Craque da Rodada ?</label>
+            <input type="checkbox" class="form-check-input" id="bestplayer" name="bestplayer" ngModel #bestplayer="ngModel">
+          </div>
+        </div>
         <div class="form-group row has-danger" [class.has-danger]="!grade.valid && grade.touched" [class.has-feedback]="!grade.valid && grade.touched">
           <label for="inputgrade" class="col-sm-2 col-form-label">Nota*:</label>
           <div class="col-sm-8">
             <input type="text" name="grade" class="form-control" id="inputgrade" placeholder="Nota" ngModel required #grade="ngModel">
             <div class="form-control-feedback" *ngIf="!grade.valid && grade.touched">
-                Campo "Nota" é obrigatório.
+              Campo "Nota" é obrigatório.
             </div>
           </div>
         </div>
@@ -133,21 +125,6 @@
           </div>
         </div>
       </form>
-    </div>
-
-  </div>
-
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6 col-sm-6 col1">
-    </div>
-    <div class="col-md-5 col-sm-5 col2">
-      <h3>
-        <i id="infolicon" class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Média dos Jogadores"></i> Média :
-        <span id="average">{{(match | async)?.average}}</span>
-      </h3>
     </div>
   </div>
 </div>

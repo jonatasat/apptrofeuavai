@@ -53,3 +53,26 @@
 .form{
     margin-top: 50px;
 }
+
+
+#substitutelabel{
+    position: relative;
+    margin-top: 5px;
+}
+
+#substitute{
+    position: relative;
+    margin-top: 5px;
+    margin-left: 125px;
+}
+
+#bestplayerlabel{
+    position: relative;
+    margin-top: 5px;
+}
+
+#bestplayer{
+    position: relative;
+    margin-top: 5px;
+    margin-left: 50px;
+}

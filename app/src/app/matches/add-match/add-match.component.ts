@@ -3,7 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { FirebaseApp } from 'angularfire2';
+import 'firebase/storage';
 
 @Component({
   selector: 'app-add-match',
@@ -12,9 +14,16 @@ import { Router } from '@angular/router'
 })
 export class AddMatchComponent implements OnInit {
 
-  constructor(private angularFire: AngularFireDatabase, private router: Router) { }
+  storageRef: any;
+  teams: any;
+
+  constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) { }
 
   ngOnInit() {
+    this.storageRef = this.firebase.storage().ref();
+    this.teams = this.angularFire.list('teams').snapshotChanges().map(actions =>{
+      return actions.map(action => ({ key: action.key, ...action.payload.val() }));
+    });
   }
 
   onSubmit(form){
@@ -26,6 +35,7 @@ export class AddMatchComponent implements OnInit {
         stadium: form.value.stadium,
         championship: form.value.championship,
         round: form.value.round,
+        date: form.value.date,
         average: 0
       }
     ).then((t: any) => console.log('dados gravados: ' + t.key)),

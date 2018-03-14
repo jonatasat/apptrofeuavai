@@ -24,16 +24,13 @@
     <div class="form-group row has-danger" [class.has-danger]="!position.valid && position.touched" [class.has-feedback]="!position.valid && position.touched">
       <label for="inputposition" class="col-sm-2 col-form-label">Posição*:</label>
       <div class="col-sm-10">
-        <select class="form-control input-sm" name="position" id="selectposition" ngModel required #position="ngModel">
-          <option selected>Selecione a posição</option>
-          <option value="Atacante">Atacante</option>
-          <option value="Meia">Meia</option>
-          <option value="Goleiro">Goleiro</option>
-          <option value="Zagueiro">Zagueiro</option>
+        <select name="position" class="form-control input-sm" id="selectposition" ngModel required #position="ngModel">
+          <option value="" disabled selected>Selecione a posição</option>
+          <option *ngFor="let item of positions | async" [ngValue]="item.name">{{item.name}}</option>
         </select>
-        <div class="form-control-feedback" *ngIf="!name.valid && name.touched">
-            Campo "Posição" é obrigatório.
-          </div>
+        <div class="form-control-feedback" *ngIf="!position.valid && position.touched">
+          Campo "Posição" é obrigatório.
+        </div>
       </div>
     </div>
 
@@ -51,9 +48,9 @@
       <div class="col-sm-4">
         <button routerLink="/players" id="btncancel" type="submit" class="btn btn-danger">Cancelar</button>
       </div>
-      
+
       <div class="col-sm-4">
-        <button  id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
+        <button id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
       </div>
     </div>
   </form>

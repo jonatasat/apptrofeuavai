@@ -19,9 +19,9 @@
   </thead>
   <tbody id="rows">
     <tr *ngFor="let item of matches | async">
-      <td>{{item.team}}</td>
+      <td>{{item.team.name}}</td>
       <td>{{item.score}}</td>
-      <td>{{item.opponent}}</td>
+      <td>{{item.opponent.name}}</td>
       <td>{{item.stadium}}</td>
       <td>{{item.championship}}</td>
       <td>{{item.round}}</td>

@@ -14,7 +14,8 @@
     <div class="form-group row has-danger" [class.has-danger]="!name.valid && name.touched" [class.has-feedback]="!name.valid && name.touched">
       <label for="inputname" class="col-sm-2 col-form-label">Nome*:</label>
       <div class="col-sm-10">
-        <input type="text" name="name" class="form-control" id="inputname" placeholder="Nome" required ngModel="{{(player | async)?.name}}" #name="ngModel" >
+        <input type="text" name="name" class="form-control" id="inputname" placeholder="Nome" required ngModel="{{(player | async)?.name}}"
+          #name="ngModel">
         <div class="form-control-feedback" *ngIf="!name.valid && name.touched">
           Campo "Nome" é obrigatório.
         </div>
@@ -24,14 +25,11 @@
     <div class="form-group row has-danger" [class.has-danger]="!position.valid && position.touched" [class.has-feedback]="!position.valid && position.touched">
       <label for="inputposition" class="col-sm-2 col-form-label">Posição*:</label>
       <div class="col-sm-10">
-        <select class="form-control input-sm" name="position" id="selectposition" required ngModel="{{(player | async)?.position}}" #position="ngModel">
-          <option selected>Selecione a posição</option>
-          <option value="Atacante">Atacante</option>
-          <option value="Meia">Meia</option>
-          <option value="Goleiro">Goleiro</option>
-          <option value="Zagueiro">Zagueiro</option>
+        <select name="position" class="form-control input-sm" id="selectposition" ngModel required #position="ngModel">
+          <option value="" disabled selected>Selecione a posição</option>
+          <option *ngFor="let item of positions | async" [ngValue]="item.name">{{item.name}}</option>
         </select>
-        <div class="form-control-feedback" *ngIf="!name.valid && name.touched">
+        <div class="form-control-feedback" *ngIf="!position.valid && position.touched">
           Campo "Posição" é obrigatório.
         </div>
       </div>
