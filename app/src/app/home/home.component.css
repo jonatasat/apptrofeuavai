@@ -59,6 +59,14 @@
     width: 80px;
 }
 
+#coroagoleiro{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmgoleiro{
     position: absolute;
     bottom: 0px;
@@ -85,6 +93,8 @@
 
 
 
+
+
 #divzagueiroesquerdo{
     position: absolute;
     left: 190px;
@@ -98,6 +108,14 @@
     left: 30px;
     height: 80px;
     width: 80px;
+}
+
+#coroazagueiroesquerdo{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
 }
 
 #nmzagueiroesquerdo{
@@ -144,6 +162,14 @@
     width: 80px;
 }
 
+#coroazagueirodireito{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmzagueirodireito{
     position: absolute;
     bottom: 0px;
@@ -186,6 +212,14 @@
     left: 30px;
     height: 80px;
     width: 80px;
+}
+
+#coroalateralesquerdo{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
 }
 
 #nmlateralesquerdo{
@@ -233,6 +267,14 @@
     width: 80px;
 }
 
+#coroalateraldireito{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmlateraldireito{
     position: absolute;
     bottom: 0px;
@@ -276,6 +318,14 @@
     width: 80px;
 }
 
+#coroavolanteesquerdo{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmvolanteesquerdo{
     position: absolute;
     bottom: 0px;
@@ -317,6 +367,14 @@
     left: 30px;
     height: 80px;
     width: 80px;
+}
+
+#coroavolantedireito{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
 }
 
 #nmvolantedireito{
@@ -364,6 +422,14 @@
     width: 80px;
 }
 
+#coroapontaesquerdo{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmpontaesquerdo{
     position: absolute;
     bottom: 0px;
@@ -409,6 +475,14 @@
     width: 80px;
 }
 
+#coroapontadireito{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmpontadireito{
     position: absolute;
     bottom: 0px;
@@ -450,6 +524,14 @@
     left: 30px;
     height: 80px;
     width: 80px;
+}
+
+#coroameiacentral{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
 }
 
 #nmmeiacentral{
@@ -494,6 +576,14 @@
     width: 80px;
 }
 
+#coroacentroavante{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
 #nmcentroavante{
     position: absolute;
     bottom: 0px;
@@ -534,6 +624,14 @@
     left: 30px;
     height: 60px;
     width: 60px;
+}
+
+#coroareserva1{
+    position: absolute;
+    bottom: 20px;
+    left: -5px;
+    height: 40px;
+    width: 40px;
 }
 
 #nmreserva1{
@@ -582,6 +680,14 @@
     width: 60px;
 }
 
+#coroareserva2{
+    position: absolute;
+    bottom: 20px;
+    left: -5px;
+    height: 40px;
+    width: 40px;
+}
+
 #nmreserva2{
     position: absolute;
     bottom: 0px;
@@ -628,6 +734,14 @@
     left: 30px;
     height: 60px;
     width: 60px;
+}
+
+#coroareserva3{
+    position: absolute;
+    bottom: 20px;
+    left: -5px;
+    height: 40px;
+    width: 40px;
 }
 
 #nmreserva3{
