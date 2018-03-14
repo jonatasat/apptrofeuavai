@@ -71,6 +71,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -97,7 +99,7 @@
 
 #divzagueiroesquerdo{
     position: absolute;
-    left: 190px;
+    left: 170px;
     top: 170px;
     height: 100px;
     width: 130px;
@@ -122,6 +124,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -148,7 +152,7 @@
 
 #divzagueirodireito{
     position: absolute;
-    left: 190px;
+    left: 170px;
     top: 300px;
     height: 100px;
     width: 130px;
@@ -174,6 +178,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -226,6 +232,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -279,6 +287,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -330,6 +340,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -381,6 +393,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -434,6 +448,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -487,6 +503,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -513,7 +531,7 @@
 
 #divmeiacentral{
     position: absolute;
-    left: 570px;
+    left: 550px;
     top: 220px;
     height: 100px;
     width: 130px;
@@ -538,6 +556,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -588,6 +608,8 @@
     position: absolute;
     bottom: 0px;
     left: 40px;
+    height: 20px;
+    width: 80px;
     font-size: 14px;
     text-align: center;
     color: white;
@@ -638,6 +660,8 @@
     position: absolute;
     bottom: 0px;
     left: 30px;
+    height: 15px;
+    width: 70px;
     font-size: 10px;
     text-align: center;
     color: white;
@@ -692,6 +716,8 @@
     position: absolute;
     bottom: 0px;
     left: 30px;
+    height: 15px;
+    width: 70px;
     font-size: 10px;
     text-align: center;
     color: white;
@@ -748,6 +774,8 @@
     position: absolute;
     bottom: 0px;
     left: 30px;
+    height: 15px;
+    width: 70px;
     font-size: 10px;
     text-align: center;
     color: white;
