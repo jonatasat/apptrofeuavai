@@ -18,44 +18,28 @@
     </tr>
   </thead>
   <tbody id="rows">
+    <span id="zeropartidas" *ngIf="(matches | async)?.length==0">
+      <b>Nenhuma partida encontrada.</b>
+    </span>
     <tr *ngFor="let item of matches | async">
-      <td>{{item.team.name}}</td>
-      <td>{{item.score}}</td>
-      <td>{{item.opponent.name}}</td>
-      <td>{{item.stadium}}</td>
-      <td>{{item.championship}}</td>
-      <td>{{item.round}}</td>
-      <td>
+      <td id="td1">{{item.team.name}}</td>
+      <td id="td2">{{item.score}}</td>
+      <td id="td3">{{item.opponent.name}}</td>
+      <td id="td4">{{item.stadium}}</td>
+      <td id="td5">{{item.championship}}</td>
+      <td id="td6">{{item.round}}</td>
+      <td id="td7">
         <div id="buttonbar">
-          <i id="pencilicon" [routerLink]="['editmatches', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Partida"></i>
-          <i id="usersicon" [routerLink]="['editplayersmatch', item.key]" class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogadores da Partida"></i>
+          <i id="pencilicon" [routerLink]="['editmatches', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip"
+            title="Editar Partida"></i>
+          <i id="usersicon" [routerLink]="['editplayersmatch', item.key]" class="fa fa-users fa-lg" aria-hidden="true" data-toggle="tooltip"
+            title="Editar Jogadores da Partida"></i>
           <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Partida" (click)="deleteItem(item)"></i>
         </div>
       </td>
     </tr>
-     
+
 </table>
-
-<nav id="pagination" aria-label="Page navigation example">
-  <ul class="pagination justify-content-center" *ngIf="pager.pages && pager.pages.length" >
-      <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
-        <a (click)="setPage(1)" class="page-link"><<</a>
-      </li>
-      <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
-        <a (click)="setPage(pager.currentPage - 1)" class="page-link">Anterior</a>
-      </li>
-      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
-        <a (click)="setPage(page)" class="page-link">{{page}}</a>
-      </li>
-      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
-        <a (click)="setPage(pager.currentPage + 1)" class="page-link">Próximo</a>
-      </li>
-      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
-        <a (click)="setPage(pager.totalPages)" class="page-link">>></a>
-      </li>
-    </ul>
-</nav>
-
 
 <div>
   <button id="btnadd" routerLink='/addmatch' class="btn btn-primary btn-lg" data-toggle="tooltip" title="Adicionar Partida">

@@ -61,3 +61,32 @@
 a {
     cursor: pointer;
 }
+
+
+tbody {
+    margin-top: 3px;
+    position: fixed;
+    overflow-y: scroll;
+    height: 400px;
+    width: 1093px;
+}
+
+#td2{
+    padding-left: 230px;
+}
+
+#td3{
+    padding-left: 230px;
+}
+
+#td4{
+    padding-left: 215px;
+}
+
+#zeroplayers{
+    text-align: center;
+    font-size: 12pt;
+    margin-top: 5px;
+    margin-left: 400px;
+    color: gray;
+}

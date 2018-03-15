@@ -7,6 +7,7 @@ import 'firebase/storage';
 import * as _ from 'underscore';
 import { Observable } from 'rxjs/Observable';
 import { FirebaseApp } from 'angularfire2';
+import { database } from 'firebase/app';
 
 @Component({
   selector: 'app-players',
@@ -19,7 +20,12 @@ export class PlayersComponent implements OnInit {
   pager: any = {};
   pagedItems: any[];
   players: Observable<any[]>;
+  playersList: any[] = [];
   storageRef: any;
+  num: any;
+  foto: any;
+  nome: any;
+  posicao: any;
 
   constructor(private paginationService: PaginationService, private db: AngularFireDatabase, private firebase: FirebaseApp) { }
 
@@ -29,9 +35,24 @@ export class PlayersComponent implements OnInit {
     this.players = this.db.list('players').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
+
+    this.firebase.database().ref("players/").once('value', data => this.getPlayers(data), this.errData);
+
     this.allItems.push(this.players);
     this.setPage(1);
+
   }
+
+  getPlayers(data){
+    this.nome = data.val().name;
+    this.foto = data.val().photo;
+    this.posicao = data.val().position;
+  }
+
+  errData(){
+
+  }
+
 
   setPage(page: number) {
     if (page < 1 || page > this.pager.totalPages) {
