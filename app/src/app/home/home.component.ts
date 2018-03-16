@@ -88,6 +88,7 @@ export class HomeComponent implements OnInit {
     this.showAverage = true;
   }
 
+
   getMatch(data) {
     this.opponent = data.val().opponent;
     this.team = data.val().team;

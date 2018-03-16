@@ -5,9 +5,6 @@
 </ol>
 <div class="col-sm-2">
     <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <span id="titleconfig">
-            <b>Configurações do campo:</b>
-        </span>
         <select name="match" class="form-control input-sm" id="selectmatches" ngModel required #match="ngModel">
             <option value="" disabled selected>Selecione a partida</option>
             <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team.name}} x {{item.opponent.name}}</option>

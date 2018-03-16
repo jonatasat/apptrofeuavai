@@ -56,13 +56,13 @@ a {
 tbody {
     margin-top: 3px;
     position: fixed;
-    overflow-y: scroll;
-    height: 400px;
-    width: 1123px;
+    overflow-y: auto;
+    height: 380px;
+    width: 100%;
 }
 
 #td2{
-    padding-left: 20px;
+    padding-left: 80px;
 }
 
 #td3{
@@ -78,7 +78,7 @@ tbody {
 }
 
 #td6{
-    padding-left: 50px;
+    padding-left: 80px;
 }
 
 #td7{
@@ -92,4 +92,11 @@ tbody {
     margin-top: 5px;
     margin-left: 400px;
     color: gray;
+}
+
+#qtdregistros{
+    position: absolute;
+    width: 200px;
+    bottom: 10px;
+    left: 45%;
 }

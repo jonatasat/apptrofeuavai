@@ -32,7 +32,7 @@
     cursor: pointer;
     border-radius: 50%;
     border: solid 0px #888888;
-    box-shadow: 1px 1px  #888888;
+    box-shadow: 0.5px 0.5px  #888888;
 }
 
 #breadcrumb{
@@ -63,13 +63,6 @@ a {
 }
 
 
-tbody {
-    margin-top: 3px;
-    position: fixed;
-    overflow-y: scroll;
-    height: 400px;
-    width: 1093px;
-}
 
 #td2{
     padding-left: 230px;
@@ -89,4 +82,20 @@ tbody {
     margin-top: 5px;
     margin-left: 400px;
     color: gray;
+}
+
+
+tbody{
+    position: fixed;
+    overflow-y: auto;
+    width: 100%;
+    height:380px;
+    margin-top: 3px;
+}
+
+#qtdregistros{
+    position: absolute;
+    width: 200px;
+    bottom: 10px;
+    left: 45%;
 }

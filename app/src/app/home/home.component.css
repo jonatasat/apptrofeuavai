@@ -1,11 +1,3 @@
-#titleconfig{
-    position: absolute;
-    left: 10px;
-    top: 20px;
-    text-align: center;
-    font-size: 12pt;
-}
-
 #breadcrumb{
     position: absolute;
     right: 7px;
@@ -23,7 +15,7 @@
 #selectmatches{
     position: absolute;
     left: 10px;
-    top: 70px;
+    top: 50px;
 }
 
 .container{

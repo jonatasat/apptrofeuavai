@@ -5,7 +5,7 @@
   <li class="breadcrumb-item">
     <a routerLink="/matches">Partidas</a>
   </li>
-  <li class="breadcrumb-item active">Editar Pessoas da Partida</li>
+  <li class="breadcrumb-item active">Editar Jogadores da Partida</li>
 </ol>
 
 <div id="divtable" class="container-fluid">
@@ -42,15 +42,22 @@
         </tr>
       </tbody>
     </table>
+    
   </div>
+</div>
+
+<div id="qtdregistros" *ngIf="(playersMatch | async)?.length>0">
+  <span>
+    Encontrado {{(playersMatch | async)?.length}} registro(s).
+  </span>
 </div>
 
 <div id="divform">
   <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="form-group row">
-      <label for="inputplayers" class="col-sm-2 col-form-label">Jogadores*:</label>
+      <label for="inputplayers" class="col-sm-2 col-form-label">Jogador*: </label>
       <div class="col-sm-8">
-        <select name="player" class="form-control input-sm" id="selectplayer" ngModel #player="ngModel">
+        <select name="player" class="form-control input-sm" id="selectplayer" ngModel required #player="ngModel">
           <option value="" disabled selected>Selecione o jogador</option>
           <option *ngFor="let item of players | async" [ngValue]="item">{{item.name}}</option>
         </select>

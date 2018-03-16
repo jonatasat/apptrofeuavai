@@ -89,7 +89,7 @@
     position: relative;
     margin-top: 80px;
     margin-left: 60%;
-    width: 50%;
+    width: 70%;
     background: gray;
 }
 
@@ -98,13 +98,20 @@
 }
 
 #td3{
-    padding-left: 80px;
+    padding-left: 150px;
 }
 
 tbody {
     margin-top: 3px;
     position: fixed;
-    overflow-y: scroll;
-    height: 400px;
-    width: 550px;
+    overflow-y: auto;
+    height: 380px;
+    width: 100%;
+}
+
+#qtdregistros{
+    position: absolute;
+    width: 200px;
+    bottom: 10px;
+    left: 15%;
 }
