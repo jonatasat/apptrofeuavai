@@ -66,7 +66,8 @@ import { EditRefereesComponent } from './referees/edit-referees/edit-referees.co
     AddCoachesComponent,
     EditCoachesComponent,
     AddRefereesComponent,
-    EditRefereesComponent,
+    EditRefereesComponent
+    
   ],
 
   imports: [
@@ -75,7 +76,7 @@ import { EditRefereesComponent } from './referees/edit-referees/edit-referees.co
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(FirebaseConfig),
-    AngularFirestoreModule,
+    AngularFirestoreModule
   ],
   providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService, AngularFireDatabase],
   bootstrap: [AppComponent]

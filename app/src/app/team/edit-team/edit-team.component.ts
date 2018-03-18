@@ -28,12 +28,14 @@ export class EditTeamComponent implements OnInit {
   showNew: any;
   storageRef: any;
   team: any;
+  filenotempty: any;
 
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {
     console.log(this.route.snapshot.params['id']);
     this.showOld = true;
     this.showNew = false;
+    
    }
 
   ngOnInit() {
@@ -41,6 +43,7 @@ export class EditTeamComponent implements OnInit {
     this.team = this.db.object('teams/'+ this.route.snapshot.params['id']).valueChanges();
     this.showOld = true;
     this.showNew = false;
+    this.filenotempty = false;
   }
 
   fullStore(photo){
@@ -102,6 +105,7 @@ export class EditTeamComponent implements OnInit {
     });
     this.showOld = false;
     this.showNew = true;
+    this.filenotempty = true;
   }
 
 }

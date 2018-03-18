@@ -10,14 +10,20 @@ import { Usuario } from './usuario';
 export class LoginComponent implements OnInit {
 
   private usuario: Usuario = new Usuario;
+  failMessage: any;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) { 
+    this.failMessage = false;
+  }
 
   ngOnInit() {
   }
 
   fazerLogin(){
     this.authService.fazerLogin(this.usuario);
+    if(!this.authService.fazerLogin(this.usuario)){
+      this.failMessage = true;
+    }
   }
 
 }

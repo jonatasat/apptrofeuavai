@@ -25,8 +25,8 @@
     <div class="form-group row has-danger" [class.has-danger]="!position.valid && position.touched" [class.has-feedback]="!position.valid && position.touched">
       <label for="inputposition" class="col-sm-2 col-form-label">Posição*:</label>
       <div class="col-sm-10">
-        <select name="position" class="form-control input-sm" id="selectposition" ngModel required #position="ngModel">
-          <option value="" disabled selected>Selecione a posição</option>
+        <select name="position" class="form-control input-sm" id="selectposition" ngModel #position="ngModel">
+          <option  value="" disabled selected>{{(player | async)?.position}}</option>
           <option *ngFor="let item of positions | async" [ngValue]="item.name">{{item.name}}</option>
         </select>
         <div class="form-control-feedback" *ngIf="!position.valid && position.touched">

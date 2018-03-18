@@ -43,6 +43,10 @@
     margin-left: 380px;
 }
 
+#btnsave[disabled]{
+    cursor: not-allowed;
+}
+
 .col2{
     margin-top: 20px;
 }
