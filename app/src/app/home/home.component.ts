@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
   listGradesSubstitutes: any[] = [];
   showAverage = false;
   matchesPlayers: any[] = [];
+  matchStrategy:any;
 
 
   ngOnInit() {
@@ -50,6 +51,9 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(form) {
+    console.log(form.value.strategy);
+    this.matchStrategy = form.value.strategy;
+
     let id = form.value.match.key;
 
     this.storageRef = this.firebase.storage().ref();

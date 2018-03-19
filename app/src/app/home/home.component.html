@@ -9,6 +9,12 @@
             <option value="" disabled selected>Selecione a partida</option>
             <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team.name}} x {{item.opponent.name}}</option>
         </select>
+        <select name="strategy" class="form-control input-sm" id="selectstrategy" ngModel required #strategy="ngModel">
+            <option value="" disabled selected>Selecione a estratégia</option>
+            <option value="4-2-3-1">4-2-3-1</option>
+            <option value="4-1-4-1">4-1-4-1</option>
+            <option value="4-1-2-1-2">4-1-2-1-2</option>
+        </select>
         <div class="col-sm-4">
             <button id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Enviar</button>
         </div>
@@ -127,6 +133,7 @@
                 <b>{{item.grade}}</b>
             </span>
         </div>
+        
         <div id="divvolanteesquerdo">
             <img *ngIf='item.position=="Volante (Esquerdo)"' id="volanteesquerdo" src="{{item.photo}}" alt="volanteesquerdo">
             <img *ngIf='item.position=="Volante (Esquerdo)" && item.bestplayer==true' id="coroavolanteesquerdo" src="../../assets/coroa.png" alt="coroa">
@@ -149,6 +156,30 @@
                 <b>{{item.grade}}</b>
             </span>
         </div>
+
+        <div id="divvolantecentral" *ngIf="strategy=='4-1-4-1' || strategy=='4-1-2-1-2'">
+            <img *ngIf='item.position=="Volante (Central)"' id="volantecentral" src="{{item.photo}}" alt="volantecentral">
+            <img *ngIf='item.position=="Volante (Central)" && item.bestplayer==true' id="coroavolantecentral" src="../../assets/coroa.png" alt="coroa">
+            <span *ngIf='item.position=="Volante (Central)"' id="nmvolantecentral">
+                <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Central)" && item.grade <= "0.9"' id="gradevolantecentral" style="background-color:#aa0808">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Central)" && item.grade >= "1" && item.grade <= "4.9"' id="gradevolantecentral" style="background-color:#fb3f3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Central)" && item.grade >= "5" && item.grade <= "5.9"' id="gradevolantecentral" style="background-color:#fb9c3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Central)" && item.grade >= "6" && item.grade <= "6.9"' id="gradevolantecentral" style="background-color:#ecfb3f">
+                <b>{{item.grade}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Central)" && item.grade >= "7"' id="gradevolantecentral" style="background-color:#2ded14">
+                <b>{{item.grade}}</b>
+            </span>
+        </div>
+
         <div id="divvolantedireito">
             <img *ngIf='item.position=="Volante (Direito)"' id="volantedireito" src="{{item.photo}}" alt="volantedireito">
             <img *ngIf='item.position=="Volante (Direito)" && item.bestplayer==true' id="coroavolantedireito" src="../../assets/coroa.png" alt="coroa">

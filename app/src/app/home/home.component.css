@@ -9,13 +9,19 @@
 #btnsave{
     position: absolute;
     left: 150px;
-    top: 120px;
+    top: 170px;
 }
 
 #selectmatches{
     position: absolute;
     left: 10px;
     top: 50px;
+}
+
+#selectstrategy{
+    position: absolute;
+    left: 10px;
+    top: 100px;
 }
 
 .container{
@@ -362,6 +368,58 @@
 
 
 
+#divvolantecentral{
+    position: absolute;
+    left: 300px;
+    top: 230px;
+    height: 100px;
+    width: 130px;
+}
+
+#volantecentral{
+    position: absolute;
+    left: 30px;
+    height: 80px;
+    width: 80px;
+}
+
+#coroavolantecentral{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
+#nmvolantecentral{
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    height: 20px;
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradevolantecentral{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
 #divvolantedireito{
     position: absolute;
     left: 410px;
@@ -528,7 +586,7 @@
 #divmeiacentral{
     position: absolute;
     left: 550px;
-    top: 220px;
+    top: 230px;
     height: 100px;
     width: 130px;
 }
