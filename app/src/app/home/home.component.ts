@@ -75,17 +75,28 @@ export class HomeComponent implements OnInit {
 
 
     let sum = 0;
+    let countZero = 0;
     this.listGrades.map(function (value, index) {
+      if(value==""){
+        console.log("value 0");
+        value = 0;
+        countZero = countZero + 1;
+      }
       sum = sum + parseFloat(value);
     });
 
     let sumSubstitutes = 0;
     this.listGradesSubstitutes.map(function (value, index) {
+      if(value==""){
+        console.log("value 0");
+        value = 0;
+        countZero = countZero + 1;
+      }
       sumSubstitutes = sumSubstitutes + parseFloat(value);
     });
 
     let soma = sum + sumSubstitutes;
-    let somaTamanhos = this.listGrades.length + this.listGradesSubstitutes.length;
+    let somaTamanhos = this.listGrades.length + this.listGradesSubstitutes.length - countZero;
     let total = soma / somaTamanhos;
 
     this.average = total.toFixed(2);
