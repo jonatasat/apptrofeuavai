@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   listGradesSubstitutes: any[] = [];
   showAverage = false;
   matchesPlayers: any[] = [];
-  matchStrategy:any;
+  matchStrategy: any;
 
 
   ngOnInit() {
@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
   onSubmit(form) {
     console.log(form.value.strategy);
     this.matchStrategy = form.value.strategy;
+    console.log(this.matchStrategy);
 
     let id = form.value.match.key;
 

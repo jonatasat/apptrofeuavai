@@ -42,7 +42,7 @@
 }
 
 
-
+/* ############# Goleiro ############# */
 
 
 #divgoleiro{
@@ -95,7 +95,7 @@
 
 
 
-
+/* ############# Zagueiro Esquerdo ############# */
 
 
 
@@ -148,7 +148,7 @@
 
 
 
-
+/* ############# Zagueiro Direito ############# */
 
 
 
@@ -203,7 +203,7 @@
 
 
 
-
+/* ############# Lateral Esquerdo ############# */
 
 
 
@@ -257,7 +257,7 @@
 
 
 
-
+/* ############# Zagueiro Direito ############# */
 
 
 
@@ -312,7 +312,7 @@
 
 
 
-
+/* ############# Volante Esquerdo ############# */
 
 
 #divvolanteesquerdo{
@@ -365,13 +365,14 @@
 
 
 
+/* ############# Volante Central ############# */
 
 
 
 #divvolantecentral{
     position: absolute;
-    left: 300px;
-    top: 230px;
+    left: 295px;
+    top: 225px;
     height: 100px;
     width: 130px;
 }
@@ -417,6 +418,8 @@
 }
 
 
+
+/* ############# Volante Direito ############# */
 
 
 
@@ -470,8 +473,7 @@
 
 
 
-
-
+/* ############# Ponta Esquerdo ############# */
 
 
 
@@ -525,8 +527,7 @@
 
 
 
-
-
+/* ############# Ponta Direito ############# */
 
 
 
@@ -580,13 +581,66 @@
 
 
 
+/* ############# Meia Esquerdo #############              (Precisa arrumar)*/
 
 
+
+#divmeiaesquerdo{
+    position: absolute;
+    left: 540px;
+    top: 175px;
+    height: 100px;
+    width: 130px;
+}
+
+#meiaesquerdo{
+    position: absolute;
+    left: 30px;
+    height: 80px;
+    width: 80px;
+}
+
+#coroameiaesquerdo{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
+#nmmeiaesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    height: 20px;
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#grademeiaesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+/* ############# Meia Central ############# */
 
 #divmeiacentral{
     position: absolute;
-    left: 550px;
-    top: 230px;
+    left: 545px;
+    top: 225px;
     height: 100px;
     width: 130px;
 }
@@ -631,6 +685,62 @@
     text-shadow: 1px 1px 1px black;
 }
 
+
+
+/* ############# Meia Direito #############                  (Precisa arrumar)*/
+
+
+
+#divmeiadireito{
+    position: absolute;
+    left: 540px;
+    top: 280px;
+    height: 100px;
+    width: 130px;
+}
+
+#meiadireito{
+    position: absolute;
+    left: 30px;
+    height: 80px;
+    width: 80px;
+}
+
+#coroameiadireito{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
+#nmmeiadireito{
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    height: 20px;
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#grademeiadireito{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+/* ############# Centroavante #############*/
 
 
 
@@ -685,6 +795,116 @@
 
 
 
+/* ############# Atacante Esquerdo #############              (Precisa arrumar)*/
+
+
+
+#divatacanteesquerdo{
+    position: absolute;
+    left: 720px;
+    top: 170px;
+    height: 100px;
+    width: 130px;
+}
+
+#atacanteesquerdo{
+    position: absolute;
+    left: 30px;
+    height: 80px;
+    width: 80px;
+}
+
+#coroaatacanteesquerdo{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
+#nmatacanteesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    height: 20px;
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradeatacanteesquerdo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+/* ############# Atacante Direito #############              (Precisa arrumar)*/
+
+
+
+#divatacantedireito{
+    position: absolute;
+    left: 720px;
+    top: 300px;
+    height: 100px;
+    width: 130px;
+}
+
+#atacantedireito{
+    position: absolute;
+    left: 30px;
+    height: 80px;
+    width: 80px;
+}
+
+#coroaatacantedireito{
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    height: 60px;
+    width: 60px;
+}
+
+#nmatacantedireito{
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    height: 20px;
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: navy;
+}
+
+#gradeatacantedireito{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+
+/* ############# Reserva 1 ############# */
+
 
 
 #divreserva1{
@@ -737,9 +957,7 @@
 
 
 
-
-
-
+/* ############# Reserva 2 ############# */
 
 
 
@@ -793,10 +1011,7 @@
 
 
 
-
-
-
-
+/* ############# Reserva 3 ############# */
 
 
 
