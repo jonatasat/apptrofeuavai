@@ -7,7 +7,7 @@
     <form id="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
         <select name="match" class="form-control input-sm" id="selectmatches" ngModel required #match="ngModel">
             <option value="" disabled selected>Selecione a partida</option>
-            <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team.name}} x {{item.opponent.name}}</option>
+            <option *ngFor="let item of matches | async" [ngValue]="item">{{item.team.name}} x {{item.opponent.name}} - ({{item.date}})</option>
         </select>
         <select name="strategy" class="form-control input-sm" id="selectstrategy" ngModel required #strategy="ngModel">
             <option value="" disabled selected>Selecione a estratégia</option>
@@ -489,7 +489,7 @@
             <b>Média da Equipe</b>
         </span>
     </div>
-    <img id="substituicao" *ngIf="showAverage" src="../../assets/substituicao.png" alt="substituicao">
+    <!-- <img id="substituicao" *ngIf="showAverage" src="../../assets/substituicao.png" alt="substituicao"> -->
     <div id="team" *ngIf="showAverage">
         <img id="teamphoto" src="{{team.photo}}" alt="teamphoto">
     </div>

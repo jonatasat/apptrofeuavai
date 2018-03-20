@@ -119,3 +119,31 @@ tbody {
     bottom: 10px;
     left: 15%;
 }
+
+#addDone{
+    color: green;
+    font-size: 12px;
+    background: white;
+    margin-left: 110px;
+ }
+
+ #addFail{
+    color: red;
+    font-size: 12px;
+    background: white;
+    margin-left: 110px;
+ }
+
+ #removeDone{
+    color: green;
+    font-size: 12px;
+    background: white;
+    margin-left: 110px;
+ }
+
+ #removeFail{
+    color: red;
+    font-size: 12px;
+    background: white;
+    margin-left: 110px;
+ }

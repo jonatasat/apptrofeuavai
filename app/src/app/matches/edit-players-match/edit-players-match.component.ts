@@ -10,6 +10,7 @@ import { PaginationService } from '../../pagination.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { FirebaseApp } from 'angularfire2';
 import 'firebase/storage';
+import { delay } from 'rxjs/operator/delay';
 
 
 @Component({
@@ -28,6 +29,11 @@ export class EditPlayersMatchComponent implements OnInit {
   allItems: any[] = [];
   pager: any = {};
   pagedItems: any[];
+  addDone: any;
+  addFail: any;
+  removeDone: any;
+  removeFail: any;
+
 
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private router: Router, private paginationService: PaginationService, private firebase: FirebaseApp) {
     console.log(this.route.snapshot.params['id']);
@@ -55,7 +61,10 @@ export class EditPlayersMatchComponent implements OnInit {
     this.allItems.push(this.substitutesMatch);
     this.setPage(1);
 
-    
+    this.addDone = false;
+    this.addFail = false;
+    this.removeDone = false;
+    this.removeFail = false;
   }
 
 
@@ -84,7 +93,7 @@ export class EditPlayersMatchComponent implements OnInit {
         fileName: nomeFile,
         grade: nota,
         bestplayer: true
-      });
+      }).then(e => this.showMessages("addDone")).catch(c => this.addFail = true);
     }else{
       this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + key).set({
         name: nome,
@@ -92,8 +101,10 @@ export class EditPlayersMatchComponent implements OnInit {
         photo: url,
         fileName: nomeFile,
         grade: nota
-      });
+      }).then(e => this.showMessages("addDone")).catch(c => this.addFail = true);
     }
+
+    form.reset();
     
 
   }
@@ -115,7 +126,7 @@ export class EditPlayersMatchComponent implements OnInit {
         fileName: nomeFile,
         grade: nota,
         bestplayer: true
-      });
+      }).then(e => this.showMessages("addDone")).catch(c => this.showMessages("addFail"));
     }else{
       this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + key).set({
         name: nome,
@@ -123,16 +134,47 @@ export class EditPlayersMatchComponent implements OnInit {
         photo: url,
         fileName: nomeFile,
         grade: nota
-      });
+      }).then(e => this.showMessages("addDone")).catch(c => this.showMessages("addFail"));
     }
+
+    form.reset();
 
   }
 
   deleteItem(item) {
     if (item.position == 'reserva') {
-      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + item.key).remove();
+      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/substitutes/' + item.key).remove().then(e => this.showMessages("removeDone")).catch(c => this.showMessages("removeFail"));
     } else {
-      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + item.key).remove();
+      this.db.database.ref('matches/' + this.route.snapshot.params['id'] + '/players/' + item.key).remove().then(e => this.showMessages("removeDone")).catch(c => this.showMessages("removeFail"));
+    }
+
+  }
+
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async showMessages(msg){
+    if(msg=="addDone"){
+      this.addDone = true;
+      await this.delay(3000);
+      this.addDone = false;
+    }
+    if(msg=="addFail"){
+      this.addFail = true;
+      await this.delay(3000);
+      this.addFail = false;
+    }
+
+    if(msg=="removeDone"){
+      this.removeDone = true;
+      await this.delay(3000);
+      this.removeDone = false;
+    }
+    if(msg=="removeFail"){
+      this.removeFail = true;
+      await this.delay(3000);
+      this.removeFail = false;
     }
   }
 

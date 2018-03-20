@@ -42,7 +42,7 @@
         </tr>
       </tbody>
     </table>
-    
+
   </div>
 </div>
 
@@ -59,7 +59,7 @@
       <div class="col-sm-8">
         <select name="player" class="form-control input-sm" id="selectplayer" ngModel required #player="ngModel">
           <option value="" disabled selected>Selecione o jogador</option>
-          <option *ngFor="let item of players | async" [ngValue]="item">{{item.name}}</option>
+          <option *ngFor="let item of players | async" [ngValue]="item">{{item.name}} - {{item.position}}</option>
         </select>
       </div>
     </div>
@@ -89,6 +89,24 @@
       <div class="col-sm-4">
         <button id="btnsave" type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
       </div>
+
+    </div>
+    <div class="form-group row">
+      <div id="addDone" *ngIf="addDone">
+        <strong>OK</strong> Jogador inserido !
+      </div>
+      <div id="addFail" *ngIf="addFail">
+          <strong>Falhou</strong> Jogador não inserido !
+      </div>
+
+      <div id="removeDone" *ngIf="removeDone">
+          <strong>OK</strong> Jogador removido !
+        </div>
+        <div id="removeFail" *ngIf="removeFail">
+            <strong>Falhou</strong> Jogador não removido !
+        </div>
     </div>
   </form>
+
+
 </div>
