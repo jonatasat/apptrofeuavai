@@ -15,7 +15,7 @@
       <label for="inputnametime" class="col-sm-2 col-form-label">Time*:</label>
       <div class="col-sm-10">
         <select name="team" class="form-control input-sm" id="inputtime" placeholder="Time" ngModel #team="ngModel">
-            <option value="" disabled selected>Selecione o time</option>
+          <option value="" disabled selected>Selecione o time</option>
           <option *ngFor="let item of teams | async" [ngValue]="item">{{item.name}}</option>
         </select>
       </div>
@@ -25,7 +25,7 @@
       <label for="inputnameopponent" class="col-sm-2 col-form-label">Adversário*:</label>
       <div class="col-sm-10">
         <select name="opponent" class="form-control input-sm" id="inputtime" placeholder="Adversário" ngModel #opponent="ngModel">
-            <option value="" disabled selected>Selecione o adversário</option>
+          <option value="" disabled selected>Selecione o adversário</option>
           <option *ngFor="let item of teams | async" [ngValue]="item">{{item.name}}</option>
         </select>
       </div>
@@ -79,6 +79,18 @@
         <div class="form-control-feedback" *ngIf="!date.valid && date.touched">
           Campo "Data" é obrigatório.
         </div>
+      </div>
+    </div>
+
+    <div class="form-group row has-danger" [class.has-danger]="!strategy.valid && strategy.touched" [class.has-feedback]="!strategy.valid && strategy.touched">
+      <label for="inputstrategy" class="col-sm-2 col-form-label">Estratégia*:</label>
+      <div class="col-sm-10">
+        <select name="strategy" class="form-control input-sm" id="inputstrategy" placeholder="strategy" required ngModel #strategy="ngModel">
+          <option value="" disabled selected>Selecione a estratégia</option>
+          <option value="4-2-3-1">4-2-3-1</option>
+          <option value="4-1-4-1">4-1-4-1</option>
+          <option value="4-1-2-1-2">4-1-2-1-2</option>
+        </select>
       </div>
     </div>
 

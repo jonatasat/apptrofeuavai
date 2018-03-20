@@ -24,8 +24,8 @@
         </span>
         <tr *ngFor="let item of playersMatch | async">
           <td id="td1">{{item.name}}</td>
-          <td id="td2">{{item.grade}}</td>
-          <td id="td2" *ngIf="item.grade==''">S/N</td>
+          <td id="td2" *ngIf="item.grade!=''">{{item.grade}}</td>
+          <td id="td4" *ngIf="item.grade==''">S/N</td>
           <td id="td3">
             <div id="buttonbar">
               <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>
@@ -34,8 +34,8 @@
         </tr>
         <tr *ngFor="let item of substitutesMatch | async">
           <td id="td1">{{item.name}} (Reserva)</td>
-          <td id="td2">{{item.grade}}</td>
-          <td id="td2" *ngIf="item.grade==''">S/N</td>
+          <td id="td2" *ngIf="item.grade!=''">{{item.grade}}</td>
+          <td id="td4" *ngIf="item.grade==''">S/N</td>
           <td id="td3">
             <div id="buttonbar">
               <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Pessoa" (click)="deleteItem(item)"></i>

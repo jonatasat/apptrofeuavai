@@ -29,6 +29,9 @@
             <span *ngIf='item.position=="Goleiro"' id="nmgoleiro">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Goleiro" && item.grade == ""' id="gradegoleiro" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Goleiro" && item.grade <= "0.9"' id="gradegoleiro" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -51,6 +54,9 @@
                 alt="coroa">
             <span *ngIf='item.position=="Zagueiro (Esquerdo)"' id="nmzagueiroesquerdo">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade == ""' id="gradezagueiroesquerdo" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='item.position=="Zagueiro (Esquerdo)" && item.grade <= "0.9"' id="gradezagueiroesquerdo" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
@@ -78,6 +84,9 @@
             <span *ngIf='item.position=="Zagueiro (Direito)"' id="nmzagueirodireito">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade == ""' id="gradezagueirodireito" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Zagueiro (Direito)" && item.grade <= "0.9"' id="gradezagueirodireito" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -101,6 +110,9 @@
             <span *ngIf='item.position=="Lateral (Esquerdo)"' id="nmlateralesquerdo">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade == "S/N"' id="gradelateralesquerdo" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Lateral (Esquerdo)" && item.grade <= "0.9"' id="gradelateralesquerdo" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -123,6 +135,9 @@
                 alt="coroa">
             <span *ngIf='item.position=="Lateral (Direito)"' id="nmlateraldireito">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Lateral (Direito)" && item.grade == ""' id="gradelateraldireito" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='item.position=="Lateral (Direito)" && item.grade <= "0.9"' id="gradelateraldireito" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
@@ -148,6 +163,9 @@
             <span *ngIf='item.position=="Volante (Esquerdo)"' id="nmvolanteesquerdo">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade == ""' id="gradevolanteesquerdo" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Volante (Esquerdo)" && item.grade <= "0.9"' id="gradevolanteesquerdo" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -171,6 +189,9 @@
                 alt="coroa">
             <span *ngIf='item.position=="Volante (Central)"' id="nmvolantecentral">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Volante (Central)" && item.grade == ""' id="gradevolantecentral" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='item.position=="Volante (Central)" && item.grade <= "0.9"' id="gradevolantecentral" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
@@ -196,6 +217,9 @@
             <span *ngIf='item.position=="Volante (Direito)"' id="nmvolantedireito">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Volante (Direito)" && item.grade == ""' id="gradevolantedireito" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Volante (Direito)" && item.grade <= "0.9"' id="gradevolantedireito" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -218,6 +242,9 @@
                 alt="coroa">
             <span *ngIf='item.position=="Meia (Esquerdo)"' id="nmmeiaesquerdo">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Meia (Esquerdo)" && item.grade == ""' id="grademeiaesquerdo" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='item.position=="Meia (Esquerdo)" && item.grade <= "0.9"' id="grademeiaesquerdo" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
@@ -242,6 +269,9 @@
             <span *ngIf='item.position=="Meia (Central)"' id="nmmeiacentral">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Meia (Central)" && item.grade == ""' id="grademeiacentral" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Meia (Central)" && item.grade <= "0.9"' id="grademeiacentral" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -264,6 +294,9 @@
                     alt="coroa">
                 <span *ngIf='item.position=="Meia (Direito)"' id="nmmeiadireito">
                     <b>{{item.name}}</b>
+                </span>
+                <span *ngIf='item.position=="Meia (Direito)" && item.grade == ""' id="grademeiadireito" style="background-color:#c2c2a3">
+                    <b>S/N</b>
                 </span>
                 <span *ngIf='item.position=="Meia (Direito)" && item.grade <= "0.9"' id="grademeiadireito" style="background-color:#aa0808">
                     <b>{{item.grade}}</b>
@@ -288,6 +321,9 @@
             <span *ngIf='item.position=="Ponta (Esquerdo)"' id="nmpontaesquerdo">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade == "0.9"' id="gradepontaesquerdo" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Ponta (Esquerdo)" && item.grade <= "0.9"' id="gradepontaesquerdo" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -311,6 +347,9 @@
             <span *ngIf='item.position=="Ponta (Direito)"' id="nmpontadireito">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Ponta (Direito)" && item.grade == ""' id="gradepontadireito" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Ponta (Direito)" && item.grade <= "0.9"' id="gradepontadireito" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -332,6 +371,9 @@
             <img *ngIf='item.position=="Centroavante" && item.bestplayer==true' id="coroacentroavante" src="../../assets/coroa.png" alt="coroa">
             <span *ngIf='item.position=="Centroavante"' id="nmcentroavante">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Centroavante" && item.grade == ""' id="gradecentroavante" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='item.position=="Centroavante" && item.grade <= "0.9"' id="gradecentroavante" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
@@ -355,6 +397,9 @@
                 alt="coroa">
             <span *ngIf='item.position=="Atacante (Esquerdo)"' id="nmatacanteesquerdo">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='item.position=="Atacante (Esquerdo)" && item.grade == ""' id="gradeatacanteesquerdo" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='item.position=="Atacante (Esquerdo)" && item.grade <= "0.9"' id="gradeatacanteesquerdo" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
@@ -382,6 +427,9 @@
             <span *ngIf='item.position=="Atacante (Direito)"' id="nmatacantedireito">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='item.position=="Atacante (Direito)" && item.grade == ""' id="gradeatacantedireito" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='item.position=="Atacante (Direito)" && item.grade <= "0.9"' id="gradeatacantedireito" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -407,6 +455,9 @@
             <span *ngIf='i==0' id="nmreserva1">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='i==0 && item.grade == ""' id="gradereserva1" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='i==0 && item.grade <= "0.9"' id="gradereserva1" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -429,6 +480,9 @@
             <span *ngIf='i==1' id="nmreserva2">
                 <b>{{item.name}}</b>
             </span>
+            <span *ngIf='i==1 && item.grade == ""' id="gradereserva2" style="background-color:#c2c2a3">
+                <b>S/N</b>
+            </span>
             <span *ngIf='i==1 && item.grade <= "0.9"' id="gradereserva2" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
             </span>
@@ -450,6 +504,9 @@
             <img *ngIf='i==2 && item.bestplayer==true' id="coroareserva3" src="../../assets/coroa.png" alt="coroa">
             <span *ngIf='i==2' id="nmreserva3">
                 <b>{{item.name}}</b>
+            </span>
+            <span *ngIf='i==2 && item.grade == ""' id="gradereserva3" style="background-color:#c2c2a3">
+                <b>S/N</b>
             </span>
             <span *ngIf='i==2 && item.grade <= "0.9"' id="gradereserva3" style="background-color:#aa0808">
                 <b>{{item.grade}}</b>
