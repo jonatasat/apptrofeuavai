@@ -24,10 +24,12 @@ import { EditUsersComponent } from './users/edit-users/edit-users.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth-guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PasswordComponent } from './password/password.component';
 
 
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'password', component: PasswordComponent, canActivate: [AuthGuard] },
     { path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
     { path: 'addplayer', component: AddPlayerComponent, canActivate: [AuthGuard]},
     { path: 'players/editplayer/:id', component: EditPlayerComponent, canActivate: [AuthGuard]},

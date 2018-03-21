@@ -61,3 +61,34 @@
 a {
     cursor: pointer;
 }
+
+tbody{
+    position: fixed;
+    overflow-y: auto;
+    width: 100%;
+    height:400px;
+    margin-top: 3px;
+}
+
+#td2{
+    padding-left: 450px;
+}
+
+#td3{
+    padding-left: 375px;
+}
+
+#zerotimes{
+    text-align: center;
+    font-size: 12pt;
+    margin-top: 5px;
+    margin-left: 400px;
+    color: gray;
+}
+
+#qtdregistros{
+    position: absolute;
+    width: 200px;
+    bottom: 10px;
+    left: 45%;
+}

@@ -85,16 +85,23 @@ export class EditPlayerComponent implements OnInit {
       let name = null;
       let fileName = null;
       let position = null;
+      let positionOld = null;
       let photo = null;
       this.firebase.database().ref("players/"+ this.route.snapshot.params['id']).on('value', function(snap){
         fileName = snap.val().fileName;
         photo = snap.val().photo;
+        positionOld = snap.val().position;
       });
       console.log(fileName);
       this.playerName = form.value.name;
       this.playerPosition = form.value.position;
       name = this.playerName;
-      position = this.playerPosition;
+      console.log('position old: '+form.value.position);
+      if(form.value.position!=""){
+        position = this.playerPosition;
+      }else{
+        position = positionOld;
+      }
       this.store(name, position, photo, fileName);
 
       

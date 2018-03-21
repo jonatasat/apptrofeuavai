@@ -19,9 +19,12 @@
           </button>
         </div>
       </div>
+      <span *ngIf="failMessage" id="fail">
+        <strong>Login falhou !</strong> Verifique o nome de usuário ou a senha.
+      </span>
     </form>
   </div>
   <div id="footer">
-    <span>©2017 Jonatas A. Tavares</span>
+    <span>©2018 Jonatas A. Tavares</span>
   </div>
 </div>

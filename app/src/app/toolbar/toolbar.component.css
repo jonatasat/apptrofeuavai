@@ -24,3 +24,14 @@
     color: white;
     
 }
+
+#usericon{
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+#nmusericon{
+    margin-right: 20px;
+    color: white;
+}

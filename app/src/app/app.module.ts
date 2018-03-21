@@ -38,6 +38,7 @@ import { AddCoachesComponent } from './coaches/add-coaches/add-coaches.component
 import { EditCoachesComponent } from './coaches/edit-coaches/edit-coaches.component';
 import { AddRefereesComponent } from './referees/add-referees/add-referees.component';
 import { EditRefereesComponent } from './referees/edit-referees/edit-referees.component';
+import { PasswordComponent } from './password/password.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,8 @@ import { EditRefereesComponent } from './referees/edit-referees/edit-referees.co
     EditCoachesComponent,
     AddRefereesComponent,
     EditRefereesComponent,
+    PasswordComponent
+    
   ],
 
   imports: [
@@ -75,7 +78,7 @@ import { EditRefereesComponent } from './referees/edit-referees/edit-referees.co
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(FirebaseConfig),
-    AngularFirestoreModule,
+    AngularFirestoreModule
   ],
   providers: [TogglesidebarService, AuthService, AuthGuard, PaginationService, AngularFireDatabase],
   bootstrap: [AppComponent]

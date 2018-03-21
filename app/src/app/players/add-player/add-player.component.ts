@@ -8,6 +8,7 @@ import { FirebaseApp } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
 import 'firebase/storage';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-add-player',
@@ -25,6 +26,7 @@ export class AddPlayerComponent implements OnInit {
   show: any;
   storageRef: any;
   positions: any;
+  filenotempty: any;
 
 
   constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp, private db: AngularFireDatabase) { }
@@ -35,7 +37,10 @@ export class AddPlayerComponent implements OnInit {
     this.positions = this.db.list('positions').snapshotChanges().map(actions =>{
       return actions.map(action => ({ key: action.key, ...action.payload.val() }));
     });
+    this.filenotempty = false;
+    
   }
+
 
   store(url){
     let nome = this.playerName;
@@ -51,10 +56,12 @@ export class AddPlayerComponent implements OnInit {
     ).then((t: any) => console.log('dados gravados: ' + t.key)),
       (e: any) => console.log(e.message);
 
+      
   }
 
   onSubmit(form){
     console.log(form);
+    
     this.playerName = form.value.name;
     this.playerPosition = form.value.position;
     this.storageRef.child(this.fileName).getDownloadURL().then(url => this.store(url));
@@ -72,6 +79,7 @@ export class AddPlayerComponent implements OnInit {
       }
     });
     this.show = true;
+    this.filenotempty = true;
   }
 
 }

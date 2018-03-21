@@ -30,3 +30,7 @@
     cursor: pointer;
     margin-left: 300px;
 }
+
+#btnsave[disabled]{
+    cursor: not-allowed;
+}

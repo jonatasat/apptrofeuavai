@@ -47,16 +47,104 @@ export class EditMatchComponent implements OnInit {
   }
 
   onSubmit(form) {
-
-    this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
-      team: form.value.team,
-      opponent: form.value.opponent,
-      score: form.value.score,
-      stadium: form.value.stadium,
-      championship: form.value.championship,
-      round: form.value.round,
-      date: form.value.date
+    let teamOld = null;
+    let opponentOld = null;
+    let strategyOld = null;
+    this.firebase.database().ref("matches/"+ this.route.snapshot.params['id']).once('value', function(snap){
+      teamOld = snap.val().team;
+      opponentOld = snap.val().opponent;
+      strategyOld = snap.val().strategy;
     });
+
+    if(form.value.team=="" && form.value.opponent=="" && form.value.strategy==""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: teamOld,
+        opponent: opponentOld,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: strategyOld
+      });
+    }else if(form.value.team=="" && form.value.opponent=="" && form.value.strategy!=""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: teamOld,
+        opponent: opponentOld,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: form.value.strategy
+      });
+    }else if(form.value.team=="" && form.value.opponent!="" && form.value.strategy==""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: teamOld,
+        opponent: form.value.opponent,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: strategyOld
+      });
+    }else if(form.value.team!="" && form.value.opponent=="" && form.value.strategy==""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: form.value.team,
+        opponent: opponentOld,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: strategyOld
+      });
+    }else if(form.value.team=="" && form.value.opponent!="" && form.value.strategy!=""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: teamOld,
+        opponent: form.value.opponent,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: form.value.strategy
+      });
+    }else if(form.value.team!="" && form.value.opponent=="" && form.value.strategy!=""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: form.value.team,
+        opponent: opponentOld,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: form.value.strategy
+      });
+    }else if(form.value.team!="" && form.value.opponent!="" && form.value.strategy==""){
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: teamOld,
+        opponent: opponentOld,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: form.value.strategy
+      });
+    }else{
+      this.db.database.ref('matches/' + this.route.snapshot.params['id']).update({
+        team: form.value.team,
+        opponent: form.value.opponent,
+        score: form.value.score,
+        stadium: form.value.stadium,
+        championship: form.value.championship,
+        round: form.value.round,
+        date: form.value.date,
+        strategy: form.value.strategy
+      });
+    }
 
     this.router.navigate(['/matches']);
 

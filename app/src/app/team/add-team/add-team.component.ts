@@ -25,12 +25,15 @@ export class AddTeamComponent implements OnInit {
   preview: any;
   show: any;
   storageRef: any;
+  filenotempty: any;
+  
 
   constructor(private angularFire: AngularFireDatabase, private router: Router, private firebase: FirebaseApp) {  }
 
   ngOnInit() {
     this.storageRef = this.firebase.storage().ref();
     this.show = false;
+    this.filenotempty = false;
   }
 
   store(url){
@@ -65,6 +68,7 @@ export class AddTeamComponent implements OnInit {
       }
     });
     this.show = true;
+    this.filenotempty = true;
   }
 
 

@@ -14,6 +14,14 @@
     margin-left: 15px;
 }
 
+#image1{
+    max-height: 150px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    margin-left: 15px;
+}
+
 #form{
     margin-left: 200px;
     margin-top: 70px;
@@ -29,5 +37,9 @@
 #btnsave{
     cursor: pointer;
     margin-left: 300px;
+}
+
+#btnsave[disabled]{
+    cursor: not-allowed;
 }
 
