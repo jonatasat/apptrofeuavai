@@ -5,26 +5,29 @@
   <li class="breadcrumb-item active">Jogadores</li>
 </ol>
 
-<table id="playerstable" class="table table-fixed">
-  <thead class="thead-default">
-    <tr>
-      <th class="col-xs-3">Foto</th>
-      <th class="col-xs-3">Nome</th>
-      <th class="col-xs-3">Posição</th>
-      <th class="col-xs-3"></th>
-    </tr>
-  </thead>
-  <tbody id="rows">
-    <span id="zeroplayers" *ngIf="(players | async)?.length==0">
-      <b>Nenhum jogador encontrado.</b>
-    </span>
-      <tr *ngFor="let item of players | async">
-        <td id="td1" class="col-xs-3">
+<div class="container">
+  <table class="table table-fixed">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Foto</th>
+        <th>Nome</th>
+        <th>Posição</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="rows">
+      <span id="zeroplayers" *ngIf="(players | async)?.length==0">
+        <b>Nenhum jogador encontrado.</b>
+      </span>
+      <tr *ngFor="let item of players | async; let i = index">
+        <td>{{i+1}}</td>
+        <td>
           <img id="image" src="{{item.photo}}" alt="photo" class="img-fluid">
         </td>
-        <td id="td2" class="col-xs-3">{{item.name}}</td>
-        <td id="td3" class="col-xs-3">{{item.position}}</td>
-        <td id="td4" class="col-xs-3">
+        <td>{{item.name}}</td>
+        <td>{{item.position}}</td>
+        <td>
           <div id="buttonbar">
             <i id="pencilicon" [routerLink]="['editplayer', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip"
               title="Editar Jogador"></i>
@@ -32,8 +35,9 @@
           </div>
         </td>
       </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
 <div id="qtdregistros" *ngIf="(players | async)?.length>0">
   <span>
