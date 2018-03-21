@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TogglesidebarService } from '../togglesidebar.service';
 import { AuthService } from '../login/auth.service';
+import { Router } from '@angular/router/';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,6 +15,7 @@ export class ToolbarComponent implements OnInit {
   constructor(
     private service: TogglesidebarService,
     private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class ToolbarComponent implements OnInit {
 
   fazerLogout(){
     this.authService.fazerLogout();
+  }
+
+  trocarSenha(){
+    this.router.navigate(['/password']);
   }
 
 }

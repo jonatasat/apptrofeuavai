@@ -51,9 +51,6 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(form.value.strategy);
-    this.matchStrategy = form.value.strategy;
-    console.log(this.matchStrategy);
 
     let id = form.value.match.key;
 
@@ -77,8 +74,7 @@ export class HomeComponent implements OnInit {
     let sum = 0;
     let countZero = 0;
     this.listGrades.map(function (value, index) {
-      if(value==""){
-        console.log("value 0");
+      if (value == "") {
         value = 0;
         countZero = countZero + 1;
       }
@@ -87,8 +83,7 @@ export class HomeComponent implements OnInit {
 
     let sumSubstitutes = 0;
     this.listGradesSubstitutes.map(function (value, index) {
-      if(value==""){
-        console.log("value 0");
+      if (value == "") {
         value = 0;
         countZero = countZero + 1;
       }
@@ -99,31 +94,45 @@ export class HomeComponent implements OnInit {
     let somaTamanhos = this.listGrades.length + this.listGradesSubstitutes.length - countZero;
     let total = soma / somaTamanhos;
 
-    this.average = total.toFixed(2);
+    if (!isNaN(total)) {
+      this.average = total.toFixed(2);
+      this.showAverage = true;
+    }else{
+      this.average = "";
+      this.showAverage = true;
+    }
 
-    this.showAverage = true;
+
   }
 
 
   getMatch(data) {
-    this.opponent = data.val().opponent;
-    this.team = data.val().team;
-    this.score = data.val().score;
-    this.championship = data.val().championship;
-    this.round = data.val().round;
-    this.date = data.val().date.split('-')[2] + '/' + data.val().date.split('-')[1] + '/' + data.val().date.split('-')[0];
+    if (data.val()) {
+      this.opponent = data.val().opponent;
+      this.team = data.val().team;
+      this.score = data.val().score;
+      this.championship = data.val().championship;
+      this.round = data.val().round;
+      this.date = data.val().date.split('-')[2] + '/' + data.val().date.split('-')[1] + '/' + data.val().date.split('-')[0];
+      this.matchStrategy = data.val().strategy;
+    }
+
   }
 
   getPlayers(data) {
-    this.listGrades = Object.keys(data.val()).map(function (key) {
-      return data.val()[key].grade;
-    });
+    if (data.val()) {
+      this.listGrades = Object.keys(data.val()).map(function (key) {
+        return data.val()[key].grade;
+      });
+    }
   }
 
-  getSubstitutes(data){
-    this.listGradesSubstitutes = Object.keys(data.val()).map(function (key) {
-      return data.val()[key].grade;
-    });
+  getSubstitutes(data) {
+    if (data.val()) {
+      this.listGradesSubstitutes = Object.keys(data.val()).map(function (key) {
+        return data.val()[key].grade;
+      });
+    }
   }
 
   logelements(element) {

@@ -20,11 +20,12 @@ export class AuthService {
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(private router: Router, private firebase: FirebaseApp) { 
-    this.firebase.database().ref("password/").once('value', data => this.getPassword(data), this.errData);
+    this.firebase.database().ref("password/").on('value', data => this.getPassword(data), this.errData);
     this.failMessage = true;
   }
 
   getPassword(data){
+    console.log(data.val());
     this.pass = data.val();
   }
 

@@ -18,22 +18,21 @@
     <span id="zeroplayers" *ngIf="(players | async)?.length==0">
       <b>Nenhum jogador encontrado.</b>
     </span>
-    <tr *ngFor="let item of players | async">
-      <td id="td1" class="col-xs-3">
-        <img id="image" src="{{item.photo}}" alt="photo" class="img-fluid">
-      </td>
-      <td id="td2" class="col-xs-3">{{item.name}}</td>
-      <td id="td3" class="col-xs-3">{{item.position}}</td>
-      <td id="td4" class="col-xs-3">
-        <div id="buttonbar">
-          <i id="pencilicon" [routerLink]="['editplayer', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip" title="Editar Jogador"></i>
-          <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador" (click)="deleteItem(item)"></i>
-        </div>
-      </td>
-    </tr>
-    
+      <tr *ngFor="let item of players | async">
+        <td id="td1" class="col-xs-3">
+          <img id="image" src="{{item.photo}}" alt="photo" class="img-fluid">
+        </td>
+        <td id="td2" class="col-xs-3">{{item.name}}</td>
+        <td id="td3" class="col-xs-3">{{item.position}}</td>
+        <td id="td4" class="col-xs-3">
+          <div id="buttonbar">
+            <i id="pencilicon" [routerLink]="['editplayer', item.key]" class="fa fa-pencil fa-lg" aria-hidden="true" data-toggle="tooltip"
+              title="Editar Jogador"></i>
+            <i id="trashicon" class="fa fa-trash fa-lg" aria-hidden="true" data-toggle="tooltip" title="Remover Jogador" (click)="deleteItem(item)"></i>
+          </div>
+        </td>
+      </tr>
   </tbody>
-
 </table>
 
 <div id="qtdregistros" *ngIf="(players | async)?.length>0">

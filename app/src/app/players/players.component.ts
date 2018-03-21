@@ -44,9 +44,11 @@ export class PlayersComponent implements OnInit {
   }
 
   getPlayers(data){
-    this.nome = data.val().name;
-    this.foto = data.val().photo;
-    this.posicao = data.val().position;
+    if(data.val()){
+      this.nome = data.val().name;
+      this.foto = data.val().photo;
+      this.posicao = data.val().position;
+    }
   }
 
   errData(){
